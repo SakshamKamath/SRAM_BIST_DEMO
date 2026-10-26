@@ -1,0 +1,1 @@
+verilator -Wno-fatal -Wno-style -Wno-BLKANDNBLK -Wno-WIDTHEXPAND -Wno-WIDTHTRUNC -Wno-WIDTHCONCAT -Wno-ASCRANGE --Wno-TIMESCALEMOD -binary -j 0 --timing --autoflush --trace-fst --trace-threads 2 --trace-structs --unroll-count 1 --unroll-stmts 1 --x-assign fast --x-initial fast -O3 --top tb_march_bist_top -f march.f

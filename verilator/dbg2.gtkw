@@ -1,0 +1,203 @@
+[*]
+[*] GTKWave Analyzer v4.0.0-prealpha (a6aae77) (w)1999-2022 BSI
+[*] Sat Sep 19 11:12:38 2026
+[*]
+[dumpfile] "/home/sem26h3/Documents/SEM_PROJ/SRAM_BIST/verilator/croc.fst"
+[dumpfile_mtime] "Sat Sep 19 11:06:38 2026"
+[dumpfile_size] 8697605
+[savefile] "/home/sem26h3/Documents/SEM_PROJ/SRAM_BIST/verilator/dbg2.gtkw"
+[timestart] 743834800
+[size] 1427 600
+[pos] 49 26
+*-17.000000 744069400 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+[markername] AA
+[markername] BB
+[markername] CC
+[markername] DD
+[markername] EE
+[markername] FF
+[markername] GG
+[markername] HH
+[markername] II
+[markername] JJ
+[markername] KK
+[markername] LL
+[markername] MM
+[markername] NN
+[markername] OO
+[markername] PP
+[markername] QQ
+[markername] RR
+[markername] SS
+[markername] TT
+[markername] UU
+[markername] VV
+[markername] WW
+[markername] XX
+[markername] YY
+[markername] ZZ
+[treeopen] tb_croc_soc.
+[treeopen] tb_croc_soc.i_croc_soc.
+[treeopen] tb_croc_soc.i_croc_soc.i_croc.
+[treeopen] tb_croc_soc.i_croc_soc.i_croc.all_sbr_obi_req[2].
+[treeopen] tb_croc_soc.i_croc_soc.i_croc.all_sbr_obi_req[3].
+[treeopen] tb_croc_soc.i_croc_soc.i_croc.all_sbr_obi_req[4].
+[treeopen] tb_croc_soc.i_croc_soc.i_croc.all_sbr_obi_rsp[0].
+[treeopen] tb_croc_soc.i_croc_soc.i_croc.all_sbr_obi_rsp[1].
+[treeopen] tb_croc_soc.i_croc_soc.i_croc.all_sbr_obi_rsp[1].r.
+[treeopen] tb_croc_soc.i_croc_soc.i_croc.all_sbr_obi_rsp[2].
+[treeopen] tb_croc_soc.i_croc_soc.i_croc.all_sbr_obi_rsp[3].
+[treeopen] tb_croc_soc.i_croc_soc.i_croc.all_sbr_obi_rsp[4].
+[treeopen] tb_croc_soc.i_croc_soc.i_croc.core_instr_obi_req.
+[treeopen] tb_croc_soc.i_croc_soc.i_croc.gen_sram_bank[0].i_sram.
+[treeopen] tb_croc_soc.i_croc_soc.i_croc.gen_sram_bank[1].i_sram.
+[treeopen] tb_croc_soc.i_croc_soc.i_croc.gen_sram_bank[1].i_sram_shim.
+[treeopen] tb_croc_soc.i_croc_soc.i_croc.i_core_wrap.i_core.id_stage_i.
+[treeopen] tb_croc_soc.i_croc_soc.i_croc.i_core_wrap.i_core.if_stage_i.
+[treeopen] tb_croc_soc.i_croc_soc.i_croc.i_dmi_jtag.i_dmi_jtag_tap.
+[treeopen] tb_croc_soc.i_croc_soc.i_croc.i_main_xbar.
+[treeopen] tb_croc_soc.i_croc_soc.i_croc.i_main_xbar.i_obi_jtag_top.cut_xbar_mgr_ports_rsp_o[1].
+[treeopen] tb_croc_soc.i_croc_soc.i_croc.i_main_xbar.i_obi_jtag_top.i_obi_jtag_wrap.
+[treeopen] tb_croc_soc.i_croc_soc.i_croc.i_main_xbar.i_obi_jtag_top.i_obi_multicut.gen_mgr_cuts[0].i_mgr_obi_cut.i_req_r.
+[treeopen] tb_croc_soc.i_croc_soc.i_croc.i_main_xbar.i_obi_jtag_top.i_obi_multicut.gen_mgr_cuts[1].i_mgr_obi_cut.i_req_r.spill_register_flushable_i.gen_spill_reg.
+[treeopen] tb_croc_soc.i_croc_soc.i_croc.i_main_xbar.i_obi_jtag_top.i_obi_multicut.gen_mgr_cuts[1].i_mgr_obi_cut.mgr_port_rsp_i.
+[treeopen] tb_croc_soc.i_croc_soc.i_croc.i_main_xbar.i_obi_jtag_top.i_obi_multicut.gen_mgr_cuts[1].i_mgr_obi_cut.sbr_port_rsp_o.
+[treeopen] tb_croc_soc.i_croc_soc.i_croc.i_main_xbar.i_obi_jtag_top.i_obi_multicut.gen_mgr_cuts[2].i_mgr_obi_cut.i_req_r.
+[treeopen] tb_croc_soc.i_croc_soc.i_croc.i_main_xbar.i_obi_jtag_top.i_obi_multicut.gen_mgr_cuts[2].i_mgr_obi_cut.mgr_port_rsp_i.
+[treeopen] tb_croc_soc.i_croc_soc.i_croc.i_main_xbar.i_obi_jtag_top.i_obi_multicut.gen_mgr_cuts[3].i_mgr_obi_cut.i_req_r.
+[treeopen] tb_croc_soc.i_croc_soc.i_croc.i_main_xbar.i_obi_jtag_top.i_obi_multicut.gen_mgr_cuts[3].i_mgr_obi_cut.mgr_port_rsp_i.
+[treeopen] tb_croc_soc.i_croc_soc.i_croc.i_main_xbar.i_obi_jtag_top.i_obi_multicut.gen_mgr_cuts[4].i_mgr_obi_cut.i_req_r.
+[treeopen] tb_croc_soc.i_croc_soc.i_croc.i_main_xbar.i_obi_jtag_top.i_obi_multicut.gen_mgr_cuts[4].i_mgr_obi_cut.mgr_port_rsp_i.
+[treeopen] tb_croc_soc.i_croc_soc.i_croc.i_main_xbar.i_obi_jtag_top.i_obi_multicut.gen_sbr_cuts[0].i_sbr_obi_cut.i_reg_a.spill_register_flushable_i.
+[treeopen] tb_croc_soc.i_croc_soc.i_croc.i_main_xbar.i_obi_jtag_top.slv_cut_mgr_ports_rsp_i[0].
+[treeopen] tb_croc_soc.i_croc_soc.i_croc.i_main_xbar.i_obi_jtag_top.slv_cut_mgr_ports_rsp_i[1].
+[treeopen] tb_croc_soc.i_croc_soc.i_croc.i_main_xbar.i_obi_jtag_top.slv_cut_mgr_ports_rsp_i[2].r.
+[treeopen] tb_croc_soc.i_croc_soc.i_croc.i_main_xbar.i_obi_jtag_top.slv_cut_mgr_ports_rsp_i[3].
+[treeopen] tb_croc_soc.i_croc_soc.i_croc.i_main_xbar.i_obi_jtag_top.slv_cut_mgr_ports_rsp_i[4].
+[treeopen] tb_croc_soc.i_croc_soc.i_croc.i_main_xbar.i_obi_jtag_top.xbar_cut_sbr_ports_rsp_i[0].
+[treeopen] tb_croc_soc.i_croc_soc.i_croc.i_main_xbar.i_obi_jtag_top.xbar_cut_sbr_ports_rsp_i[1].
+[treeopen] tb_croc_soc.i_croc_soc.i_croc.i_main_xbar.i_obi_jtag_top.xbar_cut_sbr_ports_rsp_i[2].
+[treeopen] tb_croc_soc.i_croc_soc.i_croc.i_main_xbar.i_obi_jtag_top.xbar_cut_sbr_ports_rsp_i[3].r.
+[treeopen] tb_croc_soc.i_croc_soc.i_croc.i_main_xbar.mgr_ports_req_o[0].
+[treeopen] tb_croc_soc.i_croc_soc.i_croc.i_main_xbar.mgr_ports_rsp_i[0].
+[treeopen] tb_croc_soc.i_croc_soc.i_croc.i_main_xbar.mgr_ports_rsp_i[1].
+[treeopen] tb_croc_soc.i_croc_soc.i_croc.i_main_xbar.mgr_ports_rsp_i[1].r.
+[treeopen] tb_croc_soc.i_croc_soc.i_croc.i_main_xbar.mgr_ports_rsp_i[2].
+[treeopen] tb_croc_soc.i_croc_soc.i_croc.i_main_xbar.mgr_ports_rsp_i[2].r.
+[treeopen] tb_croc_soc.i_croc_soc.i_croc.i_main_xbar.mgr_ports_rsp_i[3].
+[treeopen] tb_croc_soc.i_croc_soc.i_croc.i_main_xbar.mgr_ports_rsp_i[3].r.
+[treeopen] tb_croc_soc.i_croc_soc.i_croc.i_main_xbar.sbr_ports_req_i[0].
+[treeopen] tb_croc_soc.i_croc_soc.i_croc.i_main_xbar.sbr_ports_req_i[1].
+[treeopen] tb_croc_soc.i_croc_soc.i_croc.i_main_xbar.sbr_ports_req_i[2].
+[treeopen] tb_croc_soc.i_croc_soc.i_croc.i_main_xbar.sbr_ports_req_i[2].a.
+[treeopen] tb_croc_soc.i_croc_soc.i_croc.i_main_xbar.sbr_ports_req_i[3].
+[treeopen] tb_croc_soc.i_croc_soc.i_croc.i_main_xbar.sbr_ports_req_i[3].a.
+[treeopen] tb_croc_soc.i_croc_soc.i_croc.i_main_xbar.sbr_ports_rsp_o[3].
+[treeopen] tb_croc_soc.i_croc_soc.i_croc.i_main_xbar.sbr_rsps[0][0].
+[treeopen] tb_croc_soc.i_croc_soc.i_croc.i_main_xbar.sbr_rsps[0][1].
+[treeopen] tb_croc_soc.i_croc_soc.i_croc.i_main_xbar.sbr_rsps[0][3].
+[treeopen] tb_croc_soc.i_croc_soc.i_croc.i_main_xbar.sbr_rsps[0][4].
+[treeopen] tb_croc_soc.i_croc_soc.i_croc.i_main_xbar.sbr_rsps[1][0].
+[treeopen] tb_croc_soc.i_croc_soc.i_croc.i_main_xbar.sbr_rsps[1][1].
+[treeopen] tb_croc_soc.i_croc_soc.i_croc.i_main_xbar.sbr_rsps[1][2].
+[treeopen] tb_croc_soc.i_croc_soc.i_croc.i_main_xbar.sbr_rsps[1][3].
+[treeopen] tb_croc_soc.i_croc_soc.i_croc.i_main_xbar.sbr_rsps[1][4].
+[treeopen] tb_croc_soc.i_croc_soc.i_croc.i_main_xbar.sbr_rsps[2][0].
+[treeopen] tb_croc_soc.i_croc_soc.i_croc.i_main_xbar.sbr_rsps[2][1].
+[treeopen] tb_croc_soc.i_croc_soc.i_croc.i_main_xbar.sbr_rsps[2][2].
+[treeopen] tb_croc_soc.i_croc_soc.i_croc.i_main_xbar.sbr_rsps[2][3].
+[treeopen] tb_croc_soc.i_croc_soc.i_croc.i_main_xbar.sbr_rsps[2][4].
+[treeopen] tb_croc_soc.i_croc_soc.i_croc.i_main_xbar.sbr_rsps[3][0].
+[treeopen] tb_croc_soc.i_croc_soc.i_croc.i_main_xbar.sbr_rsps[3][1].
+[treeopen] tb_croc_soc.i_croc_soc.i_croc.user_mgr_obi_req_i.
+[treeopen] tb_croc_soc.i_croc_soc.i_croc.xbar_mgr_obi_req[3].
+[sst_width] 382
+[signals_width] 281
+[sst_expanded] 1
+[sst_vpaned_height] 292
+@28
+tb_croc_soc.i_croc_soc.i_croc.i_dmi_jtag.i_dmi_jtag_tap.tck_i
+tb_croc_soc.i_croc_soc.i_croc.i_dmi_jtag.i_dmi_jtag_tap.td_i
+tb_croc_soc.i_croc_soc.i_croc.i_dmi_jtag.i_dmi_jtag_tap.td_o
+tb_croc_soc.i_croc_soc.i_croc.i_dmi_jtag.i_dmi_jtag_tap.tms_i
+tb_croc_soc.i_croc_soc.i_croc.i_dmi_jtag.i_dmi_jtag_tap.trst_ni
+tb_croc_soc.i_croc_soc.i_croc.i_dmi_jtag.i_dmi_jtag_tap.testmode_i
+@100000028
+tb_croc_soc.i_croc_soc.i_croc.i_dmi_jtag.i_dmi_jtag_tap.tap_state_q[3:0]
+@22
+tb_croc_soc.i_croc_soc.i_croc.i_dmi_jtag.i_dmi_jtag_tap.idcode_q[31:0]
+tb_croc_soc.i_croc_soc.i_croc.i_dmi_jtag.i_dmi_jtag_tap.jtag_ir_shift_q[4:0]
+tb_croc_soc.i_croc_soc.i_croc.i_dmi_jtag.i_dmi_jtag_tap.jtag_ir_shift_d[4:0]
+@100000028
+tb_croc_soc.i_croc_soc.i_croc.i_dmi_jtag.i_dmi_jtag_tap.jtag_ir_q[4:0]
+@28
+tb_croc_soc.i_croc_soc.i_croc.jtag_tdi_i
+@200
+-OBI Jtag
+@28
+tb_croc_soc.i_croc_soc.i_croc.i_main_xbar.i_obi_jtag_top.tclk_i
+tb_croc_soc.i_croc_soc.i_croc.i_main_xbar.i_obi_jtag_top.tdi_i
+tb_croc_soc.i_croc_soc.i_croc.i_main_xbar.i_obi_jtag_top.testmode_i
+tb_croc_soc.i_croc_soc.i_croc.i_main_xbar.i_obi_jtag_top.tms_i
+tb_croc_soc.i_croc_soc.i_croc.i_main_xbar.i_obi_jtag_top.trst_ni
+tb_croc_soc.i_croc_soc.i_croc.i_main_xbar.i_obi_jtag_top.tdo_o
+tb_croc_soc.i_croc_soc.i_croc.i_main_xbar.i_obi_jtag_top.i_obi_jtag_wrap.ir_shift_reg_q[1:0]
+tb_croc_soc.i_croc_soc.i_croc.i_main_xbar.i_obi_jtag_top.i_obi_jtag_wrap.tdo_d
+tb_croc_soc.i_croc_soc.i_croc.i_main_xbar.i_obi_jtag_top.i_obi_jtag_wrap.tdo_q
+tb_croc_soc.i_croc_soc.i_croc.i_main_xbar.i_obi_jtag_top.tdo_chained
+@100000028
+tb_croc_soc.i_croc_soc.i_croc.i_main_xbar.i_obi_jtag_top.i_tap_fsm.state_q[3:0]
+tb_croc_soc.i_croc_soc.i_croc.i_main_xbar.i_obi_jtag_top.i_obi_jtag_wrap.ir_latched_q[1:0]
+@200
+-Croc JTAG Connectivity
+@28
+tb_croc_soc.i_croc_soc.i_croc.i_main_xbar.i_obi_jtag_top.i_obi_jtag_wrap.tdi_i
+tb_croc_soc.i_croc_soc.i_croc.i_main_xbar.i_obi_jtag_top.i_obi_jtag_wrap.tdo_o
+tb_croc_soc.i_croc_soc.i_croc.i_main_xbar.i_obi_jtag_top.i_obi_jtag_wrap.ir_shift_reg_q[1:0]
+tb_croc_soc.i_croc_soc.i_croc.i_dmi_jtag.i_dmi_jtag_tap.td_i
+tb_croc_soc.i_croc_soc.i_croc.i_core_wrap.i_core.id_stage_i.controller_i.illegal_insn_d
+@22
+tb_croc_soc.i_croc_soc.i_croc.i_core_wrap.i_core.id_stage_i.instr_rdata_i[31:0]
+tb_croc_soc.i_croc_soc.i_croc.i_core_wrap.i_core.if_stage_i.instr_rdata_id_o[31:0]
+tb_croc_soc.i_croc_soc.i_croc.i_core_wrap.i_core.if_stage_i.instr_rdata_i[31:0]
+tb_croc_soc.i_croc_soc.i_croc.i_core_wrap.i_core.if_stage_i.compressed_decoder_i.instr_i[31:0]
+tb_croc_soc.i_croc_soc.i_croc.i_core_wrap.i_core.if_stage_i.compressed_decoder_i.instr_o[31:0]
+@28
+tb_croc_soc.i_croc_soc.i_croc.i_dmi_jtag.i_dmi_jtag_tap.jtag_ir_shift_q[4:0]
+tb_croc_soc.i_croc_soc.i_croc.i_main_xbar.i_obi_jtag_top.xcnct_isol_en
+@200
+-Error Trace
+@22
+tb_croc_soc.i_croc_soc.i_croc.i_main_xbar.sbr_ports_rsp_o[3].r.rdata[31:0]
+tb_croc_soc.i_croc_soc.i_croc.i_main_xbar.mgr_ports_rsp_i[0].r.rdata[31:0]
+tb_croc_soc.i_croc_soc.i_croc.i_main_xbar.mgr_ports_rsp_i[1].r.rdata[31:0]
+tb_croc_soc.i_croc_soc.i_croc.i_core_wrap.instr_rdata_i[31:0]
+tb_croc_soc.i_croc_soc.i_croc.i_core_wrap.i_core.id_stage_i.controller_i.pc_id_i[31:0]
+@200
+-Cut Signals
+@28
+tb_croc_soc.i_croc_soc.i_croc.i_main_xbar.sbr_ports_req_i[0].req
+@22
+tb_croc_soc.i_croc_soc.i_croc.i_main_xbar.sbr_ports_req_i[0].a.addr[31:0]
+@28
+tb_croc_soc.i_croc_soc.i_croc.i_main_xbar.sbr_ports_req_i[1].req
+@22
+tb_croc_soc.i_croc_soc.i_croc.i_main_xbar.sbr_ports_req_i[1].a.addr[31:0]
+@28
+tb_croc_soc.i_croc_soc.i_croc.i_main_xbar.sbr_ports_req_i[2].req
+@22
+tb_croc_soc.i_croc_soc.i_croc.i_main_xbar.sbr_ports_req_i[2].a.addr[31:0]
+@28
+tb_croc_soc.i_croc_soc.i_croc.i_main_xbar.sbr_ports_req_i[3].req
+@22
+tb_croc_soc.i_croc_soc.i_croc.i_main_xbar.sbr_ports_req_i[3].a.addr[31:0]
+tb_croc_soc.i_croc_soc.i_croc.xbar_mgr_obi_req[3].a.addr[31:0]
+@23
+tb_croc_soc.i_croc_soc.i_croc.core_instr_obi_req.a.addr[31:0]
+@200
+-Croc Domain Signals
+@28
+tb_croc_soc.i_croc_soc.i_croc.gen_sram_bank[0].i_sram.i_tc_sram.req_i[0]
+tb_croc_soc.i_croc_soc.i_croc.gen_sram_bank[1].i_sram.i_tc_sram.req_i[0]
+[pattern_trace] 1
+[pattern_trace] 0

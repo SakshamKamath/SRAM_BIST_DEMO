@@ -1,0 +1,91 @@
+[*]
+[*] GTKWave Analyzer v4.0.0-prealpha (8ba24ab) (w)1999-2022 BSI
+[*] Thu Aug 27 09:16:31 2026
+[*]
+[dumpfile] "/home/sem26h3/Documents/SEM_PROJ/SRAM_BIST/verilator/obj_dir/tb_jtag_march.fst"
+[dumpfile_mtime] "Thu Aug 27 09:14:34 2026"
+[dumpfile_size] 6172
+[savefile] "/home/sem26h3/Documents/SEM_PROJ/SRAM_BIST/verilator/jtag_march.gtkw"
+[timestart] 1715
+[size] 1427 600
+[pos] -16 26
+*-6.000000 1525 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+[markername] AA
+[markername] BB
+[markername] CC
+[markername] DD
+[markername] EE
+[markername] FF
+[markername] GG
+[markername] HH
+[markername] II
+[markername] JJ
+[markername] KK
+[markername] LL
+[markername] MM
+[markername] NN
+[markername] OO
+[markername] PP
+[markername] QQ
+[markername] RR
+[markername] SS
+[markername] TT
+[markername] UU
+[markername] VV
+[markername] WW
+[markername] XX
+[markername] YY
+[markername] ZZ
+[treeopen] tb_jtag_march.
+[treeopen] tb_jtag_march.u_dut.
+[treeopen] tb_jtag_march.u_dut.i_jtag_tap_top.
+[treeopen] tb_jtag_march.u_dut.u_bist_controller.
+[treeopen] tb_jtag_march.u_dut.u_bist_controller.gen_fifo_enabled.
+[sst_width] 297
+[signals_width] 256
+[sst_expanded] 1
+[sst_vpaned_height] 150
+@28
+tb_jtag_march.A_CLK
+tb_jtag_march.u_dut.TEST_TRSTNI
+@100000028
+tb_jtag_march.u_dut.i_jtag_tap_top.ir_latched_q[3:0]
+@28
+tb_jtag_march.u_dut.i_jtag_tap_top.mbist_start_o
+tb_jtag_march.u_dut.TEST_TMS
+@29
+tb_jtag_march.u_dut.TEST_TDO
+@100000028
+tb_jtag_march.u_dut.i_jtag_tap_top.i_tap_fsm.state_q[3:0]
+@22
+tb_jtag_march.u_dut.i_jtag_tap_top.err_addr_reg_q[3:0]
+@200
+-March Test Signals
+@28
+tb_jtag_march.u_dut.u_sram_mem.A_BIST_CLK
+@22
+tb_jtag_march.u_dut.u_sram_mem.A_BIST_DIN[23:0]
+@28
+tb_jtag_march.u_dut.u_sram_mem.A_BIST_EN
+tb_jtag_march.u_dut.u_sram_mem.A_BIST_MEN
+tb_jtag_march.u_dut.u_sram_mem.A_BIST_WEN
+tb_jtag_march.u_dut.u_sram_mem.A_BIST_REN
+@22
+tb_jtag_march.u_dut.u_sram_mem.A_BIST_BM[23:0]
+tb_jtag_march.u_dut.u_sram_mem.A_DOUT[23:0]
+@28
+tb_jtag_march.u_dut.u_bist_controller.sub_op_q[1:0]
+@22
+tb_jtag_march.u_dut.u_bist_controller.addr_q[3:0]
+@100000028
+tb_jtag_march.u_dut.u_bist_controller.seq_q[3:0]
+@28
+tb_jtag_march.u_dut.u_bist_controller.fail_o
+tb_jtag_march.u_dut.u_bist_controller.fifo_full
+@22
+tb_jtag_march.u_dut.u_bist_controller.gen_fifo_enabled.u_err_fifo.memfifo[0][3:0]
+tb_jtag_march.u_dut.u_bist_controller.gen_fifo_enabled.u_err_fifo.memfifo[1][3:0]
+tb_jtag_march.u_dut.u_bist_controller.gen_fifo_enabled.u_err_fifo.memfifo[2][3:0]
+tb_jtag_march.u_dut.u_bist_controller.gen_fifo_enabled.u_err_fifo.memfifo[3][3:0]
+[pattern_trace] 1
+[pattern_trace] 0

@@ -1,0 +1,63 @@
+[*]
+[*] GTKWave Analyzer v4.0.0-prealpha (8ba24ab) (w)1999-2022 BSI
+[*] Sat Aug  1 22:15:12 2026
+[*]
+[dumpfile] "/scratch/vlsi2_42fs26/SEM_PROJ/reference_flow/verilator/obj_dir/tb_march_bist_top.fst"
+[dumpfile_mtime] "Sat Aug  1 22:08:18 2026"
+[dumpfile_size] 9706
+[savefile] "/scratch/vlsi2_42fs26/SEM_PROJ/reference_flow/verilator/march.gtkw"
+[timestart] 25525
+[size] 1374 600
+[pos] 103 21
+*-5.000000 25645 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+[markername] AA
+[markername] BB
+[markername] CC
+[markername] DD
+[markername] EE
+[markername] FF
+[markername] GG
+[markername] HH
+[markername] II
+[markername] JJ
+[markername] KK
+[markername] LL
+[markername] MM
+[markername] NN
+[markername] OO
+[markername] PP
+[markername] QQ
+[markername] RR
+[markername] SS
+[markername] TT
+[markername] UU
+[markername] VV
+[markername] WW
+[markername] XX
+[markername] YY
+[markername] ZZ
+[treeopen] tb_march_bist_top.
+[sst_width] 276
+[signals_width] 142
+[sst_expanded] 1
+[sst_vpaned_height] 150
+@28
+tb_march_bist_top.u_bist_controller.tclk_i
+@100000028
+tb_march_bist_top.u_bist_controller.seq_q[3:0]
+@22
+tb_march_bist_top.u_bist_controller.rdata_i[31:0]
+@28
+tb_march_bist_top.u_bist_controller.start_i
+tb_march_bist_top.u_bist_controller.is_last_addr
+tb_march_bist_top.u_bist_controller.memen_o
+@23
+tb_march_bist_top.u_bist_controller.memaddr_o[9:0]
+@28
+tb_march_bist_top.u_bist_controller.memwen_o
+@22
+tb_march_bist_top.u_bist_controller.wdata_o[31:0]
+@28
+tb_march_bist_top.u_bist_controller.err_q
+[pattern_trace] 1
+[pattern_trace] 0

@@ -1,0 +1,169 @@
+[*]
+[*] GTKWave Analyzer v4.0.0-prealpha (132a086) (w)1999-2022 BSI
+[*] Fri Sep  4 22:41:10 2026
+[*]
+[dumpfile] "/home/sem26h3/Documents/SEM_PROJ/SRAM_BIST/verilator/obj_dir/tb_redundancy.vcd"
+[dumpfile_mtime] "Fri Sep  4 22:30:40 2026"
+[dumpfile_size] 128833
+[savefile] "/home/sem26h3/Documents/SEM_PROJ/SRAM_BIST/verilator/optimised.gtkw"
+[timestart] 8378
+[size] 1427 600
+[pos] 76 58
+*-6.000000 8590 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+[markername] AA
+[markername] BB
+[markername] CC
+[markername] DD
+[markername] EE
+[markername] FF
+[markername] GG
+[markername] HH
+[markername] II
+[markername] JJ
+[markername] KK
+[markername] LL
+[markername] MM
+[markername] NN
+[markername] OO
+[markername] PP
+[markername] QQ
+[markername] RR
+[markername] SS
+[markername] TT
+[markername] UU
+[markername] VV
+[markername] WW
+[markername] XX
+[markername] YY
+[markername] ZZ
+[treeopen] tb_redundancy.
+[treeopen] tb_redundancy.u_dut.
+[treeopen] tb_redundancy.u_dut.i_jtag_tap_top.
+[treeopen] tb_redundancy.u_dut.i_jtag_tap_top.mem_isol_q.
+[treeopen] tb_redundancy.u_dut.i_jtag_tap_top.mem_isol_q.redundancy.
+[treeopen] tb_redundancy.u_dut.u_bist_controller.
+[treeopen] tb_redundancy.u_dut.u_bist_controller.gen_fifo_enabled.
+[sst_width] 297
+[signals_width] 256
+[sst_expanded] 1
+[sst_vpaned_height] 150
+@200
+-JTAG Signals
+@28
+tb_redundancy.u_dut.u_bist_controller.trst_ni
+tb_redundancy.u_dut.u_bist_controller.tclk_i
+tb_redundancy.u_dut.i_jtag_tap_top.tdi_i
+tb_redundancy.u_dut.i_jtag_tap_top.tms_i
+tb_redundancy.u_dut.i_jtag_tap_top.tdo_o
+@100000028
+tb_redundancy.u_dut.i_jtag_tap_top.ir_latched_q[3:0]
+@28
+tb_redundancy.u_dut.i_jtag_tap_top.mbist_status_select
+tb_redundancy.u_dut.i_jtag_tap_top.mem_isol_select
+tb_redundancy.u_dut.i_jtag_tap_top.mem_repair_select
+@100000028
+tb_redundancy.u_dut.i_jtag_tap_top.i_tap_fsm.state_q[3:0]
+@28
+tb_redundancy.u_dut.i_jtag_tap_top.update_dr
+tb_redundancy.u_dut.i_jtag_tap_top.shift_dr
+tb_redundancy.u_dut.i_jtag_tap_top.capture_dr
+@22
+tb_redundancy.u_dut.i_jtag_tap_top.err_addr_reg_q.addr[3:0]
+@200
+-Isolation Signals
+@28
+tb_redundancy.u_dut.i_jtag_tap_top.mem_isol_q.redundancy.vaddr.valid
+@22
+tb_redundancy.u_dut.i_jtag_tap_top.mem_isol_q.redundancy.vaddr.addr[3:0]
+tb_redundancy.u_dut.i_jtag_tap_top.mem_isol_q.redundancy.data[23:0]
+tb_redundancy.u_dut.i_jtag_tap_top.mem_isol_q.redundancy.bm[23:0]
+@28
+tb_redundancy.u_dut.i_jtag_tap_top.mem_isol_q.bist_en
+tb_redundancy.u_dut.i_jtag_tap_top.mem_isol_q.men
+tb_redundancy.u_dut.i_jtag_tap_top.mem_isol_q.wen
+tb_redundancy.u_dut.i_jtag_tap_top.mem_isol_q.ren
+@200
+-March Signals
+@100000028
+tb_redundancy.u_dut.u_bist_controller.seq_q[3:0]
+@28
+tb_redundancy.u_dut.u_bist_controller.start_i
+tb_redundancy.u_dut.u_bist_controller.busy_o
+tb_redundancy.u_dut.u_bist_controller.done_o
+tb_redundancy.u_dut.isol_bist_en
+tb_redundancy.u_dut.i_jtag_tap_top.mem_isol_select
+tb_redundancy.u_dut.u_bist_controller.fail_o
+tb_redundancy.u_dut.i_jtag_tap_top.capture_dr
+tb_redundancy.u_dut.i_jtag_tap_top.mbist_ctrl_reg_d
+@22
+tb_redundancy.u_dut.u_bist_controller.err_addr_q[3:0]
+@28
+tb_redundancy.u_dut.i_jtag_tap_top.mbist_ctrl_select
+tb_redundancy.u_dut.u_bist_controller.resume_or_reset_i
+tb_redundancy.u_dut.i_jtag_tap_top.i_tap_fsm.update_dr_o
+@22
+tb_redundancy.u_dut.i_jtag_tap_top.i_tap_fsm.state_q[3:0]
+@100000028
+tb_redundancy.u_dut.u_bist_controller.recov_seq_q[3:0]
+@22
+tb_redundancy.u_dut.u_bist_controller.addr_q[3:0]
+@28
+tb_redundancy.u_dut.u_bist_controller.memen_o
+tb_redundancy.u_dut.u_bist_controller.memwen_o
+tb_redundancy.u_dut.u_bist_controller.memren_o
+@22
+tb_redundancy.u_dut.u_bist_controller.gen_fifo_enabled.u_err_fifo.memfifo[0][3:0]
+tb_redundancy.u_dut.u_bist_controller.gen_fifo_enabled.u_err_fifo.memfifo[1][3:0]
+tb_redundancy.u_dut.u_bist_controller.gen_fifo_enabled.u_err_fifo.memfifo[2][3:0]
+tb_redundancy.u_dut.u_bist_controller.gen_fifo_enabled.u_err_fifo.memfifo[3][3:0]
+@28
+tb_redundancy.u_dut.u_bist_controller.gen_fifo_enabled.u_err_fifo.empty_o
+tb_redundancy.u_dut.u_bist_controller.gen_fifo_enabled.u_err_fifo.full_o
+@200
+-Memory BIST Signals
+@28
+tb_redundancy.u_dut.u_sram_mem.A_BIST_EN
+@22
+tb_redundancy.u_dut.u_sram_mem.A_BIST_ADDR[3:0]
+tb_redundancy.u_dut.u_sram_mem.A_BIST_DIN[23:0]
+tb_redundancy.u_dut.u_sram_mem.A_BIST_BM[23:0]
+@28
+tb_redundancy.u_dut.u_sram_mem.A_BIST_MEN
+tb_redundancy.u_dut.u_sram_mem.A_BIST_WEN
+@22
+tb_redundancy.u_dut.u_sram_mem.A_DOUT[23:0]
+@28
+tb_redundancy.u_dut.u_sram_mem.A_BIST_REN
+@200
+-Memory Signals
+@22
+tb_redundancy.u_dut.i_jtag_tap_top.mem_isol_q.redundancy.vaddr.addr[3:0]
+@28
+tb_redundancy.u_dut.u_sram_mem.A_CLK
+tb_redundancy.u_dut.i_jtag_tap_top.rephit_rd_latency_q
+@29
+tb_redundancy.u_dut.i_jtag_tap_top.rephit_rd_latency_d
+@28
+tb_redundancy.u_dut.u_sram_mem.A_BIST_CLK
+@22
+tb_redundancy.u_dut.u_sram_mem.A_ADDR[3:0]
+tb_redundancy.u_dut.u_sram_mem.A_DIN[23:0]
+@28
+tb_redundancy.u_dut.u_sram_mem.A_MEN
+tb_redundancy.u_dut.u_sram_mem.A_WEN
+tb_redundancy.u_dut.u_sram_mem.A_REN
+@22
+tb_redundancy.u_dut.u_sram_mem.A_DOUT[23:0]
+tb_redundancy.u_dut.i_jtag_tap_top.repair_rdata_o[23:0]
+@28
+tb_redundancy.u_dut.i_jtag_tap_top.repair_men_i
+tb_redundancy.u_dut.i_jtag_tap_top.repair_wen_i
+tb_redundancy.u_dut.i_jtag_tap_top.repair_ren_i
+@22
+tb_redundancy.u_dut.i_jtag_tap_top.repair_wdata_i[23:0]
+tb_redundancy.u_dut.i_jtag_tap_top.repair_rdata[23:0]
+tb_redundancy.u_dut.i_jtag_tap_top.mem_rdata_i[23:0]
+tb_redundancy.u_dut.i_jtag_tap_top.mem_isol_q.redundancy.data[23:0]
+tb_redundancy.u_dut.i_jtag_tap_top.mem_isol_q.redundancy.bm[23:0]
+[pattern_trace] 1
+[pattern_trace] 0

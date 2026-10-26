@@ -1,0 +1,18 @@
+@     12650ns | [JTAG] Initialization success
+@     12650ns | [JTAG] Writing 0x12345678 to 0x10000000
+@     26950ns | [JTAG] Read 0x12345678 from 0x10000000
+@     26950ns | [JTAG] Read back correct data
+@     26950ns | [JTAG] Loading binary from ../sw/bin/helloworld.hex
+@     28150ns | [JTAG] Writing to memory @10000000 
+@     32950ns | [JTAG] Writing to memory @1000000c 
+@     40150ns | [JTAG] Writing to memory @10000020 
+@    736150ns | [CORE] Waking core via CLINT msip
+@    736150ns | [JTAG] Writing 0x00000001 to 0x02040000
+@    743800ns | [JTAG] Halting hart 0... 
+@    746400ns | [JTAG] Halted
+@    747600ns | [JTAG] Resumed hart 0 
+@    747600ns | [CORE] Wait for end of code...
+@   1152500ns | [JTAG] Simulation finished: SUCCESS
+- ../rtl/SEM_PROJ_RTL/integrate_optimised_redundancy/croc_vip.sv:287: Verilog $finish
+@   1152505ns | [UART] Ժ��
+

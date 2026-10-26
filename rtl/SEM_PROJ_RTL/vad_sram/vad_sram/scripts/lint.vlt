@@ -1,0 +1,4 @@
+`verilator_config
+// The archived enum has 5 bits but the address-map index has 4 bits.
+// UserDesign=1 fits; retain the vendored source unchanged.
+lint_off -rule WIDTHTRUNC -file "*/vendor/croc/user_pkg.sv" -lines 35
