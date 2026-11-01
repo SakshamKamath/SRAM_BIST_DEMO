@@ -50,6 +50,10 @@ module obi_jtag_top #(
     input  logic tdi_i,
     input  logic tms_i,
     output logic tdo_o,
+    // Clock of the cuts (clk_i, or TCK in isolation); the crossbar must run on it too
+    output logic xbar_clk_o,
+    // XcnctSubAccess is the current instruction
+    output logic xcnct_sub_access_o,
 
     // Subordinate Side Signals facing the Managers
     input  sbr_port_obi_req_t [NumSbrPorts-1:0] mst_cut_sbr_ports_req_i, // From Master to xbar
@@ -107,7 +111,7 @@ module obi_jtag_top #(
 
 
     // wrapper and multicut modules
-    logic xcnct_isol_en, tdo_chained;
+    logic xcnct_isol_en, xcnct_sub_access, tdo_chained;
     xcnct_isol_misc_t xcnct_isol_miscbus;
     logic tck;
 
@@ -117,6 +121,9 @@ module obi_jtag_top #(
       .clk_sel_i ( xcnct_isol_en ),
       .clk_o     ( tck           )
     );
+
+    assign xbar_clk_o = tck;
+    assign xcnct_sub_access_o = xcnct_sub_access;
 
     obi_multicut #(
         .SbrPortObiCfg      (SbrPortObiCfg      ),
@@ -142,8 +149,10 @@ module obi_jtag_top #(
     ) i_obi_multicut (
                       .clk_i(tck),
                       .rst_ni,
+                      .sys_clk_i(clk_i),
                       .tdi_i(tdo_chained),
                       .isol_en_i(xcnct_isol_en),
+                      .sub_access_i(xcnct_sub_access),
                       .capture_dr_i(capture_dr),
                       .shift_dr_i(shift_dr),
                       .update_dr_i(update_dr),
@@ -203,6 +212,7 @@ module obi_jtag_top #(
                        .tdo_en_o(),
 
                        .xcnct_isol_en_o(xcnct_isol_en),
+                       .xcnct_sub_access_o(xcnct_sub_access),
                        .xcnct_isol_o(xcnct_isol_miscbus)
                       );
 

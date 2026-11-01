@@ -92,6 +92,7 @@ if {[catch { vlog -incr -sv \
     "${ROOT}/rtl/common_cells/shift_reg.sv" \
     "${ROOT}/rtl/common_cells/shift_reg_gated.sv" \
     "${ROOT}/rtl/SEM_PROJ_RTL/integrate_optimised_redundancy/spill_register_flushable.sv" \
+    "${ROOT}/rtl/SEM_PROJ_RTL/integrate_optimised_redundancy/spill_register_flushable_isol.sv" \
     "${ROOT}/rtl/common_cells/stream_demux.sv" \
     "${ROOT}/rtl/common_cells/stream_filter.sv" \
     "${ROOT}/rtl/common_cells/stream_fork.sv" \
@@ -139,6 +140,7 @@ if {[catch { vlog -incr -sv \
     "${ROOT}/rtl/common_cells/max_counter.sv" \
     "${ROOT}/rtl/common_cells/rstgen.sv" \
     "${ROOT}/rtl/SEM_PROJ_RTL/integrate_optimised_redundancy/spill_register.sv" \
+    "${ROOT}/rtl/SEM_PROJ_RTL/integrate_optimised_redundancy/spill_register_isol.sv" \
     "${ROOT}/rtl/common_cells/spill_register_flushable.sv" \
     "${ROOT}/rtl/common_cells/spill_register.sv" \
     "${ROOT}/rtl/common_cells/stream_delay.sv" \
@@ -183,10 +185,14 @@ if {[catch { vlog -incr -sv \
     "${ROOT}/rtl/obi/obi_to_apb.sv" \
     "${ROOT}/rtl/obi/obi_atop_resolver.sv" \
     "${ROOT}/rtl/SEM_PROJ_RTL/integrate_optimised_redundancy/obi_cut.sv" \
+    "${ROOT}/rtl/SEM_PROJ_RTL/integrate_optimised_redundancy/obi_cut_isol.sv" \
     "${ROOT}/rtl/SEM_PROJ_RTL/integrate_optimised_redundancy/obi_multicut.sv" \
+    "${ROOT}/rtl/SEM_PROJ_RTL/integrate_optimised_redundancy/obi_multicut_isol.sv" \
     "${ROOT}/rtl/SEM_PROJ_RTL/integrate_optimised_redundancy/jtag_tap_controller.sv" \
     "${ROOT}/rtl/SEM_PROJ_RTL/integrate_optimised_redundancy/obi_jtag_wrapper.sv" \
+    "${ROOT}/rtl/SEM_PROJ_RTL/integrate_optimised_redundancy/obi_jtag_wrapper_isol.sv" \
     "${ROOT}/rtl/SEM_PROJ_RTL/integrate_optimised_redundancy/obi_jtag_top.sv" \
+    "${ROOT}/rtl/SEM_PROJ_RTL/integrate_optimised_redundancy/obi_jtag_top_isol.sv" \
     "${ROOT}/rtl/obi/obi_demux.sv" \
     "${ROOT}/rtl/obi/obi_err_sbr.sv" \
     "${ROOT}/rtl/obi/obi_mux.sv" \

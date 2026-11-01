@@ -1,0 +1,297 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="2000" height="1530" viewBox="0 0 2000 1530">
+<defs>
+<marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="3.6" markerHeight="3.6" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#000"/></marker>
+<marker id="t" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="3.6" markerHeight="3.6" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#00897b"/></marker>
+<marker id="p" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="3.6" markerHeight="3.6" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#93005f"/></marker>
+</defs>
+<rect width="2000" height="1530" fill="#fff"/>
+<rect x="10.0" y="10.0" width="1980.0" height="1400.0" fill="#f4f4f4" fill-opacity="1" stroke="#333" stroke-width="3"/>
+<text x="30.0" y="38.0" font-family="DejaVu Sans Condensed, DejaVu Sans, Arial Narrow, Arial, sans-serif" font-size="30" fill="#000" text-anchor="start" font-weight="normal" dominant-baseline="central">croc_chip</text>
+<rect x="50.0" y="60.0" width="66.0" height="66.0" fill="#d0d0d0" fill-opacity="1" stroke="#555" stroke-width="1.5"/>
+<rect x="1884.0" y="60.0" width="66.0" height="66.0" fill="#d0d0d0" fill-opacity="1" stroke="#555" stroke-width="1.5"/>
+<rect x="50.0" y="1294.0" width="66.0" height="66.0" fill="#d0d0d0" fill-opacity="1" stroke="#555" stroke-width="1.5"/>
+<rect x="1884.0" y="1294.0" width="66.0" height="66.0" fill="#d0d0d0" fill-opacity="1" stroke="#555" stroke-width="1.5"/>
+<rect x="126.0" y="60.0" width="91.5" height="66.0" fill="#8c8c8c" fill-opacity="1" stroke="#555" stroke-width="1.5"/>
+<rect x="229.5" y="60.0" width="91.5" height="66.0" fill="#8c8c8c" fill-opacity="1" stroke="#555" stroke-width="1.5"/>
+<rect x="333.1" y="60.0" width="91.5" height="66.0" fill="#fff3b0" fill-opacity="1" stroke="#555" stroke-width="1.5"/>
+<rect x="436.6" y="60.0" width="91.5" height="66.0" fill="#fff3b0" fill-opacity="1" stroke="#555" stroke-width="1.5"/>
+<rect x="540.1" y="60.0" width="91.5" height="66.0" fill="#8c8c8c" fill-opacity="1" stroke="#555" stroke-width="1.5"/>
+<rect x="643.6" y="60.0" width="91.5" height="66.0" fill="#c8e6c9" fill-opacity="1" stroke="#555" stroke-width="1.5"/>
+<rect x="747.2" y="60.0" width="91.5" height="66.0" fill="#c8e6c9" fill-opacity="1" stroke="#555" stroke-width="1.5"/>
+<rect x="850.7" y="60.0" width="91.5" height="66.0" fill="#c8e6c9" fill-opacity="1" stroke="#555" stroke-width="1.5"/>
+<rect x="954.2" y="60.0" width="91.5" height="66.0" fill="#ffcdd2" fill-opacity="1" stroke="#555" stroke-width="1.5"/>
+<rect x="1057.8" y="60.0" width="91.5" height="66.0" fill="#c8e6c9" fill-opacity="1" stroke="#555" stroke-width="1.5"/>
+<rect x="1161.3" y="60.0" width="91.5" height="66.0" fill="#8c8c8c" fill-opacity="1" stroke="#555" stroke-width="1.5"/>
+<rect x="1264.8" y="60.0" width="91.5" height="66.0" fill="#ffcdd2" fill-opacity="1" stroke="#555" stroke-width="1.5"/>
+<rect x="1368.4" y="60.0" width="91.5" height="66.0" fill="#ffcdd2" fill-opacity="1" stroke="#555" stroke-width="1.5"/>
+<rect x="1471.9" y="60.0" width="91.5" height="66.0" fill="#ffcdd2" fill-opacity="1" stroke="#555" stroke-width="1.5"/>
+<rect x="1575.4" y="60.0" width="91.5" height="66.0" fill="#ffcdd2" fill-opacity="1" stroke="#555" stroke-width="1.5"/>
+<rect x="1678.9" y="60.0" width="91.5" height="66.0" fill="#8c8c8c" fill-opacity="1" stroke="#555" stroke-width="1.5"/>
+<rect x="1782.5" y="60.0" width="91.5" height="66.0" fill="#8c8c8c" fill-opacity="1" stroke="#555" stroke-width="1.5"/>
+<rect x="126.0" y="1294.0" width="91.5" height="66.0" fill="#fff3b0" fill-opacity="1" stroke="#555" stroke-width="1.5"/>
+<rect x="229.5" y="1294.0" width="91.5" height="66.0" fill="#fff3b0" fill-opacity="1" stroke="#555" stroke-width="1.5"/>
+<rect x="333.1" y="1294.0" width="91.5" height="66.0" fill="#fff3b0" fill-opacity="1" stroke="#555" stroke-width="1.5"/>
+<rect x="436.6" y="1294.0" width="91.5" height="66.0" fill="#fff3b0" fill-opacity="1" stroke="#555" stroke-width="1.5"/>
+<rect x="540.1" y="1294.0" width="91.5" height="66.0" fill="#fff3b0" fill-opacity="1" stroke="#555" stroke-width="1.5"/>
+<rect x="643.6" y="1294.0" width="91.5" height="66.0" fill="#fff3b0" fill-opacity="1" stroke="#555" stroke-width="1.5"/>
+<rect x="747.2" y="1294.0" width="91.5" height="66.0" fill="#fff3b0" fill-opacity="1" stroke="#555" stroke-width="1.5"/>
+<rect x="850.7" y="1294.0" width="91.5" height="66.0" fill="#8c8c8c" fill-opacity="1" stroke="#555" stroke-width="1.5"/>
+<rect x="954.2" y="1294.0" width="91.5" height="66.0" fill="#8c8c8c" fill-opacity="1" stroke="#555" stroke-width="1.5"/>
+<rect x="1057.8" y="1294.0" width="91.5" height="66.0" fill="#fff3b0" fill-opacity="1" stroke="#555" stroke-width="1.5"/>
+<rect x="1161.3" y="1294.0" width="91.5" height="66.0" fill="#fff3b0" fill-opacity="1" stroke="#555" stroke-width="1.5"/>
+<rect x="1264.8" y="1294.0" width="91.5" height="66.0" fill="#fff3b0" fill-opacity="1" stroke="#555" stroke-width="1.5"/>
+<rect x="1368.4" y="1294.0" width="91.5" height="66.0" fill="#fff3b0" fill-opacity="1" stroke="#555" stroke-width="1.5"/>
+<rect x="1471.9" y="1294.0" width="91.5" height="66.0" fill="#fff3b0" fill-opacity="1" stroke="#555" stroke-width="1.5"/>
+<rect x="1575.4" y="1294.0" width="91.5" height="66.0" fill="#fff3b0" fill-opacity="1" stroke="#555" stroke-width="1.5"/>
+<rect x="1678.9" y="1294.0" width="91.5" height="66.0" fill="#fff3b0" fill-opacity="1" stroke="#555" stroke-width="1.5"/>
+<rect x="1782.5" y="1294.0" width="91.5" height="66.0" fill="#fff3b0" fill-opacity="1" stroke="#555" stroke-width="1.5"/>
+<rect x="50.0" y="141.0" width="66.0" height="66.5" fill="#8c8c8c" fill-opacity="1" stroke="#555" stroke-width="1.5"/>
+<rect x="50.0" y="217.5" width="66.0" height="66.5" fill="#8c8c8c" fill-opacity="1" stroke="#555" stroke-width="1.5"/>
+<rect x="50.0" y="294.1" width="66.0" height="66.5" fill="#c8e6c9" fill-opacity="1" stroke="#555" stroke-width="1.5"/>
+<rect x="50.0" y="370.6" width="66.0" height="66.5" fill="#c8e6c9" fill-opacity="1" stroke="#555" stroke-width="1.5"/>
+<rect x="50.0" y="447.1" width="66.0" height="66.5" fill="#c8e6c9" fill-opacity="1" stroke="#555" stroke-width="1.5"/>
+<rect x="50.0" y="523.7" width="66.0" height="66.5" fill="#c8e6c9" fill-opacity="1" stroke="#555" stroke-width="1.5"/>
+<rect x="50.0" y="600.2" width="66.0" height="66.5" fill="#ffcdd2" fill-opacity="1" stroke="#555" stroke-width="1.5"/>
+<rect x="50.0" y="676.7" width="66.0" height="66.5" fill="#8c8c8c" fill-opacity="1" stroke="#555" stroke-width="1.5"/>
+<rect x="50.0" y="753.3" width="66.0" height="66.5" fill="#c8e6c9" fill-opacity="1" stroke="#555" stroke-width="1.5"/>
+<rect x="50.0" y="829.8" width="66.0" height="66.5" fill="#ffcdd2" fill-opacity="1" stroke="#555" stroke-width="1.5"/>
+<rect x="50.0" y="906.3" width="66.0" height="66.5" fill="#fff3b0" fill-opacity="1" stroke="#555" stroke-width="1.5"/>
+<rect x="50.0" y="982.9" width="66.0" height="66.5" fill="#fff3b0" fill-opacity="1" stroke="#555" stroke-width="1.5"/>
+<rect x="50.0" y="1059.4" width="66.0" height="66.5" fill="#fff3b0" fill-opacity="1" stroke="#555" stroke-width="1.5"/>
+<rect x="50.0" y="1135.9" width="66.0" height="66.5" fill="#fff3b0" fill-opacity="1" stroke="#555" stroke-width="1.5"/>
+<rect x="50.0" y="1212.5" width="66.0" height="66.5" fill="#8c8c8c" fill-opacity="1" stroke="#555" stroke-width="1.5"/>
+<rect x="1884.0" y="141.0" width="66.0" height="66.5" fill="#8c8c8c" fill-opacity="1" stroke="#555" stroke-width="1.5"/>
+<rect x="1884.0" y="217.5" width="66.0" height="66.5" fill="#8c8c8c" fill-opacity="1" stroke="#555" stroke-width="1.5"/>
+<rect x="1884.0" y="294.1" width="66.0" height="66.5" fill="#fff3b0" fill-opacity="1" stroke="#555" stroke-width="1.5"/>
+<rect x="1884.0" y="370.6" width="66.0" height="66.5" fill="#fff3b0" fill-opacity="1" stroke="#555" stroke-width="1.5"/>
+<rect x="1884.0" y="447.1" width="66.0" height="66.5" fill="#fff3b0" fill-opacity="1" stroke="#555" stroke-width="1.5"/>
+<rect x="1884.0" y="523.7" width="66.0" height="66.5" fill="#fff3b0" fill-opacity="1" stroke="#555" stroke-width="1.5"/>
+<rect x="1884.0" y="600.2" width="66.0" height="66.5" fill="#fff3b0" fill-opacity="1" stroke="#555" stroke-width="1.5"/>
+<rect x="1884.0" y="676.7" width="66.0" height="66.5" fill="#fff3b0" fill-opacity="1" stroke="#555" stroke-width="1.5"/>
+<rect x="1884.0" y="753.3" width="66.0" height="66.5" fill="#fff3b0" fill-opacity="1" stroke="#555" stroke-width="1.5"/>
+<rect x="1884.0" y="829.8" width="66.0" height="66.5" fill="#fff3b0" fill-opacity="1" stroke="#555" stroke-width="1.5"/>
+<rect x="1884.0" y="906.3" width="66.0" height="66.5" fill="#fff3b0" fill-opacity="1" stroke="#555" stroke-width="1.5"/>
+<rect x="1884.0" y="982.9" width="66.0" height="66.5" fill="#fff3b0" fill-opacity="1" stroke="#555" stroke-width="1.5"/>
+<rect x="1884.0" y="1059.4" width="66.0" height="66.5" fill="#fff3b0" fill-opacity="1" stroke="#555" stroke-width="1.5"/>
+<rect x="1884.0" y="1135.9" width="66.0" height="66.5" fill="#8c8c8c" fill-opacity="1" stroke="#555" stroke-width="1.5"/>
+<rect x="1884.0" y="1212.5" width="66.0" height="66.5" fill="#8c8c8c" fill-opacity="1" stroke="#555" stroke-width="1.5"/>
+<rect x="160.0" y="165.0" width="1690.0" height="1050.0" fill="#e8e8e8" fill-opacity="1" stroke="none" stroke-width="0"/>
+<text x="175.0" y="190.0" font-family="DejaVu Sans Condensed, DejaVu Sans, Arial Narrow, Arial, sans-serif" font-size="30" fill="#000" text-anchor="start" font-weight="normal" dominant-baseline="central">croc_soc</text>
+<rect x="190.0" y="240.0" width="1255.0" height="947.5" fill="#cdcdcd" fill-opacity="1" stroke="none" stroke-width="0"/>
+<text x="345.0" y="262.0" font-family="DejaVu Sans Condensed, DejaVu Sans, Arial Narrow, Arial, sans-serif" font-size="30" fill="#000" text-anchor="start" font-weight="normal" dominant-baseline="central">croc_domain</text>
+<rect x="1465.0" y="240.0" width="365.0" height="950.0" fill="#cdcdcd" fill-opacity="1" stroke="none" stroke-width="0"/>
+<text x="1480.0" y="262.0" font-family="DejaVu Sans Condensed, DejaVu Sans, Arial Narrow, Arial, sans-serif" font-size="30" fill="#000" text-anchor="start" font-weight="normal" dominant-baseline="central">user_domain</text>
+<rect x="739.0" y="274.8" width="246.0" height="98.7" fill="#93005f" fill-opacity="1" stroke="none" stroke-width="0"/>
+<text x="862.0" y="324.1" font-family="DejaVu Sans Condensed, DejaVu Sans, Arial Narrow, Arial, sans-serif" font-size="46" fill="#fff" text-anchor="middle" font-weight="normal" dominant-baseline="central">JTAG</text>
+<rect x="739.0" y="407.3" width="246.0" height="98.7" fill="#93005f" fill-opacity="1" stroke="none" stroke-width="0"/>
+<text x="862.0" y="456.7" font-family="DejaVu Sans Condensed, DejaVu Sans, Arial Narrow, Arial, sans-serif" font-size="46" fill="#fff" text-anchor="middle" font-weight="normal" dominant-baseline="central">Debug</text>
+<rect x="1057.0" y="324.6" width="281.0" height="197.4" fill="#d99a99" fill-opacity="1" stroke="none" stroke-width="0"/>
+<text x="1065.0" y="346.6" font-family="DejaVu Sans Condensed, DejaVu Sans, Arial Narrow, Arial, sans-serif" font-size="32" fill="#000" text-anchor="start" font-weight="normal" dominant-baseline="central">core_wrap</text>
+<rect x="1075.0" y="374.4" width="245.0" height="131.6" fill="#a8322d" fill-opacity="1" stroke="none" stroke-width="0"/>
+<text x="1197.5" y="422.2" font-family="DejaVu Sans Condensed, DejaVu Sans, Arial Narrow, Arial, sans-serif" font-size="52" fill="#fff" text-anchor="middle" font-weight="normal" dominant-baseline="central">CVE2</text>
+<text x="1197.5" y="470.2" font-family="DejaVu Sans Condensed, DejaVu Sans, Arial Narrow, Arial, sans-serif" font-size="34" fill="#fff" text-anchor="middle" font-weight="normal" dominant-baseline="central">(Ibex)</text>
+<rect x="651.0" y="589.7" width="722.0" height="114.7" fill="#1a8a3a" fill-opacity="1" stroke="none" stroke-width="0"/>
+<text x="1012.0" y="647.0" font-family="DejaVu Sans Condensed, DejaVu Sans, Arial Narrow, Arial, sans-serif" font-size="54" fill="#fff" text-anchor="middle" font-weight="normal" dominant-baseline="central">OBI Crossbar</text>
+<polygon points="527.0,475.0 615.0,522.0 615.0,1071.9 527.0,1118.9" fill="#1a8a3a"/>
+<text x="571.0" y="796.5" font-family="DejaVu Sans Condensed, DejaVu Sans, Arial Narrow, Arial, sans-serif" font-size="44" fill="#fff" text-anchor="middle" font-weight="normal" dominant-baseline="central" transform="rotate(-90 571.0 796.5)">OBI Demux</text>
+<rect x="227.0" y="556.8" width="246.0" height="64.9" fill="#93005f" fill-opacity="1" stroke="none" stroke-width="0"/>
+<text x="350.0" y="589.2" font-family="DejaVu Sans Condensed, DejaVu Sans, Arial Narrow, Arial, sans-serif" font-size="40" fill="#fff" text-anchor="middle" font-weight="normal" dominant-baseline="central">Bootrom</text>
+<polyline points="527.0,589.2 487.6,589.2" fill="none" stroke="#000" stroke-width="4" stroke-linejoin="miter"/>
+<polygon points="475.0,589.2 489.0,582.2 489.0,596.2" fill="#000"/>
+<rect x="227.0" y="639.5" width="246.0" height="64.9" fill="#93005f" fill-opacity="1" stroke="none" stroke-width="0"/>
+<text x="350.0" y="671.9" font-family="DejaVu Sans Condensed, DejaVu Sans, Arial Narrow, Arial, sans-serif" font-size="40" fill="#fff" text-anchor="middle" font-weight="normal" dominant-baseline="central">CLINT</text>
+<polyline points="527.0,671.9 487.6,671.9" fill="none" stroke="#000" stroke-width="4" stroke-linejoin="miter"/>
+<polygon points="475.0,671.9 489.0,664.9 489.0,678.9" fill="#000"/>
+<rect x="227.0" y="722.2" width="246.0" height="64.9" fill="#93005f" fill-opacity="1" stroke="none" stroke-width="0"/>
+<text x="350.0" y="754.6" font-family="DejaVu Sans Condensed, DejaVu Sans, Arial Narrow, Arial, sans-serif" font-size="40" fill="#fff" text-anchor="middle" font-weight="normal" dominant-baseline="central">SoC Regs</text>
+<polyline points="527.0,754.6 487.6,754.6" fill="none" stroke="#000" stroke-width="4" stroke-linejoin="miter"/>
+<polygon points="475.0,754.6 489.0,747.6 489.0,761.6" fill="#000"/>
+<rect x="227.0" y="804.9" width="246.0" height="64.9" fill="#93005f" fill-opacity="1" stroke="none" stroke-width="0"/>
+<text x="350.0" y="837.4" font-family="DejaVu Sans Condensed, DejaVu Sans, Arial Narrow, Arial, sans-serif" font-size="40" fill="#fff" text-anchor="middle" font-weight="normal" dominant-baseline="central">UART</text>
+<polyline points="527.0,837.4 487.6,837.4" fill="none" stroke="#000" stroke-width="4" stroke-linejoin="miter"/>
+<polygon points="475.0,837.4 489.0,830.4 489.0,844.4" fill="#000"/>
+<rect x="227.0" y="888.6" width="246.0" height="64.9" fill="#93005f" fill-opacity="1" stroke="none" stroke-width="0"/>
+<text x="350.0" y="921.0" font-family="DejaVu Sans Condensed, DejaVu Sans, Arial Narrow, Arial, sans-serif" font-size="40" fill="#fff" text-anchor="middle" font-weight="normal" dominant-baseline="central">GPIO</text>
+<polyline points="527.0,921.0 487.6,921.0" fill="none" stroke="#000" stroke-width="4" stroke-linejoin="miter"/>
+<polygon points="475.0,921.0 489.0,914.0 489.0,928.0" fill="#000"/>
+<rect x="227.0" y="971.3" width="246.0" height="64.9" fill="#93005f" fill-opacity="1" stroke="none" stroke-width="0"/>
+<text x="350.0" y="1003.7" font-family="DejaVu Sans Condensed, DejaVu Sans, Arial Narrow, Arial, sans-serif" font-size="40" fill="#fff" text-anchor="middle" font-weight="normal" dominant-baseline="central">Timer</text>
+<polyline points="527.0,1003.8 487.6,1003.8" fill="none" stroke="#000" stroke-width="4" stroke-linejoin="miter"/>
+<polygon points="475.0,1003.8 489.0,996.8 489.0,1010.8" fill="#000"/>
+<rect x="739.0" y="788.0" width="246.0" height="117.5" fill="#b05090" fill-opacity="1" stroke="#555" stroke-width="4" stroke-dasharray="12,8"/>
+<text x="862.0" y="846.8" font-family="DejaVu Sans Condensed, DejaVu Sans, Arial Narrow, Arial, sans-serif" font-size="50" fill="#fff" text-anchor="middle" font-weight="normal" dominant-baseline="central">iDMA</text>
+<rect x="1021.0" y="772.0" width="352.0" height="330.9" fill="#5b9bd5" fill-opacity="1" stroke="none" stroke-width="0"/>
+<rect x="1039.0" y="788.0" width="140.0" height="249.1" fill="#1565b0" fill-opacity="1" stroke="none" stroke-width="0"/>
+<text x="1109.0" y="912.6" font-family="DejaVu Sans Condensed, DejaVu Sans, Arial Narrow, Arial, sans-serif" font-size="44" fill="#fff" text-anchor="middle" font-weight="normal" dominant-baseline="central" transform="rotate(-90 1109.0 912.6)">Bank 0</text>
+<rect x="1215.0" y="788.0" width="140.0" height="249.1" fill="#1565b0" fill-opacity="1" stroke="none" stroke-width="0"/>
+<text x="1285.0" y="912.6" font-family="DejaVu Sans Condensed, DejaVu Sans, Arial Narrow, Arial, sans-serif" font-size="44" fill="#fff" text-anchor="middle" font-weight="normal" dominant-baseline="central" transform="rotate(-90 1285.0 912.6)">Bank 1</text>
+<text x="1197.0" y="1071.9" font-family="DejaVu Sans Condensed, DejaVu Sans, Arial Narrow, Arial, sans-serif" font-size="44" fill="#fff" text-anchor="middle" font-weight="normal" dominant-baseline="central">SRAMs</text>
+<polyline points="862.0,373.5 862.0,392.0" fill="none" stroke="#000" stroke-width="5" stroke-linejoin="miter"/>
+<polygon points="862.0,407.3 853.5,390.3 870.5,390.3" fill="#000"/>
+<polyline points="862.0,506.0 862.0,574.4" fill="none" stroke="#000" stroke-width="5" stroke-linejoin="miter"/>
+<polygon points="862.0,589.7 853.5,572.7 870.5,572.7" fill="#000"/>
+<polyline points="1145.0,522.0 1145.0,574.4" fill="none" stroke="#000" stroke-width="5" stroke-linejoin="miter"/>
+<polygon points="1145.0,589.7 1136.5,572.7 1153.5,572.7" fill="#000"/>
+<polyline points="1250.0,522.0 1250.0,574.4" fill="none" stroke="#000" stroke-width="5" stroke-linejoin="miter"/>
+<polygon points="1250.0,589.7 1241.5,572.7 1258.5,572.7" fill="#000"/>
+<polyline points="1110.0,704.4 1110.0,756.7" fill="none" stroke="#000" stroke-width="5" stroke-linejoin="miter"/>
+<polygon points="1110.0,772.0 1101.5,755.0 1118.5,755.0" fill="#000"/>
+<polyline points="1285.0,704.4 1285.0,756.7" fill="none" stroke="#000" stroke-width="5" stroke-linejoin="miter"/>
+<polygon points="1285.0,772.0 1276.5,755.0 1293.5,755.0" fill="#000"/>
+<polyline points="685.0,704.4 685.0,787.1 632.3,787.1" fill="none" stroke="#000" stroke-width="5" stroke-linejoin="miter"/>
+<polygon points="617.0,787.1 634.0,778.6 634.0,795.6" fill="#000"/>
+<polyline points="527.0,522.0 491.0,522.0 491.0,456.2 721.7,456.2" fill="none" stroke="#000" stroke-width="5" stroke-linejoin="miter"/>
+<polygon points="737.0,456.2 720.0,464.7 720.0,447.7" fill="#000"/>
+<polyline points="810.0,788.0 810.0,718.8" fill="none" stroke="#555" stroke-width="4" stroke-linejoin="miter" stroke-dasharray="10,7"/>
+<polygon points="810.0,706.2 817.0,720.2 803.0,720.2" fill="#555"/>
+<polyline points="915.0,788.0 915.0,718.8" fill="none" stroke="#555" stroke-width="4" stroke-linejoin="miter" stroke-dasharray="10,7"/>
+<polygon points="915.0,706.2 922.0,720.2 908.0,720.2" fill="#555"/>
+<polyline points="863.0,905.5 863.0,1151.8 491.0,1151.8 491.0,1069.1 527.0,1069.1" fill="none" stroke="#555" stroke-width="4" stroke-linejoin="miter" stroke-dasharray="10,7"/>
+<rect x="1505.0" y="740.0" width="290.0" height="430.0" fill="#eb9a2f" fill-opacity="1" stroke="none" stroke-width="0"/>
+<text x="1650.0" y="778.0" font-family="DejaVu Sans Condensed, DejaVu Sans, Arial Narrow, Arial, sans-serif" font-size="42" fill="#000" text-anchor="middle" font-weight="bold" dominant-baseline="central">VAD</text>
+<text x="1650.0" y="824.0" font-family="DejaVu Sans Condensed, DejaVu Sans, Arial Narrow, Arial, sans-serif" font-size="42" fill="#000" text-anchor="middle" font-weight="bold" dominant-baseline="central">Subsystem</text>
+<rect x="1523.0" y="858.0" width="254.0" height="294.0" fill="#5b9bd5" fill-opacity="1" stroke="none" stroke-width="0"/>
+<rect x="1537.0" y="872.0" width="106.0" height="220.0" fill="#1565b0" fill-opacity="1" stroke="none" stroke-width="0"/>
+<text x="1590.0" y="982.0" font-family="DejaVu Sans Condensed, DejaVu Sans, Arial Narrow, Arial, sans-serif" font-size="38" fill="#fff" text-anchor="middle" font-weight="normal" dominant-baseline="central" transform="rotate(-90 1590.0 982.0)">Bank 0</text>
+<rect x="1657.0" y="872.0" width="106.0" height="220.0" fill="#1565b0" fill-opacity="1" stroke="none" stroke-width="0"/>
+<text x="1710.0" y="982.0" font-family="DejaVu Sans Condensed, DejaVu Sans, Arial Narrow, Arial, sans-serif" font-size="38" fill="#fff" text-anchor="middle" font-weight="normal" dominant-baseline="central" transform="rotate(-90 1710.0 982.0)">Bank 1</text>
+<text x="1650.0" y="1122.0" font-family="DejaVu Sans Condensed, DejaVu Sans, Arial Narrow, Arial, sans-serif" font-size="38" fill="#fff" text-anchor="middle" font-weight="normal" dominant-baseline="central">SRAMs</text>
+<polyline points="1373.0,672.4 1595.0,672.4 1595.0,724.7" fill="none" stroke="#000" stroke-width="5" stroke-linejoin="miter"/>
+<polygon points="1595.0,740.0 1586.5,723.0 1603.5,723.0" fill="#000"/>
+<text x="1545.0" y="646.4" font-family="DejaVu Sans Condensed, DejaVu Sans, Arial Narrow, Arial, sans-serif" font-size="30" fill="#000" text-anchor="middle" font-weight="normal" dominant-baseline="central">sbr_obi</text>
+<polyline points="1705.0,740.0 1705.0,454.3 1357.3,454.3" fill="none" stroke="#000" stroke-width="5" stroke-linejoin="miter"/>
+<polygon points="1342.0,454.3 1359.0,445.8 1359.0,462.8" fill="#000"/>
+<text x="1600.0" y="428.3" font-family="DejaVu Sans Condensed, DejaVu Sans, Arial Narrow, Arial, sans-serif" font-size="30" fill="#000" text-anchor="middle" font-weight="normal" dominant-baseline="central">irqs</text>
+<rect x="196.0" y="285.0" width="104.0" height="90.0" fill="#00897b" fill-opacity="1" stroke="none" stroke-width="0"/>
+<text x="248.0" y="315.0" font-family="DejaVu Sans Condensed, DejaVu Sans, Arial Narrow, Arial, sans-serif" font-size="21" fill="#fff" text-anchor="middle" font-weight="bold" dominant-baseline="central">Bndscan</text>
+<text x="248.0" y="347.0" font-family="DejaVu Sans Condensed, DejaVu Sans, Arial Narrow, Arial, sans-serif" font-size="21" fill="#fff" text-anchor="middle" font-weight="bold" dominant-baseline="central">TAP</text>
+<polyline points="300.0,330.0 722.4,330.0" fill="none" stroke="#00897b" stroke-width="4" stroke-linejoin="miter"/>
+<polygon points="735.0,330.0 721.0,337.0 721.0,323.0" fill="#00897b"/>
+<text x="608.0" y="312.0" font-family="DejaVu Sans Condensed, DejaVu Sans, Arial Narrow, Arial, sans-serif" font-size="22" fill="#00897b" text-anchor="middle" font-weight="bold" dominant-baseline="central">JTAG chain</text>
+<polyline points="196.0,315.0 137.0,315.0 137.0,152.0 1867.0,152.0 1867.0,1272.0 137.0,1272.0 137.0,345.0 181.4,345.0" fill="none" stroke="#00897b" stroke-width="4" stroke-linejoin="miter" stroke-dasharray="10,6"/>
+<polygon points="194.0,345.0 180.0,352.0 180.0,338.0" fill="#00897b"/>
+<polyline points="378.8,126.0 378.8,140.0" fill="none" stroke="#555" stroke-width="2" stroke-linejoin="miter"/>
+<rect x="366.8" y="140.0" width="24.0" height="24.0" fill="#b2dfdb" fill-opacity="1" stroke="#00897b" stroke-width="2.5"/>
+<polyline points="482.4,126.0 482.4,140.0" fill="none" stroke="#555" stroke-width="2" stroke-linejoin="miter"/>
+<rect x="470.4" y="140.0" width="24.0" height="24.0" fill="#b2dfdb" fill-opacity="1" stroke="#00897b" stroke-width="2.5"/>
+<polyline points="1310.6,126.0 1310.6,140.0" fill="none" stroke="#555" stroke-width="2" stroke-linejoin="miter"/>
+<rect x="1298.6" y="140.0" width="24.0" height="24.0" fill="#b2dfdb" fill-opacity="1" stroke="#00897b" stroke-width="2.5"/>
+<polyline points="1414.1,126.0 1414.1,140.0" fill="none" stroke="#555" stroke-width="2" stroke-linejoin="miter"/>
+<rect x="1402.1" y="140.0" width="24.0" height="24.0" fill="#b2dfdb" fill-opacity="1" stroke="#00897b" stroke-width="2.5"/>
+<polyline points="1517.6,126.0 1517.6,140.0" fill="none" stroke="#555" stroke-width="2" stroke-linejoin="miter"/>
+<rect x="1505.6" y="140.0" width="24.0" height="24.0" fill="#b2dfdb" fill-opacity="1" stroke="#00897b" stroke-width="2.5"/>
+<polyline points="1621.2,126.0 1621.2,140.0" fill="none" stroke="#555" stroke-width="2" stroke-linejoin="miter"/>
+<rect x="1609.2" y="140.0" width="24.0" height="24.0" fill="#b2dfdb" fill-opacity="1" stroke="#00897b" stroke-width="2.5"/>
+<polyline points="171.8,1294.0 171.8,1284.0" fill="none" stroke="#555" stroke-width="2" stroke-linejoin="miter"/>
+<rect x="159.8" y="1260.0" width="24.0" height="24.0" fill="#b2dfdb" fill-opacity="1" stroke="#00897b" stroke-width="2.5"/>
+<polyline points="275.3,1294.0 275.3,1284.0" fill="none" stroke="#555" stroke-width="2" stroke-linejoin="miter"/>
+<rect x="263.3" y="1260.0" width="24.0" height="24.0" fill="#b2dfdb" fill-opacity="1" stroke="#00897b" stroke-width="2.5"/>
+<polyline points="378.8,1294.0 378.8,1284.0" fill="none" stroke="#555" stroke-width="2" stroke-linejoin="miter"/>
+<rect x="366.8" y="1260.0" width="24.0" height="24.0" fill="#b2dfdb" fill-opacity="1" stroke="#00897b" stroke-width="2.5"/>
+<polyline points="482.4,1294.0 482.4,1284.0" fill="none" stroke="#555" stroke-width="2" stroke-linejoin="miter"/>
+<rect x="470.4" y="1260.0" width="24.0" height="24.0" fill="#b2dfdb" fill-opacity="1" stroke="#00897b" stroke-width="2.5"/>
+<polyline points="585.9,1294.0 585.9,1284.0" fill="none" stroke="#555" stroke-width="2" stroke-linejoin="miter"/>
+<rect x="573.9" y="1260.0" width="24.0" height="24.0" fill="#b2dfdb" fill-opacity="1" stroke="#00897b" stroke-width="2.5"/>
+<polyline points="689.4,1294.0 689.4,1284.0" fill="none" stroke="#555" stroke-width="2" stroke-linejoin="miter"/>
+<rect x="677.4" y="1260.0" width="24.0" height="24.0" fill="#b2dfdb" fill-opacity="1" stroke="#00897b" stroke-width="2.5"/>
+<polyline points="792.9,1294.0 792.9,1284.0" fill="none" stroke="#555" stroke-width="2" stroke-linejoin="miter"/>
+<rect x="780.9" y="1260.0" width="24.0" height="24.0" fill="#b2dfdb" fill-opacity="1" stroke="#00897b" stroke-width="2.5"/>
+<polyline points="1103.5,1294.0 1103.5,1284.0" fill="none" stroke="#555" stroke-width="2" stroke-linejoin="miter"/>
+<rect x="1091.5" y="1260.0" width="24.0" height="24.0" fill="#b2dfdb" fill-opacity="1" stroke="#00897b" stroke-width="2.5"/>
+<polyline points="1207.1,1294.0 1207.1,1284.0" fill="none" stroke="#555" stroke-width="2" stroke-linejoin="miter"/>
+<rect x="1195.1" y="1260.0" width="24.0" height="24.0" fill="#b2dfdb" fill-opacity="1" stroke="#00897b" stroke-width="2.5"/>
+<polyline points="1310.6,1294.0 1310.6,1284.0" fill="none" stroke="#555" stroke-width="2" stroke-linejoin="miter"/>
+<rect x="1298.6" y="1260.0" width="24.0" height="24.0" fill="#b2dfdb" fill-opacity="1" stroke="#00897b" stroke-width="2.5"/>
+<polyline points="1414.1,1294.0 1414.1,1284.0" fill="none" stroke="#555" stroke-width="2" stroke-linejoin="miter"/>
+<rect x="1402.1" y="1260.0" width="24.0" height="24.0" fill="#b2dfdb" fill-opacity="1" stroke="#00897b" stroke-width="2.5"/>
+<polyline points="1517.6,1294.0 1517.6,1284.0" fill="none" stroke="#555" stroke-width="2" stroke-linejoin="miter"/>
+<rect x="1505.6" y="1260.0" width="24.0" height="24.0" fill="#b2dfdb" fill-opacity="1" stroke="#00897b" stroke-width="2.5"/>
+<polyline points="1621.2,1294.0 1621.2,1284.0" fill="none" stroke="#555" stroke-width="2" stroke-linejoin="miter"/>
+<rect x="1609.2" y="1260.0" width="24.0" height="24.0" fill="#b2dfdb" fill-opacity="1" stroke="#00897b" stroke-width="2.5"/>
+<polyline points="1724.7,1294.0 1724.7,1284.0" fill="none" stroke="#555" stroke-width="2" stroke-linejoin="miter"/>
+<rect x="1712.7" y="1260.0" width="24.0" height="24.0" fill="#b2dfdb" fill-opacity="1" stroke="#00897b" stroke-width="2.5"/>
+<polyline points="1828.2,1294.0 1828.2,1284.0" fill="none" stroke="#555" stroke-width="2" stroke-linejoin="miter"/>
+<rect x="1816.2" y="1260.0" width="24.0" height="24.0" fill="#b2dfdb" fill-opacity="1" stroke="#00897b" stroke-width="2.5"/>
+<polyline points="116.0,556.9 125.0,556.9" fill="none" stroke="#555" stroke-width="2" stroke-linejoin="miter"/>
+<rect x="125.0" y="544.9" width="24.0" height="24.0" fill="#b2dfdb" fill-opacity="1" stroke="#00897b" stroke-width="2.5"/>
+<polyline points="116.0,633.5 125.0,633.5" fill="none" stroke="#555" stroke-width="2" stroke-linejoin="miter"/>
+<rect x="125.0" y="621.5" width="24.0" height="24.0" fill="#b2dfdb" fill-opacity="1" stroke="#00897b" stroke-width="2.5"/>
+<polyline points="116.0,786.5 125.0,786.5" fill="none" stroke="#555" stroke-width="2" stroke-linejoin="miter"/>
+<rect x="125.0" y="774.5" width="24.0" height="24.0" fill="#b2dfdb" fill-opacity="1" stroke="#00897b" stroke-width="2.5"/>
+<polyline points="116.0,863.1 125.0,863.1" fill="none" stroke="#555" stroke-width="2" stroke-linejoin="miter"/>
+<rect x="125.0" y="851.1" width="24.0" height="24.0" fill="#b2dfdb" fill-opacity="1" stroke="#00897b" stroke-width="2.5"/>
+<polyline points="116.0,939.6 125.0,939.6" fill="none" stroke="#555" stroke-width="2" stroke-linejoin="miter"/>
+<rect x="125.0" y="927.6" width="24.0" height="24.0" fill="#b2dfdb" fill-opacity="1" stroke="#00897b" stroke-width="2.5"/>
+<polyline points="116.0,1016.1 125.0,1016.1" fill="none" stroke="#555" stroke-width="2" stroke-linejoin="miter"/>
+<rect x="125.0" y="1004.1" width="24.0" height="24.0" fill="#b2dfdb" fill-opacity="1" stroke="#00897b" stroke-width="2.5"/>
+<polyline points="116.0,1092.7 125.0,1092.7" fill="none" stroke="#555" stroke-width="2" stroke-linejoin="miter"/>
+<rect x="125.0" y="1080.7" width="24.0" height="24.0" fill="#b2dfdb" fill-opacity="1" stroke="#00897b" stroke-width="2.5"/>
+<polyline points="116.0,1169.2 125.0,1169.2" fill="none" stroke="#555" stroke-width="2" stroke-linejoin="miter"/>
+<rect x="125.0" y="1157.2" width="24.0" height="24.0" fill="#b2dfdb" fill-opacity="1" stroke="#00897b" stroke-width="2.5"/>
+<polyline points="1884.0,327.3 1879.0,327.3" fill="none" stroke="#555" stroke-width="2" stroke-linejoin="miter"/>
+<rect x="1855.0" y="315.3" width="24.0" height="24.0" fill="#b2dfdb" fill-opacity="1" stroke="#00897b" stroke-width="2.5"/>
+<polyline points="1884.0,403.9 1879.0,403.9" fill="none" stroke="#555" stroke-width="2" stroke-linejoin="miter"/>
+<rect x="1855.0" y="391.9" width="24.0" height="24.0" fill="#b2dfdb" fill-opacity="1" stroke="#00897b" stroke-width="2.5"/>
+<polyline points="1884.0,480.4 1879.0,480.4" fill="none" stroke="#555" stroke-width="2" stroke-linejoin="miter"/>
+<rect x="1855.0" y="468.4" width="24.0" height="24.0" fill="#b2dfdb" fill-opacity="1" stroke="#00897b" stroke-width="2.5"/>
+<polyline points="1884.0,556.9 1879.0,556.9" fill="none" stroke="#555" stroke-width="2" stroke-linejoin="miter"/>
+<rect x="1855.0" y="544.9" width="24.0" height="24.0" fill="#b2dfdb" fill-opacity="1" stroke="#00897b" stroke-width="2.5"/>
+<polyline points="1884.0,633.5 1879.0,633.5" fill="none" stroke="#555" stroke-width="2" stroke-linejoin="miter"/>
+<rect x="1855.0" y="621.5" width="24.0" height="24.0" fill="#b2dfdb" fill-opacity="1" stroke="#00897b" stroke-width="2.5"/>
+<polyline points="1884.0,710.0 1879.0,710.0" fill="none" stroke="#555" stroke-width="2" stroke-linejoin="miter"/>
+<rect x="1855.0" y="698.0" width="24.0" height="24.0" fill="#b2dfdb" fill-opacity="1" stroke="#00897b" stroke-width="2.5"/>
+<polyline points="1884.0,786.5 1879.0,786.5" fill="none" stroke="#555" stroke-width="2" stroke-linejoin="miter"/>
+<rect x="1855.0" y="774.5" width="24.0" height="24.0" fill="#b2dfdb" fill-opacity="1" stroke="#00897b" stroke-width="2.5"/>
+<polyline points="1884.0,863.1 1879.0,863.1" fill="none" stroke="#555" stroke-width="2" stroke-linejoin="miter"/>
+<rect x="1855.0" y="851.1" width="24.0" height="24.0" fill="#b2dfdb" fill-opacity="1" stroke="#00897b" stroke-width="2.5"/>
+<polyline points="1884.0,939.6 1879.0,939.6" fill="none" stroke="#555" stroke-width="2" stroke-linejoin="miter"/>
+<rect x="1855.0" y="927.6" width="24.0" height="24.0" fill="#b2dfdb" fill-opacity="1" stroke="#00897b" stroke-width="2.5"/>
+<polyline points="1884.0,1016.1 1879.0,1016.1" fill="none" stroke="#555" stroke-width="2" stroke-linejoin="miter"/>
+<rect x="1855.0" y="1004.1" width="24.0" height="24.0" fill="#b2dfdb" fill-opacity="1" stroke="#00897b" stroke-width="2.5"/>
+<polyline points="1884.0,1092.7 1879.0,1092.7" fill="none" stroke="#555" stroke-width="2" stroke-linejoin="miter"/>
+<rect x="1855.0" y="1080.7" width="24.0" height="24.0" fill="#b2dfdb" fill-opacity="1" stroke="#00897b" stroke-width="2.5"/>
+<polyline points="689.4,126.0 689.4,134.0" fill="none" stroke="#93005f" stroke-width="4" stroke-linejoin="miter"/>
+<polyline points="792.9,126.0 792.9,134.0" fill="none" stroke="#93005f" stroke-width="4" stroke-linejoin="miter"/>
+<polyline points="896.5,126.0 896.5,134.0" fill="none" stroke="#93005f" stroke-width="4" stroke-linejoin="miter"/>
+<polyline points="1000.0,126.0 1000.0,134.0" fill="none" stroke="#93005f" stroke-width="4" stroke-linejoin="miter"/>
+<polyline points="1103.5,126.0 1103.5,134.0" fill="none" stroke="#93005f" stroke-width="4" stroke-linejoin="miter"/>
+<polyline points="689.4,134.0 1103.5,134.0" fill="none" stroke="#93005f" stroke-width="4" stroke-linejoin="miter"/>
+<polyline points="862.0,153.3 862.0,257.5" fill="none" stroke="#93005f" stroke-width="5" stroke-linejoin="miter"/>
+<polygon points="862.0,272.8 853.5,255.8 870.5,255.8" fill="#93005f"/>
+<polygon points="862.0,138.0 870.5,155.0 853.5,155.0" fill="#93005f"/>
+<polyline points="862.0,205.0 248.0,205.0 248.0,267.7" fill="none" stroke="#93005f" stroke-width="5" stroke-linejoin="miter"/>
+<polygon points="248.0,283.0 239.5,266.0 256.5,266.0" fill="#93005f"/>
+<text x="932.0" y="174.0" font-family="DejaVu Sans Condensed, DejaVu Sans, Arial Narrow, Arial, sans-serif" font-size="34" fill="#93005f" text-anchor="middle" font-weight="bold" dominant-baseline="central">jtag*</text>
+<polyline points="149.0,786.5 155.0,786.5" fill="none" stroke="#93005f" stroke-width="4" stroke-linejoin="miter"/>
+<polyline points="149.0,863.1 155.0,863.1" fill="none" stroke="#93005f" stroke-width="4" stroke-linejoin="miter"/>
+<polyline points="155.0,786.5 155.0,863.1" fill="none" stroke="#93005f" stroke-width="4" stroke-linejoin="miter"/>
+<polyline points="174.3,837.4 209.7,837.4" fill="none" stroke="#93005f" stroke-width="5" stroke-linejoin="miter"/>
+<polygon points="225.0,837.4 208.0,845.9 208.0,828.9" fill="#93005f"/>
+<polygon points="159.0,837.4 176.0,828.9 176.0,845.9" fill="#93005f"/>
+<text x="165.0" y="817.4" font-family="DejaVu Sans Condensed, DejaVu Sans, Arial Narrow, Arial, sans-serif" font-size="22" fill="#93005f" text-anchor="start" font-weight="bold" dominant-baseline="central">uart*</text>
+<polyline points="149.0,939.6 155.0,939.6" fill="none" stroke="#93005f" stroke-width="4" stroke-linejoin="miter"/>
+<polyline points="149.0,1016.1 155.0,1016.1" fill="none" stroke="#93005f" stroke-width="4" stroke-linejoin="miter"/>
+<polyline points="149.0,1092.7 155.0,1092.7" fill="none" stroke="#93005f" stroke-width="4" stroke-linejoin="miter"/>
+<polyline points="149.0,1169.2 155.0,1169.2" fill="none" stroke="#93005f" stroke-width="4" stroke-linejoin="miter"/>
+<polyline points="155.0,1169.2 155.0,921.0" fill="none" stroke="#93005f" stroke-width="4" stroke-linejoin="miter"/>
+<polyline points="174.3,921.0 209.7,921.0" fill="none" stroke="#93005f" stroke-width="5" stroke-linejoin="miter"/>
+<polygon points="225.0,921.0 208.0,929.5 208.0,912.5" fill="#93005f"/>
+<polygon points="159.0,921.0 176.0,912.5 176.0,929.5" fill="#93005f"/>
+<text x="165.0" y="943.0" font-family="DejaVu Sans Condensed, DejaVu Sans, Arial Narrow, Arial, sans-serif" font-size="22" fill="#93005f" text-anchor="start" font-weight="bold" dominant-baseline="central">gpio*</text>
+<rect x="40.0" y="1430.0" width="38.0" height="30.0" fill="#c8e6c9" fill-opacity="1" stroke="#555" stroke-width="1.5"/>
+<text x="90.0" y="1445.0" font-family="DejaVu Sans Condensed, DejaVu Sans, Arial Narrow, Arial, sans-serif" font-size="24" fill="#000" text-anchor="start" font-weight="normal" dominant-baseline="central">input pad</text>
+<rect x="400.0" y="1430.0" width="38.0" height="30.0" fill="#ffcdd2" fill-opacity="1" stroke="#555" stroke-width="1.5"/>
+<text x="450.0" y="1445.0" font-family="DejaVu Sans Condensed, DejaVu Sans, Arial Narrow, Arial, sans-serif" font-size="24" fill="#000" text-anchor="start" font-weight="normal" dominant-baseline="central">output pad</text>
+<rect x="760.0" y="1430.0" width="38.0" height="30.0" fill="#fff3b0" fill-opacity="1" stroke="#555" stroke-width="1.5"/>
+<text x="810.0" y="1445.0" font-family="DejaVu Sans Condensed, DejaVu Sans, Arial Narrow, Arial, sans-serif" font-size="24" fill="#000" text-anchor="start" font-weight="normal" dominant-baseline="central">bidirectional pad (GPIO)</text>
+<rect x="1120.0" y="1430.0" width="38.0" height="30.0" fill="#8c8c8c" fill-opacity="1" stroke="#555" stroke-width="1.5"/>
+<text x="1170.0" y="1445.0" font-family="DejaVu Sans Condensed, DejaVu Sans, Arial Narrow, Arial, sans-serif" font-size="24" fill="#000" text-anchor="start" font-weight="normal" dominant-baseline="central">power pad</text>
+<rect x="40.0" y="1480.0" width="38.0" height="30.0" fill="#00897b" fill-opacity="1" stroke="none" stroke-width="0"/>
+<text x="90.0" y="1495.0" font-family="DejaVu Sans Condensed, DejaVu Sans, Arial Narrow, Arial, sans-serif" font-size="24" fill="#000" text-anchor="start" font-weight="normal" dominant-baseline="central">DFT addition</text>
+<rect x="406.0" y="1484.0" width="22.0" height="22.0" fill="#b2dfdb" fill-opacity="1" stroke="#00897b" stroke-width="2.5"/>
+<text x="450.0" y="1495.0" font-family="DejaVu Sans Condensed, DejaVu Sans, Arial Narrow, Arial, sans-serif" font-size="24" fill="#000" text-anchor="start" font-weight="normal" dominant-baseline="central">boundary-scan cell (40)</text>
+<polyline points="760.0,1495.0 830.0,1495.0" fill="none" stroke="#00897b" stroke-width="4" stroke-linejoin="miter" stroke-dasharray="10,6"/>
+<text x="845.0" y="1495.0" font-family="DejaVu Sans Condensed, DejaVu Sans, Arial Narrow, Arial, sans-serif" font-size="24" fill="#000" text-anchor="start" font-weight="normal" dominant-baseline="central">scan chain (TCK)</text>
+<text x="1975.0" y="1495.0" font-family="DejaVu Sans Condensed, DejaVu Sans, Arial Narrow, Arial, sans-serif" font-size="28" fill="#00897b" text-anchor="end" font-weight="bold" dominant-baseline="central">Step 1: + boundary scan</text>
+</svg>

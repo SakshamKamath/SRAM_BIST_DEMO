@@ -38,11 +38,15 @@ module vad_csr_wrapper import croc_pkg::*; import user_pkg::*; (
 //                               [3] EVAL:  run the speech decision on LAST_ENERGY/LAST_ZCR;
 //                                          sets SPEECH like a frame would. Ignored while
 //                                          the core is busy.
-//                               Commands only take effect while DBG_EN is set.
+//                               [4] IRQ_TRIG: set SPEECH as if a frame had detected speech,
+//                                          to test the interrupt path without audio.
+//                               WRITE/READ/KICK/EVAL only take effect while DBG_EN is set;
+//                               IRQ_TRIG works in normal operation too.
 //   0x3C       RO  SRAM_RDATA   [15:0]
 //   0x40       RO  SRAM_STATUS  [0] SPEECH: sticky speech-detected flag, write 1 to clear
 //                               [1] READ_BANK, [2] WRITE_BANK, [3] READ_PENDING,
 //                               [12:4] WRITE_ADDR (next sample slot of the audio writer)
+//                               [13] IRQ: current level of vad_irq_o
 //   0x44       RW  LAST_ENERGY_LO  energy of the last processed frame [31:0]
 //   0x48       RW  LAST_ENERGY_HI  [15:0] = energy [47:32]
 //   0x4C       RW  LAST_ZCR        [15:0] zero crossings of the last processed frame
@@ -67,7 +71,7 @@ logic           speech_sticky_q;
 
 // Observability: SRAM_CMD strobes and SRAM_STATUS sources
 logic           sram_cmd_valid;
-logic           sram_we, sram_re, sram_kick, sram_eval;
+logic           sram_we, sram_re, sram_kick, sram_eval, irq_trig;
 logic [15:0]    sram_dbg_rdata;
 logic           speech_detected;
 logic           read_bank, write_bank;
@@ -88,6 +92,7 @@ assign sram_we   = sram_cmd_valid && obi_req_i.a.wdata[0];
 assign sram_re   = sram_cmd_valid && obi_req_i.a.wdata[1];
 assign sram_kick = sram_cmd_valid && obi_req_i.a.wdata[2];
 assign sram_eval = sram_cmd_valid && obi_req_i.a.wdata[3] && reg_sram_dbg_en;
+assign irq_trig  = sram_cmd_valid && obi_req_i.a.wdata[4];   // not gated by DBG_EN
 
 // Observability: write enables for the last frame result
 assign last_energy_lo_we = obi_req_i.req && obi_req_i.a.we && (obi_req_i.a.addr[7:0] == 8'h44);
@@ -241,7 +246,7 @@ always_ff @(posedge clk_i or negedge rst_ni) begin
                         8'h30: rdata_q <= {23'h0, reg_sram_addr};
                         8'h34: rdata_q <= {16'h0, reg_sram_wdata};
                         8'h3C: rdata_q <= {16'h0, sram_rd_pending_q ? sram_dbg_rdata : reg_sram_rdata};
-                        8'h40: rdata_q <= {19'h0, 9'(write_addr), sram_rd_pending_q,
+                        8'h40: rdata_q <= {18'h0, vad_irq_o, 9'(write_addr), sram_rd_pending_q,
                                            write_bank, read_bank, speech_sticky_q};
                         8'h44: rdata_q <= last_energy[31:0];
                         8'h48: rdata_q <= {16'h0, last_energy[47:32]};
@@ -256,7 +261,7 @@ always_ff @(posedge clk_i or negedge rst_ni) begin
         if (obi_req_i.req && obi_req_i.a.we && (obi_req_i.a.addr[7:0] == 8'h40) &&
             obi_req_i.a.be[0] && obi_req_i.a.wdata[0])
             speech_sticky_q <= 1'b0;
-        if (speech_detected) speech_sticky_q <= 1'b1;
+        if (speech_detected || irq_trig) speech_sticky_q <= 1'b1;
     end
 end
 

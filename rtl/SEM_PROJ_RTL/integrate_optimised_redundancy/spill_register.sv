@@ -16,7 +16,9 @@
 /// compatibility.
 module spill_register_mod #(
   parameter type T      = logic,
-  parameter bit  Bypass = 1'b0     // make this spill register transparent
+  parameter bit  Bypass = 1'b0,    // make this spill register transparent
+  parameter bit  IsolDriveValid = 1'b0,
+  parameter bit  IsolDriveReady = 1'b0
 ) (
   input  logic clk_i   ,
   input  logic rst_ni  ,
@@ -33,6 +35,8 @@ module spill_register_mod #(
   input  logic capture_dr_i,
   input  logic shift_dr_i,
   input  logic update_dr_i,
+  input  logic isol_cap_live_i,
+  output logic isol_step_valid_o,
 
   // -- JTAG Signals --
   input  logic tdi_i,
@@ -42,7 +46,9 @@ module spill_register_mod #(
 
   spill_register_flushable_mod #(
     .T(T),
-    .Bypass(Bypass)
+    .Bypass(Bypass),
+    .IsolDriveValid(IsolDriveValid),
+    .IsolDriveReady(IsolDriveReady)
   ) spill_register_flushable_i (
     .clk_i,
     .rst_ni,
@@ -57,6 +63,8 @@ module spill_register_mod #(
     .capture_dr_i,
     .shift_dr_i,
     .update_dr_i,
+    .isol_cap_live_i,
+    .isol_step_valid_o,
     .tdi_i,
     .tdo_o
   );

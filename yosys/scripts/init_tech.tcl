@@ -44,6 +44,8 @@ set tech_cells_args [concat {*}$tech_cells_args_list]
 foreach file $lib_list {
 	yosys read_liberty -lib "$file"
 }
+# blackboxes for SRAM macros without a Liberty file (e.g. the VAD 512x32 macro)
+yosys read_verilog -lib src/sram_macro_stubs.v
 
 set dont_use_list [list AOI31X1 AOI31X2]
 set dont_use_args [list]

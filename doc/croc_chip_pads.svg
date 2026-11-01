@@ -1,0 +1,282 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1800" height="1420" viewBox="0 0 1800 1420">
+<defs>
+<marker id="a" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="4" markerHeight="4" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="context-stroke"/></marker>
+<marker id="as" viewBox="0 0 10 10" refX="2" refY="5" markerWidth="4" markerHeight="4" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="context-stroke"/></marker>
+</defs>
+<rect width="1800" height="1420" fill="#ffffff"/>
+<rect x="20" y="20" width="1760" height="1280" rx="0" fill="#f7f7f7" fill-opacity="1" stroke="#333" stroke-width="3"/>
+<rect x="20" y="20" width="90" height="90" rx="0" fill="#d0d0d0" fill-opacity="1" stroke="#555" stroke-width="1.5"/>
+<rect x="1690" y="20" width="90" height="90" rx="0" fill="#d0d0d0" fill-opacity="1" stroke="#555" stroke-width="1.5"/>
+<rect x="20" y="1210" width="90" height="90" rx="0" fill="#d0d0d0" fill-opacity="1" stroke="#555" stroke-width="1.5"/>
+<rect x="1690" y="1210" width="90" height="90" rx="0" fill="#d0d0d0" fill-opacity="1" stroke="#555" stroke-width="1.5"/>
+<rect x="135.0" y="22" width="86.25" height="86" rx="0" fill="#8c8c8c" fill-opacity="1" stroke="#555" stroke-width="1.5"/>
+<text x="178.125" y="65" font-family="DejaVu Sans, Arial, Helvetica, sans-serif" font-size="15" fill="#fff" text-anchor="middle" font-weight="normal" font-style="normal" dominant-baseline="middle" transform="rotate(-90 178.125 65)">VDD</text>
+<rect x="231.25" y="22" width="86.25" height="86" rx="0" fill="#8c8c8c" fill-opacity="1" stroke="#555" stroke-width="1.5"/>
+<text x="274.375" y="65" font-family="DejaVu Sans, Arial, Helvetica, sans-serif" font-size="15" fill="#fff" text-anchor="middle" font-weight="normal" font-style="normal" dominant-baseline="middle" transform="rotate(-90 274.375 65)">VSS</text>
+<rect x="327.5" y="22" width="86.25" height="86" rx="0" fill="#c8e6c9" fill-opacity="1" stroke="#555" stroke-width="1.5"/>
+<text x="370.625" y="65" font-family="DejaVu Sans, Arial, Helvetica, sans-serif" font-size="15" fill="#222" text-anchor="middle" font-weight="normal" font-style="normal" dominant-baseline="middle" transform="rotate(-90 370.625 65)">clk</text>
+<rect x="423.75" y="22" width="86.25" height="86" rx="0" fill="#c8e6c9" fill-opacity="1" stroke="#555" stroke-width="1.5"/>
+<text x="466.875" y="65" font-family="DejaVu Sans, Arial, Helvetica, sans-serif" font-size="15" fill="#222" text-anchor="middle" font-weight="normal" font-style="normal" dominant-baseline="middle" transform="rotate(-90 466.875 65)">tck</text>
+<rect x="520.0" y="22" width="86.25" height="86" rx="0" fill="#c8e6c9" fill-opacity="1" stroke="#555" stroke-width="1.5"/>
+<text x="563.125" y="65" font-family="DejaVu Sans, Arial, Helvetica, sans-serif" font-size="15" fill="#222" text-anchor="middle" font-weight="normal" font-style="normal" dominant-baseline="middle" transform="rotate(-90 563.125 65)">tms</text>
+<rect x="616.25" y="22" width="86.25" height="86" rx="0" fill="#c8e6c9" fill-opacity="1" stroke="#555" stroke-width="1.5"/>
+<text x="659.375" y="65" font-family="DejaVu Sans, Arial, Helvetica, sans-serif" font-size="15" fill="#222" text-anchor="middle" font-weight="normal" font-style="normal" dominant-baseline="middle" transform="rotate(-90 659.375 65)">tdi</text>
+<rect x="712.5" y="22" width="86.25" height="86" rx="0" fill="#ffcdd2" fill-opacity="1" stroke="#555" stroke-width="1.5"/>
+<text x="755.625" y="65" font-family="DejaVu Sans, Arial, Helvetica, sans-serif" font-size="15" fill="#222" text-anchor="middle" font-weight="normal" font-style="normal" dominant-baseline="middle" transform="rotate(-90 755.625 65)">tdo</text>
+<rect x="808.75" y="22" width="86.25" height="86" rx="0" fill="#c8e6c9" fill-opacity="1" stroke="#555" stroke-width="1.5"/>
+<text x="851.875" y="65" font-family="DejaVu Sans, Arial, Helvetica, sans-serif" font-size="15" fill="#222" text-anchor="middle" font-weight="normal" font-style="normal" dominant-baseline="middle" transform="rotate(-90 851.875 65)">trst_n</text>
+<rect x="905.0" y="22" width="86.25" height="86" rx="0" fill="#8c8c8c" fill-opacity="1" stroke="#555" stroke-width="1.5"/>
+<text x="948.125" y="65" font-family="DejaVu Sans, Arial, Helvetica, sans-serif" font-size="15" fill="#fff" text-anchor="middle" font-weight="normal" font-style="normal" dominant-baseline="middle" transform="rotate(-90 948.125 65)">VDDIO</text>
+<rect x="1001.25" y="22" width="86.25" height="86" rx="0" fill="#8c8c8c" fill-opacity="1" stroke="#555" stroke-width="1.5"/>
+<text x="1044.375" y="65" font-family="DejaVu Sans, Arial, Helvetica, sans-serif" font-size="15" fill="#fff" text-anchor="middle" font-weight="normal" font-style="normal" dominant-baseline="middle" transform="rotate(-90 1044.375 65)">VSSIO</text>
+<rect x="1097.5" y="22" width="86.25" height="86" rx="0" fill="#c8e6c9" fill-opacity="1" stroke="#555" stroke-width="1.5"/>
+<text x="1140.625" y="65" font-family="DejaVu Sans, Arial, Helvetica, sans-serif" font-size="15" fill="#222" text-anchor="middle" font-weight="normal" font-style="normal" dominant-baseline="middle" transform="rotate(-90 1140.625 65)">rst_n</text>
+<rect x="1193.75" y="22" width="86.25" height="86" rx="0" fill="#c8e6c9" fill-opacity="1" stroke="#555" stroke-width="1.5"/>
+<text x="1236.875" y="65" font-family="DejaVu Sans, Arial, Helvetica, sans-serif" font-size="15" fill="#222" text-anchor="middle" font-weight="normal" font-style="normal" dominant-baseline="middle" transform="rotate(-90 1236.875 65)">ref_clk</text>
+<rect x="1290.0" y="22" width="86.25" height="86" rx="0" fill="#c8e6c9" fill-opacity="1" stroke="#555" stroke-width="1.5"/>
+<text x="1333.125" y="65" font-family="DejaVu Sans, Arial, Helvetica, sans-serif" font-size="15" fill="#222" text-anchor="middle" font-weight="normal" font-style="normal" dominant-baseline="middle" transform="rotate(-90 1333.125 65)">testmode</text>
+<rect x="1386.25" y="22" width="86.25" height="86" rx="0" fill="#ffcdd2" fill-opacity="1" stroke="#555" stroke-width="1.5"/>
+<text x="1429.375" y="65" font-family="DejaVu Sans, Arial, Helvetica, sans-serif" font-size="15" fill="#222" text-anchor="middle" font-weight="normal" font-style="normal" dominant-baseline="middle" transform="rotate(-90 1429.375 65)">status</text>
+<rect x="1482.5" y="22" width="86.25" height="86" rx="0" fill="#ffcdd2" fill-opacity="1" stroke="#555" stroke-width="1.5"/>
+<text x="1525.625" y="65" font-family="DejaVu Sans, Arial, Helvetica, sans-serif" font-size="15" fill="#222" text-anchor="middle" font-weight="normal" font-style="normal" dominant-baseline="middle" transform="rotate(-90 1525.625 65)">unused2</text>
+<rect x="1578.75" y="22" width="86.25" height="86" rx="0" fill="#ffcdd2" fill-opacity="1" stroke="#555" stroke-width="1.5"/>
+<text x="1621.875" y="65" font-family="DejaVu Sans, Arial, Helvetica, sans-serif" font-size="15" fill="#222" text-anchor="middle" font-weight="normal" font-style="normal" dominant-baseline="middle" transform="rotate(-90 1621.875 65)">unused3</text>
+<rect x="1578.75" y="1212" width="86.25" height="86" rx="0" fill="#8c8c8c" fill-opacity="1" stroke="#555" stroke-width="1.5"/>
+<text x="1621.875" y="1255" font-family="DejaVu Sans, Arial, Helvetica, sans-serif" font-size="15" fill="#fff" text-anchor="middle" font-weight="normal" font-style="normal" dominant-baseline="middle" transform="rotate(-90 1621.875 1255)">VDD</text>
+<rect x="1482.5" y="1212" width="86.25" height="86" rx="0" fill="#8c8c8c" fill-opacity="1" stroke="#555" stroke-width="1.5"/>
+<text x="1525.625" y="1255" font-family="DejaVu Sans, Arial, Helvetica, sans-serif" font-size="15" fill="#fff" text-anchor="middle" font-weight="normal" font-style="normal" dominant-baseline="middle" transform="rotate(-90 1525.625 1255)">VSS</text>
+<rect x="1386.25" y="1212" width="86.25" height="86" rx="0" fill="#fff3b0" fill-opacity="1" stroke="#555" stroke-width="1.5"/>
+<text x="1429.375" y="1255" font-family="DejaVu Sans, Arial, Helvetica, sans-serif" font-size="15" fill="#222" text-anchor="middle" font-weight="normal" font-style="normal" dominant-baseline="middle" transform="rotate(-90 1429.375 1255)">gpio12</text>
+<rect x="1290.0" y="1212" width="86.25" height="86" rx="0" fill="#fff3b0" fill-opacity="1" stroke="#555" stroke-width="1.5"/>
+<text x="1333.125" y="1255" font-family="DejaVu Sans, Arial, Helvetica, sans-serif" font-size="15" fill="#222" text-anchor="middle" font-weight="normal" font-style="normal" dominant-baseline="middle" transform="rotate(-90 1333.125 1255)">gpio13</text>
+<rect x="1193.75" y="1212" width="86.25" height="86" rx="0" fill="#fff3b0" fill-opacity="1" stroke="#555" stroke-width="1.5"/>
+<text x="1236.875" y="1255" font-family="DejaVu Sans, Arial, Helvetica, sans-serif" font-size="15" fill="#222" text-anchor="middle" font-weight="normal" font-style="normal" dominant-baseline="middle" transform="rotate(-90 1236.875 1255)">gpio14</text>
+<rect x="1097.5" y="1212" width="86.25" height="86" rx="0" fill="#fff3b0" fill-opacity="1" stroke="#555" stroke-width="1.5"/>
+<text x="1140.625" y="1255" font-family="DejaVu Sans, Arial, Helvetica, sans-serif" font-size="15" fill="#222" text-anchor="middle" font-weight="normal" font-style="normal" dominant-baseline="middle" transform="rotate(-90 1140.625 1255)">gpio15</text>
+<rect x="1001.25" y="1212" width="86.25" height="86" rx="0" fill="#fff3b0" fill-opacity="1" stroke="#555" stroke-width="1.5"/>
+<text x="1044.375" y="1255" font-family="DejaVu Sans, Arial, Helvetica, sans-serif" font-size="15" fill="#222" text-anchor="middle" font-weight="normal" font-style="normal" dominant-baseline="middle" transform="rotate(-90 1044.375 1255)">gpio16</text>
+<rect x="905.0" y="1212" width="86.25" height="86" rx="0" fill="#fff3b0" fill-opacity="1" stroke="#555" stroke-width="1.5"/>
+<text x="948.125" y="1255" font-family="DejaVu Sans, Arial, Helvetica, sans-serif" font-size="15" fill="#222" text-anchor="middle" font-weight="normal" font-style="normal" dominant-baseline="middle" transform="rotate(-90 948.125 1255)">gpio17</text>
+<rect x="808.75" y="1212" width="86.25" height="86" rx="0" fill="#8c8c8c" fill-opacity="1" stroke="#555" stroke-width="1.5"/>
+<text x="851.875" y="1255" font-family="DejaVu Sans, Arial, Helvetica, sans-serif" font-size="15" fill="#fff" text-anchor="middle" font-weight="normal" font-style="normal" dominant-baseline="middle" transform="rotate(-90 851.875 1255)">VDDIO</text>
+<rect x="712.5" y="1212" width="86.25" height="86" rx="0" fill="#8c8c8c" fill-opacity="1" stroke="#555" stroke-width="1.5"/>
+<text x="755.625" y="1255" font-family="DejaVu Sans, Arial, Helvetica, sans-serif" font-size="15" fill="#fff" text-anchor="middle" font-weight="normal" font-style="normal" dominant-baseline="middle" transform="rotate(-90 755.625 1255)">VSSIO</text>
+<rect x="616.25" y="1212" width="86.25" height="86" rx="0" fill="#fff3b0" fill-opacity="1" stroke="#555" stroke-width="1.5"/>
+<text x="659.375" y="1255" font-family="DejaVu Sans, Arial, Helvetica, sans-serif" font-size="15" fill="#222" text-anchor="middle" font-weight="normal" font-style="normal" dominant-baseline="middle" transform="rotate(-90 659.375 1255)">gpio18</text>
+<rect x="520.0" y="1212" width="86.25" height="86" rx="0" fill="#fff3b0" fill-opacity="1" stroke="#555" stroke-width="1.5"/>
+<text x="563.125" y="1255" font-family="DejaVu Sans, Arial, Helvetica, sans-serif" font-size="15" fill="#222" text-anchor="middle" font-weight="normal" font-style="normal" dominant-baseline="middle" transform="rotate(-90 563.125 1255)">gpio19</text>
+<rect x="423.75" y="1212" width="86.25" height="86" rx="0" fill="#fff3b0" fill-opacity="1" stroke="#555" stroke-width="1.5"/>
+<text x="466.875" y="1255" font-family="DejaVu Sans, Arial, Helvetica, sans-serif" font-size="15" fill="#222" text-anchor="middle" font-weight="normal" font-style="normal" dominant-baseline="middle" transform="rotate(-90 466.875 1255)">gpio20</text>
+<rect x="327.5" y="1212" width="86.25" height="86" rx="0" fill="#fff3b0" fill-opacity="1" stroke="#555" stroke-width="1.5"/>
+<text x="370.625" y="1255" font-family="DejaVu Sans, Arial, Helvetica, sans-serif" font-size="15" fill="#222" text-anchor="middle" font-weight="normal" font-style="normal" dominant-baseline="middle" transform="rotate(-90 370.625 1255)">gpio21</text>
+<rect x="231.25" y="1212" width="86.25" height="86" rx="0" fill="#fff3b0" fill-opacity="1" stroke="#555" stroke-width="1.5"/>
+<text x="274.375" y="1255" font-family="DejaVu Sans, Arial, Helvetica, sans-serif" font-size="15" fill="#222" text-anchor="middle" font-weight="normal" font-style="normal" dominant-baseline="middle" transform="rotate(-90 274.375 1255)">gpio22</text>
+<rect x="135.0" y="1212" width="86.25" height="86" rx="0" fill="#fff3b0" fill-opacity="1" stroke="#555" stroke-width="1.5"/>
+<text x="178.125" y="1255" font-family="DejaVu Sans, Arial, Helvetica, sans-serif" font-size="15" fill="#222" text-anchor="middle" font-weight="normal" font-style="normal" dominant-baseline="middle" transform="rotate(-90 178.125 1255)">gpio23</text>
+<rect x="22" y="135.0" width="86" height="56.25" rx="0" fill="#8c8c8c" fill-opacity="1" stroke="#555" stroke-width="1.5"/>
+<text x="65" y="163.125" font-family="DejaVu Sans, Arial, Helvetica, sans-serif" font-size="15" fill="#fff" text-anchor="middle" font-weight="normal" font-style="normal" dominant-baseline="middle">VDD</text>
+<rect x="22" y="201.25" width="86" height="56.25" rx="0" fill="#8c8c8c" fill-opacity="1" stroke="#555" stroke-width="1.5"/>
+<text x="65" y="229.375" font-family="DejaVu Sans, Arial, Helvetica, sans-serif" font-size="15" fill="#fff" text-anchor="middle" font-weight="normal" font-style="normal" dominant-baseline="middle">VSS</text>
+<rect x="22" y="267.5" width="86" height="56.25" rx="0" fill="#fff3b0" fill-opacity="1" stroke="#555" stroke-width="1.5"/>
+<text x="65" y="295.625" font-family="DejaVu Sans, Arial, Helvetica, sans-serif" font-size="15" fill="#222" text-anchor="middle" font-weight="normal" font-style="normal" dominant-baseline="middle">gpio24</text>
+<rect x="22" y="333.75" width="86" height="56.25" rx="0" fill="#fff3b0" fill-opacity="1" stroke="#555" stroke-width="1.5"/>
+<text x="65" y="361.875" font-family="DejaVu Sans, Arial, Helvetica, sans-serif" font-size="15" fill="#222" text-anchor="middle" font-weight="normal" font-style="normal" dominant-baseline="middle">gpio25</text>
+<rect x="22" y="400.0" width="86" height="56.25" rx="0" fill="#fff3b0" fill-opacity="1" stroke="#555" stroke-width="1.5"/>
+<text x="65" y="428.125" font-family="DejaVu Sans, Arial, Helvetica, sans-serif" font-size="15" fill="#222" text-anchor="middle" font-weight="normal" font-style="normal" dominant-baseline="middle">gpio26</text>
+<rect x="22" y="466.25" width="86" height="56.25" rx="0" fill="#fff3b0" fill-opacity="1" stroke="#555" stroke-width="1.5"/>
+<text x="65" y="494.375" font-family="DejaVu Sans, Arial, Helvetica, sans-serif" font-size="15" fill="#222" text-anchor="middle" font-weight="normal" font-style="normal" dominant-baseline="middle">gpio27</text>
+<rect x="22" y="532.5" width="86" height="56.25" rx="0" fill="#8c8c8c" fill-opacity="1" stroke="#555" stroke-width="1.5"/>
+<text x="65" y="560.625" font-family="DejaVu Sans, Arial, Helvetica, sans-serif" font-size="15" fill="#fff" text-anchor="middle" font-weight="normal" font-style="normal" dominant-baseline="middle">VDDIO</text>
+<rect x="22" y="598.75" width="86" height="56.25" rx="0" fill="#c8e6c9" fill-opacity="1" stroke="#555" stroke-width="1.5"/>
+<text x="65" y="626.875" font-family="DejaVu Sans, Arial, Helvetica, sans-serif" font-size="15" fill="#222" text-anchor="middle" font-weight="normal" font-style="normal" dominant-baseline="middle">uart_rx</text>
+<rect x="22" y="665.0" width="86" height="56.25" rx="0" fill="#ffcdd2" fill-opacity="1" stroke="#555" stroke-width="1.5"/>
+<text x="65" y="693.125" font-family="DejaVu Sans, Arial, Helvetica, sans-serif" font-size="15" fill="#222" text-anchor="middle" font-weight="normal" font-style="normal" dominant-baseline="middle">uart_tx</text>
+<rect x="22" y="731.25" width="86" height="56.25" rx="0" fill="#fff3b0" fill-opacity="1" stroke="#555" stroke-width="1.5"/>
+<text x="65" y="759.375" font-family="DejaVu Sans, Arial, Helvetica, sans-serif" font-size="15" fill="#222" text-anchor="middle" font-weight="normal" font-style="normal" dominant-baseline="middle">gpio28</text>
+<rect x="22" y="797.5" width="86" height="56.25" rx="0" fill="#fff3b0" fill-opacity="1" stroke="#555" stroke-width="1.5"/>
+<text x="65" y="825.625" font-family="DejaVu Sans, Arial, Helvetica, sans-serif" font-size="15" fill="#222" text-anchor="middle" font-weight="normal" font-style="normal" dominant-baseline="middle">gpio29</text>
+<rect x="22" y="863.75" width="86" height="56.25" rx="0" fill="#fff3b0" fill-opacity="1" stroke="#555" stroke-width="1.5"/>
+<text x="65" y="891.875" font-family="DejaVu Sans, Arial, Helvetica, sans-serif" font-size="15" fill="#222" text-anchor="middle" font-weight="normal" font-style="normal" dominant-baseline="middle">gpio30</text>
+<rect x="22" y="930.0" width="86" height="56.25" rx="0" fill="#fff3b0" fill-opacity="1" stroke="#555" stroke-width="1.5"/>
+<text x="65" y="958.125" font-family="DejaVu Sans, Arial, Helvetica, sans-serif" font-size="15" fill="#222" text-anchor="middle" font-weight="normal" font-style="normal" dominant-baseline="middle">gpio31</text>
+<rect x="22" y="996.25" width="86" height="56.25" rx="0" fill="#8c8c8c" fill-opacity="1" stroke="#555" stroke-width="1.5"/>
+<text x="65" y="1024.375" font-family="DejaVu Sans, Arial, Helvetica, sans-serif" font-size="15" fill="#fff" text-anchor="middle" font-weight="normal" font-style="normal" dominant-baseline="middle">VSSIO</text>
+<rect x="22" y="1062.5" width="86" height="56.25" rx="0" fill="#ffcdd2" fill-opacity="1" stroke="#555" stroke-width="1.5"/>
+<text x="65" y="1090.625" font-family="DejaVu Sans, Arial, Helvetica, sans-serif" font-size="15" fill="#222" text-anchor="middle" font-weight="normal" font-style="normal" dominant-baseline="middle">unused0</text>
+<rect x="22" y="1128.75" width="86" height="56.25" rx="0" fill="#ffcdd2" fill-opacity="1" stroke="#555" stroke-width="1.5"/>
+<text x="65" y="1156.875" font-family="DejaVu Sans, Arial, Helvetica, sans-serif" font-size="15" fill="#222" text-anchor="middle" font-weight="normal" font-style="normal" dominant-baseline="middle">unused1</text>
+<rect x="1692" y="135.0" width="86" height="56.25" rx="0" fill="#8c8c8c" fill-opacity="1" stroke="#555" stroke-width="1.5"/>
+<text x="1735" y="163.125" font-family="DejaVu Sans, Arial, Helvetica, sans-serif" font-size="15" fill="#fff" text-anchor="middle" font-weight="normal" font-style="normal" dominant-baseline="middle">VDD</text>
+<rect x="1692" y="201.25" width="86" height="56.25" rx="0" fill="#8c8c8c" fill-opacity="1" stroke="#555" stroke-width="1.5"/>
+<text x="1735" y="229.375" font-family="DejaVu Sans, Arial, Helvetica, sans-serif" font-size="15" fill="#fff" text-anchor="middle" font-weight="normal" font-style="normal" dominant-baseline="middle">VSS</text>
+<rect x="1692" y="267.5" width="86" height="56.25" rx="0" fill="#fff3b0" fill-opacity="1" stroke="#555" stroke-width="1.5"/>
+<text x="1735" y="295.625" font-family="DejaVu Sans, Arial, Helvetica, sans-serif" font-size="15" fill="#222" text-anchor="middle" font-weight="normal" font-style="normal" dominant-baseline="middle">gpio0</text>
+<rect x="1692" y="333.75" width="86" height="56.25" rx="0" fill="#fff3b0" fill-opacity="1" stroke="#555" stroke-width="1.5"/>
+<text x="1735" y="361.875" font-family="DejaVu Sans, Arial, Helvetica, sans-serif" font-size="15" fill="#222" text-anchor="middle" font-weight="normal" font-style="normal" dominant-baseline="middle">gpio1</text>
+<rect x="1692" y="400.0" width="86" height="56.25" rx="0" fill="#fff3b0" fill-opacity="1" stroke="#555" stroke-width="1.5"/>
+<text x="1735" y="428.125" font-family="DejaVu Sans, Arial, Helvetica, sans-serif" font-size="15" fill="#222" text-anchor="middle" font-weight="normal" font-style="normal" dominant-baseline="middle">gpio2</text>
+<rect x="1692" y="466.25" width="86" height="56.25" rx="0" fill="#fff3b0" fill-opacity="1" stroke="#555" stroke-width="1.5"/>
+<text x="1735" y="494.375" font-family="DejaVu Sans, Arial, Helvetica, sans-serif" font-size="15" fill="#222" text-anchor="middle" font-weight="normal" font-style="normal" dominant-baseline="middle">gpio3</text>
+<rect x="1692" y="532.5" width="86" height="56.25" rx="0" fill="#fff3b0" fill-opacity="1" stroke="#555" stroke-width="1.5"/>
+<text x="1735" y="560.625" font-family="DejaVu Sans, Arial, Helvetica, sans-serif" font-size="15" fill="#222" text-anchor="middle" font-weight="normal" font-style="normal" dominant-baseline="middle">gpio4</text>
+<rect x="1692" y="598.75" width="86" height="56.25" rx="0" fill="#fff3b0" fill-opacity="1" stroke="#555" stroke-width="1.5"/>
+<text x="1735" y="626.875" font-family="DejaVu Sans, Arial, Helvetica, sans-serif" font-size="15" fill="#222" text-anchor="middle" font-weight="normal" font-style="normal" dominant-baseline="middle">gpio5</text>
+<rect x="1692" y="665.0" width="86" height="56.25" rx="0" fill="#8c8c8c" fill-opacity="1" stroke="#555" stroke-width="1.5"/>
+<text x="1735" y="693.125" font-family="DejaVu Sans, Arial, Helvetica, sans-serif" font-size="15" fill="#fff" text-anchor="middle" font-weight="normal" font-style="normal" dominant-baseline="middle">VDDIO</text>
+<rect x="1692" y="731.25" width="86" height="56.25" rx="0" fill="#8c8c8c" fill-opacity="1" stroke="#555" stroke-width="1.5"/>
+<text x="1735" y="759.375" font-family="DejaVu Sans, Arial, Helvetica, sans-serif" font-size="15" fill="#fff" text-anchor="middle" font-weight="normal" font-style="normal" dominant-baseline="middle">VSSIO</text>
+<rect x="1692" y="797.5" width="86" height="56.25" rx="0" fill="#fff3b0" fill-opacity="1" stroke="#555" stroke-width="1.5"/>
+<text x="1735" y="825.625" font-family="DejaVu Sans, Arial, Helvetica, sans-serif" font-size="15" fill="#222" text-anchor="middle" font-weight="normal" font-style="normal" dominant-baseline="middle">gpio6</text>
+<rect x="1692" y="863.75" width="86" height="56.25" rx="0" fill="#fff3b0" fill-opacity="1" stroke="#555" stroke-width="1.5"/>
+<text x="1735" y="891.875" font-family="DejaVu Sans, Arial, Helvetica, sans-serif" font-size="15" fill="#222" text-anchor="middle" font-weight="normal" font-style="normal" dominant-baseline="middle">gpio7</text>
+<rect x="1692" y="930.0" width="86" height="56.25" rx="0" fill="#fff3b0" fill-opacity="1" stroke="#555" stroke-width="1.5"/>
+<text x="1735" y="958.125" font-family="DejaVu Sans, Arial, Helvetica, sans-serif" font-size="15" fill="#222" text-anchor="middle" font-weight="normal" font-style="normal" dominant-baseline="middle">gpio8</text>
+<rect x="1692" y="996.25" width="86" height="56.25" rx="0" fill="#fff3b0" fill-opacity="1" stroke="#555" stroke-width="1.5"/>
+<text x="1735" y="1024.375" font-family="DejaVu Sans, Arial, Helvetica, sans-serif" font-size="15" fill="#222" text-anchor="middle" font-weight="normal" font-style="normal" dominant-baseline="middle">gpio9</text>
+<rect x="1692" y="1062.5" width="86" height="56.25" rx="0" fill="#fff3b0" fill-opacity="1" stroke="#555" stroke-width="1.5"/>
+<text x="1735" y="1090.625" font-family="DejaVu Sans, Arial, Helvetica, sans-serif" font-size="15" fill="#222" text-anchor="middle" font-weight="normal" font-style="normal" dominant-baseline="middle">gpio10</text>
+<rect x="1692" y="1128.75" width="86" height="56.25" rx="0" fill="#fff3b0" fill-opacity="1" stroke="#555" stroke-width="1.5"/>
+<text x="1735" y="1156.875" font-family="DejaVu Sans, Arial, Helvetica, sans-serif" font-size="15" fill="#222" text-anchor="middle" font-weight="normal" font-style="normal" dominant-baseline="middle">gpio11</text>
+<rect x="150" y="150" width="1500" height="1020" rx="0" fill="#e6e6e6" fill-opacity="1" stroke="#999" stroke-width="1.5"/>
+<text x="162" y="172" font-family="DejaVu Sans, Arial, Helvetica, sans-serif" font-size="22" fill="#000" text-anchor="start" font-weight="normal" font-style="normal" dominant-baseline="middle">croc_soc</text>
+<rect x="170" y="195" width="995" height="955" rx="0" fill="#cdcdcd" fill-opacity="1" stroke="none" stroke-width="0"/>
+<text x="182" y="218" font-family="DejaVu Sans, Arial, Helvetica, sans-serif" font-size="22" fill="#000" text-anchor="start" font-weight="normal" font-style="normal" dominant-baseline="middle">croc_domain</text>
+<rect x="1185" y="195" width="450" height="955" rx="0" fill="#cdcdcd" fill-opacity="1" stroke="none" stroke-width="0"/>
+<text x="1197" y="218" font-family="DejaVu Sans, Arial, Helvetica, sans-serif" font-size="22" fill="#000" text-anchor="start" font-weight="normal" font-style="normal" dominant-baseline="middle">user_domain</text>
+<rect x="560" y="245" width="160" height="55" rx="0" fill="#93005f" fill-opacity="1" stroke="none" stroke-width="0"/>
+<text x="640.0" y="273.5" font-family="DejaVu Sans, Arial, Helvetica, sans-serif" font-size="28" fill="#fff" text-anchor="middle" font-weight="normal" font-style="normal" dominant-baseline="middle">JTAG</text>
+<rect x="560" y="330" width="160" height="55" rx="0" fill="#93005f" fill-opacity="1" stroke="none" stroke-width="0"/>
+<text x="640.0" y="358.5" font-family="DejaVu Sans, Arial, Helvetica, sans-serif" font-size="28" fill="#fff" text-anchor="middle" font-weight="normal" font-style="normal" dominant-baseline="middle">Debug</text>
+<rect x="800" y="240" width="210" height="155" rx="0" fill="#d99a99" fill-opacity="1" stroke="none" stroke-width="0"/>
+<text x="808" y="258" font-family="DejaVu Sans, Arial, Helvetica, sans-serif" font-size="20" fill="#000" text-anchor="start" font-weight="normal" font-style="normal" dominant-baseline="middle">core_wrap</text>
+<rect x="815" y="275" width="180" height="110" rx="0" fill="#a8322d" fill-opacity="1" stroke="none" stroke-width="0"/>
+<text x="905.0" y="316.8" font-family="DejaVu Sans, Arial, Helvetica, sans-serif" font-size="34" fill="#fff" text-anchor="middle" font-weight="normal" font-style="normal" dominant-baseline="middle">CVE2</text>
+<text x="905.0" y="348.7" font-family="DejaVu Sans, Arial, Helvetica, sans-serif" font-size="22" fill="#fff" text-anchor="middle" font-weight="normal" font-style="normal" dominant-baseline="middle">(Ibex)</text>
+<rect x="470" y="430" width="680" height="60" rx="0" fill="#1a8a3a" fill-opacity="1" stroke="none" stroke-width="0"/>
+<text x="810.0" y="461.0" font-family="DejaVu Sans, Arial, Helvetica, sans-serif" font-size="32" fill="#fff" text-anchor="middle" font-weight="normal" font-style="normal" dominant-baseline="middle">OBI Crossbar</text>
+<polygon points="330,390 395,430 395,1040 330,1080" fill="#1a8a3a"/>
+<text x="362" y="735" font-family="DejaVu Sans, Arial, Helvetica, sans-serif" font-size="28" fill="#fff" text-anchor="middle" font-weight="normal" font-style="normal" dominant-baseline="middle" transform="rotate(-90 362 735)">OBI Demux</text>
+<rect x="215" y="450" width="100" height="48" rx="0" fill="#93005f" fill-opacity="1" stroke="none" stroke-width="0"/>
+<text x="265.0" y="475.0" font-family="DejaVu Sans, Arial, Helvetica, sans-serif" font-size="19" fill="#fff" text-anchor="middle" font-weight="normal" font-style="normal" dominant-baseline="middle">Bootrom</text>
+<polyline points="330,474 315,474" fill="none" stroke="#000" stroke-width="3" stroke-linejoin="round" marker-end="url(#a)"/>
+<rect x="215" y="512" width="100" height="48" rx="0" fill="#93005f" fill-opacity="1" stroke="none" stroke-width="0"/>
+<text x="265.0" y="537.0" font-family="DejaVu Sans, Arial, Helvetica, sans-serif" font-size="19" fill="#fff" text-anchor="middle" font-weight="normal" font-style="normal" dominant-baseline="middle">CLINT</text>
+<polyline points="330,536 315,536" fill="none" stroke="#000" stroke-width="3" stroke-linejoin="round" marker-end="url(#a)"/>
+<rect x="215" y="574" width="100" height="48" rx="0" fill="#93005f" fill-opacity="1" stroke="none" stroke-width="0"/>
+<text x="265.0" y="599.0" font-family="DejaVu Sans, Arial, Helvetica, sans-serif" font-size="19" fill="#fff" text-anchor="middle" font-weight="normal" font-style="normal" dominant-baseline="middle">SoC Regs</text>
+<polyline points="330,598 315,598" fill="none" stroke="#000" stroke-width="3" stroke-linejoin="round" marker-end="url(#a)"/>
+<rect x="215" y="636" width="100" height="48" rx="0" fill="#93005f" fill-opacity="1" stroke="none" stroke-width="0"/>
+<text x="265.0" y="661.0" font-family="DejaVu Sans, Arial, Helvetica, sans-serif" font-size="19" fill="#fff" text-anchor="middle" font-weight="normal" font-style="normal" dominant-baseline="middle">UART</text>
+<polyline points="330,660 315,660" fill="none" stroke="#000" stroke-width="3" stroke-linejoin="round" marker-end="url(#a)"/>
+<rect x="215" y="698" width="100" height="48" rx="0" fill="#93005f" fill-opacity="1" stroke="none" stroke-width="0"/>
+<text x="265.0" y="723.0" font-family="DejaVu Sans, Arial, Helvetica, sans-serif" font-size="19" fill="#fff" text-anchor="middle" font-weight="normal" font-style="normal" dominant-baseline="middle">GPIO</text>
+<polyline points="330,722 315,722" fill="none" stroke="#000" stroke-width="3" stroke-linejoin="round" marker-end="url(#a)"/>
+<rect x="215" y="760" width="100" height="48" rx="0" fill="#93005f" fill-opacity="1" stroke="none" stroke-width="0"/>
+<text x="265.0" y="785.0" font-family="DejaVu Sans, Arial, Helvetica, sans-serif" font-size="19" fill="#fff" text-anchor="middle" font-weight="normal" font-style="normal" dominant-baseline="middle">Timer</text>
+<polyline points="330,784 315,784" fill="none" stroke="#000" stroke-width="3" stroke-linejoin="round" marker-end="url(#a)"/>
+<rect x="560" y="560" width="160" height="70" rx="0" fill="#b05090" fill-opacity="0.55" stroke="#555" stroke-width="2.5" stroke-dasharray="8,6"/>
+<text x="640" y="585" font-family="DejaVu Sans, Arial, Helvetica, sans-serif" font-size="26" fill="#fff" text-anchor="middle" font-weight="normal" font-style="normal" dominant-baseline="middle">iDMA</text>
+<text x="640" y="612" font-family="DejaVu Sans, Arial, Helvetica, sans-serif" font-size="15" fill="#fff" text-anchor="middle" font-weight="normal" font-style="normal" dominant-baseline="middle">(disabled)</text>
+<rect x="800" y="525" width="350" height="380" rx="0" fill="#5b9bd5" fill-opacity="1" stroke="none" stroke-width="0"/>
+<text x="975" y="545" font-family="DejaVu Sans, Arial, Helvetica, sans-serif" font-size="22" fill="#fff" text-anchor="middle" font-weight="normal" font-style="normal" dominant-baseline="middle">SRAMs</text>
+<rect x="815" y="562" width="150" height="328" rx="0" fill="#1565b0" fill-opacity="1" stroke="none" stroke-width="0"/>
+<text x="890" y="690" font-family="DejaVu Sans, Arial, Helvetica, sans-serif" font-size="28" fill="#fff" text-anchor="middle" font-weight="normal" font-style="normal" dominant-baseline="middle" transform="rotate(-90 890 690)">Bank 0</text>
+<text x="890" y="800" font-family="DejaVu Sans, Arial, Helvetica, sans-serif" font-size="15" fill="#fff" text-anchor="middle" font-weight="normal" font-style="normal" dominant-baseline="middle">512×32</text>
+<rect x="830" y="830" width="120" height="45" rx="0" fill="#fbe3b8" fill-opacity="1" stroke="#b36b00" stroke-width="2"/>
+<text x="890" y="853" font-family="DejaVu Sans, Arial, Helvetica, sans-serif" font-size="17" fill="#7a4a00" text-anchor="middle" font-weight="bold" font-style="normal" dominant-baseline="middle">MBIST</text>
+<rect x="985" y="562" width="150" height="328" rx="0" fill="#1565b0" fill-opacity="1" stroke="none" stroke-width="0"/>
+<text x="1060" y="690" font-family="DejaVu Sans, Arial, Helvetica, sans-serif" font-size="28" fill="#fff" text-anchor="middle" font-weight="normal" font-style="normal" dominant-baseline="middle" transform="rotate(-90 1060 690)">Bank 1</text>
+<text x="1060" y="800" font-family="DejaVu Sans, Arial, Helvetica, sans-serif" font-size="15" fill="#fff" text-anchor="middle" font-weight="normal" font-style="normal" dominant-baseline="middle">512×32</text>
+<rect x="1000" y="830" width="120" height="45" rx="0" fill="#fbe3b8" fill-opacity="1" stroke="#b36b00" stroke-width="2"/>
+<text x="1060" y="853" font-family="DejaVu Sans, Arial, Helvetica, sans-serif" font-size="17" fill="#7a4a00" text-anchor="middle" font-weight="bold" font-style="normal" dominant-baseline="middle">MBIST</text>
+<polyline points="640,300 640,330" fill="none" stroke="#000" stroke-width="4" stroke-linejoin="round" marker-end="url(#a)"/>
+<polyline points="640,385 640,430" fill="none" stroke="#000" stroke-width="4" stroke-linejoin="round" marker-end="url(#a)"/>
+<polyline points="870,395 870,430" fill="none" stroke="#000" stroke-width="4" stroke-linejoin="round" marker-end="url(#a)"/>
+<polyline points="940,395 940,430" fill="none" stroke="#000" stroke-width="4" stroke-linejoin="round" marker-end="url(#a)"/>
+<polyline points="490,490 490,700 395,700" fill="none" stroke="#000" stroke-width="4" stroke-linejoin="round" marker-end="url(#a)"/>
+<polyline points="362,410 362,357 560,357" fill="none" stroke="#000" stroke-width="4" stroke-linejoin="round" marker-end="url(#a)"/>
+<polyline points="890,490 890,562" fill="none" stroke="#000" stroke-width="4" stroke-linejoin="round" marker-end="url(#a)"/>
+<polyline points="1060,490 1060,562" fill="none" stroke="#000" stroke-width="4" stroke-linejoin="round" marker-end="url(#a)"/>
+<polyline points="600,560 600,490" fill="none" stroke="#555" stroke-width="3" stroke-linejoin="round" stroke-dasharray="7,5" marker-end="url(#a)"/>
+<polyline points="680,560 680,490" fill="none" stroke="#555" stroke-width="3" stroke-linejoin="round" stroke-dasharray="7,5" marker-end="url(#a)"/>
+<polyline points="1150,462 1222,462" fill="none" stroke="#000" stroke-width="4" stroke-linejoin="round" marker-end="url(#a)"/>
+<text x="1186" y="450" font-family="DejaVu Sans, Arial, Helvetica, sans-serif" font-size="14" fill="#000" text-anchor="middle" font-weight="normal" font-style="normal" dominant-baseline="middle">sbr_obi</text>
+<text x="1300" y="500" font-family="DejaVu Sans, Arial, Helvetica, sans-serif" font-size="14" fill="#555" text-anchor="start" font-weight="normal" font-style="italic" dominant-baseline="middle">no mgr_obi (tied off)</text>
+<polygon points="1222,425 1262,445 1262,545 1222,565" fill="#1a8a3a"/>
+<text x="1243" y="495" font-family="DejaVu Sans, Arial, Helvetica, sans-serif" font-size="15" fill="#fff" text-anchor="middle" font-weight="normal" font-style="normal" dominant-baseline="middle" transform="rotate(-90 1243 495)">demux</text>
+<rect x="1300" y="425" width="130" height="44" rx="0" fill="#8a8a8a" fill-opacity="1" stroke="none" stroke-width="0"/>
+<text x="1365.0" y="448.0" font-family="DejaVu Sans, Arial, Helvetica, sans-serif" font-size="17" fill="#fff" text-anchor="middle" font-weight="normal" font-style="normal" dominant-baseline="middle">OBI error</text>
+<polyline points="1262,447 1300,447" fill="none" stroke="#000" stroke-width="3" stroke-linejoin="round" marker-end="url(#a)"/>
+<rect x="1210" y="590" width="400" height="500" rx="0" fill="#eb9a2f" fill-opacity="1" stroke="none" stroke-width="0"/>
+<text x="1272" y="612" font-family="DejaVu Sans, Arial, Helvetica, sans-serif" font-size="22" fill="#000" text-anchor="start" font-weight="bold" font-style="normal" dominant-baseline="middle">VAD Subsystem</text>
+<rect x="1230" y="630" width="360" height="60" rx="0" fill="#fbe3b8" fill-opacity="1" stroke="#b36b00" stroke-width="2"/>
+<text x="1410" y="650" font-family="DejaVu Sans, Arial, Helvetica, sans-serif" font-size="18" fill="#000" text-anchor="middle" font-weight="bold" font-style="normal" dominant-baseline="middle">VAD CSRs  (0x2000_0000)</text>
+<text x="1410" y="674" font-family="DejaVu Sans, Arial, Helvetica, sans-serif" font-size="14" fill="#000" text-anchor="middle" font-weight="normal" font-style="normal" dominant-baseline="middle">ctrl · SRAM debug · status · last result</text>
+<polyline points="1242,545 1242,630" fill="none" stroke="#000" stroke-width="4" stroke-linejoin="round" marker-end="url(#a)"/>
+<rect x="1230" y="715" width="150" height="50" rx="0" fill="#fbe3b8" fill-opacity="1" stroke="#b36b00" stroke-width="2"/>
+<text x="1305" y="740" font-family="DejaVu Sans, Arial, Helvetica, sans-serif" font-size="17" fill="#000" text-anchor="middle" font-weight="normal" font-style="normal" dominant-baseline="middle">CDC FIFO</text>
+<rect x="1440" y="715" width="150" height="50" rx="0" fill="#fbe3b8" fill-opacity="1" stroke="#b36b00" stroke-width="2"/>
+<text x="1515" y="740" font-family="DejaVu Sans, Arial, Helvetica, sans-serif" font-size="17" fill="#000" text-anchor="middle" font-weight="normal" font-style="normal" dominant-baseline="middle">I2S RX</text>
+<polyline points="1440,740 1380,740" fill="none" stroke="#000" stroke-width="3" stroke-linejoin="round" marker-end="url(#a)"/>
+<rect x="1230" y="790" width="360" height="185" rx="0" fill="#fbe3b8" fill-opacity="1" stroke="#b36b00" stroke-width="2"/>
+<text x="1410" y="805" font-family="DejaVu Sans, Arial, Helvetica, sans-serif" font-size="14" fill="#000" text-anchor="middle" font-weight="normal" font-style="normal" dominant-baseline="middle">Ping-pong buffer</text>
+<rect x="1245" y="818" width="155" height="145" rx="0" fill="#1565b0" fill-opacity="1" stroke="none" stroke-width="0"/>
+<text x="1322" y="845" font-family="DejaVu Sans, Arial, Helvetica, sans-serif" font-size="20" fill="#fff" text-anchor="middle" font-weight="normal" font-style="normal" dominant-baseline="middle">Bank 0</text>
+<text x="1322" y="870" font-family="DejaVu Sans, Arial, Helvetica, sans-serif" font-size="14" fill="#fff" text-anchor="middle" font-weight="normal" font-style="normal" dominant-baseline="middle">512×32</text>
+<rect x="1260" y="905" width="125" height="42" rx="0" fill="#fbe3b8" fill-opacity="1" stroke="#b36b00" stroke-width="2"/>
+<text x="1322" y="926" font-family="DejaVu Sans, Arial, Helvetica, sans-serif" font-size="16" fill="#7a4a00" text-anchor="middle" font-weight="bold" font-style="normal" dominant-baseline="middle">MBIST</text>
+<rect x="1420" y="818" width="155" height="145" rx="0" fill="#1565b0" fill-opacity="1" stroke="none" stroke-width="0"/>
+<text x="1497" y="845" font-family="DejaVu Sans, Arial, Helvetica, sans-serif" font-size="20" fill="#fff" text-anchor="middle" font-weight="normal" font-style="normal" dominant-baseline="middle">Bank 1</text>
+<text x="1497" y="870" font-family="DejaVu Sans, Arial, Helvetica, sans-serif" font-size="14" fill="#fff" text-anchor="middle" font-weight="normal" font-style="normal" dominant-baseline="middle">512×32</text>
+<rect x="1435" y="905" width="125" height="42" rx="0" fill="#fbe3b8" fill-opacity="1" stroke="#b36b00" stroke-width="2"/>
+<text x="1497" y="926" font-family="DejaVu Sans, Arial, Helvetica, sans-serif" font-size="16" fill="#7a4a00" text-anchor="middle" font-weight="bold" font-style="normal" dominant-baseline="middle">MBIST</text>
+<polyline points="1305,765 1305,790" fill="none" stroke="#000" stroke-width="3" stroke-linejoin="round" marker-end="url(#a)"/>
+<rect x="1230" y="1000" width="360" height="65" rx="0" fill="#fbe3b8" fill-opacity="1" stroke="#b36b00" stroke-width="2"/>
+<text x="1410" y="1032" font-family="DejaVu Sans, Arial, Helvetica, sans-serif" font-size="18" fill="#000" text-anchor="middle" font-weight="normal" font-style="normal" dominant-baseline="middle">VAD core  (energy, ZCR)</text>
+<polyline points="1410,975 1410,1000" fill="none" stroke="#000" stroke-width="3" stroke-linejoin="round" marker-end="url(#a)"/>
+<polyline points="1595,590 1595,320 1010,320" fill="none" stroke="#000" stroke-width="4" stroke-linejoin="round" marker-end="url(#a)"/>
+<text x="1300" y="308" font-family="DejaVu Sans, Arial, Helvetica, sans-serif" font-size="15" fill="#000" text-anchor="middle" font-weight="normal" font-style="normal" dominant-baseline="middle">irq (VAD speech)</text>
+<polyline points="1590,740 1690,740" fill="none" stroke="#c62828" stroke-width="3" stroke-linejoin="round" stroke-dasharray="8,6"/>
+<text x="1690" y="740" font-family="DejaVu Sans, Arial, Helvetica, sans-serif" font-size="22" fill="#c62828" text-anchor="middle" font-weight="bold" font-style="normal" dominant-baseline="middle">✕</text>
+<text x="1450" y="703" font-family="DejaVu Sans, Arial, Helvetica, sans-serif" font-size="13" fill="#c62828" text-anchor="start" font-weight="normal" font-style="normal" dominant-baseline="middle">I2S: no pads yet (sd tied 0)</text>
+<polyline points="215,598 190,598 190,1125 1625,1125 1625,880 1590,880" fill="none" stroke="#d9822b" stroke-width="3" stroke-linejoin="round" stroke-dasharray="10,6" marker-end="url(#a)"/>
+<polyline points="890,1125 890,890" fill="none" stroke="#d9822b" stroke-width="3" stroke-linejoin="round" stroke-dasharray="10,6" marker-end="url(#a)"/>
+<polyline points="1060,1125 1060,890" fill="none" stroke="#d9822b" stroke-width="3" stroke-linejoin="round" stroke-dasharray="10,6" marker-end="url(#a)"/>
+<text x="215" y="1108" font-family="DejaVu Sans, Arial, Helvetica, sans-serif" font-size="15" fill="#8a4b0f" text-anchor="start" font-weight="normal" font-style="normal" dominant-baseline="middle">MBIST start / status / error FIFO  (macros 0–3)</text>
+<polyline points="466.875,108 466.875,130 851.875,130 851.875,108" fill="none" stroke="#000" stroke-width="3" stroke-linejoin="round"/>
+<polyline points="563.125,108 563.125,130" fill="none" stroke="#000" stroke-width="3" stroke-linejoin="round"/>
+<polyline points="659.375,108 659.375,130" fill="none" stroke="#000" stroke-width="3" stroke-linejoin="round"/>
+<polyline points="755.625,108 755.625,130" fill="none" stroke="#000" stroke-width="3" stroke-linejoin="round"/>
+<polyline points="640,130 640,245" fill="none" stroke="#000" stroke-width="3" stroke-linejoin="round" marker-end="url(#a)"/>
+<text x="650" y="165" font-family="DejaVu Sans, Arial, Helvetica, sans-serif" font-size="15" fill="#000" text-anchor="start" font-weight="normal" font-style="normal" dominant-baseline="middle">jtag</text>
+<polyline points="370.625,108 370.625,150" fill="none" stroke="#000" stroke-width="3" stroke-linejoin="round" marker-end="url(#a)"/>
+<polyline points="1140.625,108 1140.625,150" fill="none" stroke="#000" stroke-width="3" stroke-linejoin="round" marker-end="url(#a)"/>
+<polyline points="1236.875,108 1236.875,150" fill="none" stroke="#000" stroke-width="3" stroke-linejoin="round" marker-end="url(#a)"/>
+<polyline points="1333.125,108 1333.125,150" fill="none" stroke="#000" stroke-width="3" stroke-linejoin="round" marker-end="url(#a)"/>
+<polyline points="1429.375,150 1429.375,108" fill="none" stroke="#000" stroke-width="3" stroke-linejoin="round" marker-end="url(#a)"/>
+<polyline points="1525.625,150 1525.625,108" fill="none" stroke="#000" stroke-width="3" stroke-linejoin="round" marker-end="url(#a)"/>
+<polyline points="1621.875,150 1621.875,108" fill="none" stroke="#000" stroke-width="3" stroke-linejoin="round" marker-end="url(#a)"/>
+<polyline points="108,626.875 150,626.875 150,693.125 108,693.125" fill="none" stroke="#000" stroke-width="3" stroke-linejoin="round"/>
+<polyline points="150,660 215,660" fill="none" stroke="#000" stroke-width="3" stroke-linejoin="round" marker-end="url(#a)"/>
+<text x="158" y="646" font-family="DejaVu Sans, Arial, Helvetica, sans-serif" font-size="14" fill="#000" text-anchor="start" font-weight="normal" font-style="normal" dominant-baseline="middle">uart</text>
+<polyline points="108,759.375 135,759.375" fill="none" stroke="#000" stroke-width="3" stroke-linejoin="round"/>
+<polyline points="108,825.625 135,825.625" fill="none" stroke="#000" stroke-width="3" stroke-linejoin="round"/>
+<polyline points="108,891.875 135,891.875" fill="none" stroke="#000" stroke-width="3" stroke-linejoin="round"/>
+<polyline points="108,958.125 135,958.125" fill="none" stroke="#000" stroke-width="3" stroke-linejoin="round"/>
+<polyline points="135,958.125 135,722 215,722" fill="none" stroke="#000" stroke-width="3" stroke-linejoin="round" marker-end="url(#a)"/>
+<text x="158" y="708" font-family="DejaVu Sans, Arial, Helvetica, sans-serif" font-size="14" fill="#000" text-anchor="start" font-weight="normal" font-style="normal" dominant-baseline="middle">gpio</text>
+<polyline points="150,1090.625 108,1090.625" fill="none" stroke="#000" stroke-width="3" stroke-linejoin="round" marker-end="url(#a)"/>
+<polyline points="150,1156.875 108,1156.875" fill="none" stroke="#000" stroke-width="3" stroke-linejoin="round" marker-end="url(#a)"/>
+<rect x="40" y="1330" width="34" height="24" rx="0" fill="#c8e6c9" fill-opacity="1" stroke="#555" stroke-width="1.5"/>
+<text x="84" y="1343" font-family="DejaVu Sans, Arial, Helvetica, sans-serif" font-size="17" fill="#000" text-anchor="start" font-weight="normal" font-style="normal" dominant-baseline="middle">input pad</text>
+<rect x="340" y="1330" width="34" height="24" rx="0" fill="#ffcdd2" fill-opacity="1" stroke="#555" stroke-width="1.5"/>
+<text x="384" y="1343" font-family="DejaVu Sans, Arial, Helvetica, sans-serif" font-size="17" fill="#000" text-anchor="start" font-weight="normal" font-style="normal" dominant-baseline="middle">output pad</text>
+<rect x="640" y="1330" width="34" height="24" rx="0" fill="#fff3b0" fill-opacity="1" stroke="#555" stroke-width="1.5"/>
+<text x="684" y="1343" font-family="DejaVu Sans, Arial, Helvetica, sans-serif" font-size="17" fill="#000" text-anchor="start" font-weight="normal" font-style="normal" dominant-baseline="middle">bidirectional pad (GPIO)</text>
+<rect x="940" y="1330" width="34" height="24" rx="0" fill="#8c8c8c" fill-opacity="1" stroke="#555" stroke-width="1.5"/>
+<text x="984" y="1343" font-family="DejaVu Sans, Arial, Helvetica, sans-serif" font-size="17" fill="#000" text-anchor="start" font-weight="normal" font-style="normal" dominant-baseline="middle">power pad</text>
+<polyline points="1240,1342 1300,1342" fill="none" stroke="#d9822b" stroke-width="3" stroke-linejoin="round" stroke-dasharray="10,6"/>
+<text x="1310" y="1343" font-family="DejaVu Sans, Arial, Helvetica, sans-serif" font-size="17" fill="#000" text-anchor="start" font-weight="normal" font-style="normal" dominant-baseline="middle">MBIST control</text>
+<text x="40" y="1385" font-family="DejaVu Sans, Arial, Helvetica, sans-serif" font-size="15" fill="#444" text-anchor="start" font-weight="normal" font-style="normal" dominant-baseline="middle">64 IHP sg13cmos5l IO cells: 48 signal + 16 power. GPIO pads on all four sides connect to the GPIO block. Pad order is illustrative, not the floorplan.</text>
+</svg>

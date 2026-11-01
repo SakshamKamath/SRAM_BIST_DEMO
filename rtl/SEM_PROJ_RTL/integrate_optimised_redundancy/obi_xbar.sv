@@ -47,7 +47,10 @@ module obi_xbar #(
   /// Bypass enable for manager side requests (Manager side).
   parameter bit [NumMgrPorts-1:0] BypassReqMgr    = '0,
   /// Bypass enable for manager side responses(Manager side).
-  parameter bit [NumMgrPorts-1:0] BypassRspMgr    = '0
+  parameter bit [NumMgrPorts-1:0] BypassRspMgr    = '0,
+  /// JTAG crossbar test: 1 = isolation + XcnctSubAccess (obi_jtag_top),
+  /// 0 = isolation only (obi_jtag_top_isol)
+  parameter bit                JtagSubAccess   = 1'b1
 ) (
   input  logic clk_i,
   input  logic rst_ni,
@@ -88,51 +91,108 @@ module obi_xbar #(
 
 
 
+  // Crossbar clock: follows the cuts (TCK in isolation) so a scan step is one crossbar cycle
+  logic xbar_clk;
+
   // Multicut with JTAG capabilities 
-  obi_jtag_top #(
-    .SbrPortObiCfg      (SbrPortObiCfg),
-    .MgrPortObiCfg      (MgrPortObiCfg),
-    .sbr_port_obi_req_t (sbr_port_obi_req_t),
-    .sbr_port_a_chan_t  (sbr_port_a_chan_t),
-    .sbr_port_obi_rsp_t (sbr_port_obi_rsp_t),
-    .sbr_port_r_chan_t  (sbr_port_r_chan_t),
-    .mgr_port_obi_req_t (mgr_port_obi_req_t),
-    .mgr_port_a_chan_t  (mgr_port_a_chan_t),
-    .mgr_port_obi_rsp_t (mgr_port_obi_rsp_t),
-    .mgr_port_r_chan_t  (mgr_port_r_chan_t),
-    .NumSbrPorts        (NumSbrPorts),
-    .NumMgrPorts        (NumMgrPorts),
-    .NumMaxTrans        (NumMaxTrans),
-    .NumAddrRules       (NumAddrRules),
-    .addr_map_rule_t    (addr_map_rule_t),
-    .BypassReqSbr       (BypassReqSbr),
-    .BypassRspSbr       (BypassRspSbr),
-    .BypassReqMgr       (BypassReqMgr),
-    .BypassRspMgr       (BypassRspMgr)
-) i_obi_jtag_top (
-                  .clk_i                        (clk_i),
-                  .rst_ni                       (rst_ni),
-                  .testmode_i                   (testmode_i),
-                  .tclk_i                       (tclk_i),
-                  .trst_ni                      (trst_ni),
-                  .tdi_i                        (tdi_i),
-                  .tms_i                        (tms_i),
-                  .tdo_o                        (tdo_o),
-                  .mst_cut_sbr_ports_req_i      (sbr_ports_req_i), 
-                  .cut_xbar_sbr_ports_req_o     (cut_out_sbr_ports_req),
-                  .xbar_cut_sbr_ports_rsp_i     (cut_in_sbr_ports_rsp), 
-                  .cut_mst_sbr_ports_rsp_o      (sbr_ports_rsp_o),
-                  .xbar_cut_mgr_ports_req_i     (cut_in_mgr_ports_req), 
-                  .cut_slv_mgr_ports_req_o      (mgr_ports_req_o),
-                  .slv_cut_mgr_ports_rsp_i      (mgr_ports_rsp_i), 
-                  .cut_xbar_mgr_ports_rsp_o     (cut_out_mgr_ports_rsp),
-                  .addr_map_i                   (addr_map_i),
-                  .addr_map_o                   (cut_out_addr_map),
-                  .en_default_idx_i             (en_default_idx_i),
-                  .en_default_idx_o             (cut_out_en_default_idx),
-                  .default_idx_i                (default_idx_i),
-                  .default_idx_o                (cut_out_default_idx)
-                 );
+  // Sub-access mode active (XcnctSubAccess); always 0 in the isolation-only version
+  logic jtag_sub_access;
+
+  if (JtagSubAccess) begin : gen_jtag
+    obi_jtag_top #(
+      .SbrPortObiCfg      (SbrPortObiCfg),
+      .MgrPortObiCfg      (MgrPortObiCfg),
+      .sbr_port_obi_req_t (sbr_port_obi_req_t),
+      .sbr_port_a_chan_t  (sbr_port_a_chan_t),
+      .sbr_port_obi_rsp_t (sbr_port_obi_rsp_t),
+      .sbr_port_r_chan_t  (sbr_port_r_chan_t),
+      .mgr_port_obi_req_t (mgr_port_obi_req_t),
+      .mgr_port_a_chan_t  (mgr_port_a_chan_t),
+      .mgr_port_obi_rsp_t (mgr_port_obi_rsp_t),
+      .mgr_port_r_chan_t  (mgr_port_r_chan_t),
+      .NumSbrPorts        (NumSbrPorts),
+      .NumMgrPorts        (NumMgrPorts),
+      .NumMaxTrans        (NumMaxTrans),
+      .NumAddrRules       (NumAddrRules),
+      .addr_map_rule_t    (addr_map_rule_t),
+      .BypassReqSbr       (BypassReqSbr),
+      .BypassRspSbr       (BypassRspSbr),
+      .BypassReqMgr       (BypassReqMgr),
+      .BypassRspMgr       (BypassRspMgr)
+  ) i_obi_jtag_top (
+                    .clk_i                        (clk_i),
+                    .rst_ni                       (rst_ni),
+                    .testmode_i                   (testmode_i),
+                    .tclk_i                       (tclk_i),
+                    .trst_ni                      (trst_ni),
+                    .tdi_i                        (tdi_i),
+                    .tms_i                        (tms_i),
+                    .tdo_o                        (tdo_o),
+                    .xcnct_sub_access_o           (jtag_sub_access),
+                    .xbar_clk_o                   (xbar_clk),
+                    .mst_cut_sbr_ports_req_i      (sbr_ports_req_i), 
+                    .cut_xbar_sbr_ports_req_o     (cut_out_sbr_ports_req),
+                    .xbar_cut_sbr_ports_rsp_i     (cut_in_sbr_ports_rsp), 
+                    .cut_mst_sbr_ports_rsp_o      (sbr_ports_rsp_o),
+                    .xbar_cut_mgr_ports_req_i     (cut_in_mgr_ports_req), 
+                    .cut_slv_mgr_ports_req_o      (mgr_ports_req_o),
+                    .slv_cut_mgr_ports_rsp_i      (mgr_ports_rsp_i), 
+                    .cut_xbar_mgr_ports_rsp_o     (cut_out_mgr_ports_rsp),
+                    .addr_map_i                   (addr_map_i),
+                    .addr_map_o                   (cut_out_addr_map),
+                    .en_default_idx_i             (en_default_idx_i),
+                    .en_default_idx_o             (cut_out_en_default_idx),
+                    .default_idx_i                (default_idx_i),
+                    .default_idx_o                (cut_out_default_idx)
+                   );
+  end else begin : gen_jtag
+    assign jtag_sub_access = 1'b0;
+    obi_jtag_top_isol #(
+      .SbrPortObiCfg      (SbrPortObiCfg),
+      .MgrPortObiCfg      (MgrPortObiCfg),
+      .sbr_port_obi_req_t (sbr_port_obi_req_t),
+      .sbr_port_a_chan_t  (sbr_port_a_chan_t),
+      .sbr_port_obi_rsp_t (sbr_port_obi_rsp_t),
+      .sbr_port_r_chan_t  (sbr_port_r_chan_t),
+      .mgr_port_obi_req_t (mgr_port_obi_req_t),
+      .mgr_port_a_chan_t  (mgr_port_a_chan_t),
+      .mgr_port_obi_rsp_t (mgr_port_obi_rsp_t),
+      .mgr_port_r_chan_t  (mgr_port_r_chan_t),
+      .NumSbrPorts        (NumSbrPorts),
+      .NumMgrPorts        (NumMgrPorts),
+      .NumMaxTrans        (NumMaxTrans),
+      .NumAddrRules       (NumAddrRules),
+      .addr_map_rule_t    (addr_map_rule_t),
+      .BypassReqSbr       (BypassReqSbr),
+      .BypassRspSbr       (BypassRspSbr),
+      .BypassReqMgr       (BypassReqMgr),
+      .BypassRspMgr       (BypassRspMgr)
+  ) i_obi_jtag_top (
+                    .clk_i                        (clk_i),
+                    .rst_ni                       (rst_ni),
+                    .testmode_i                   (testmode_i),
+                    .tclk_i                       (tclk_i),
+                    .trst_ni                      (trst_ni),
+                    .tdi_i                        (tdi_i),
+                    .tms_i                        (tms_i),
+                    .tdo_o                        (tdo_o),
+                    .xbar_clk_o                   (xbar_clk),
+                    .mst_cut_sbr_ports_req_i      (sbr_ports_req_i), 
+                    .cut_xbar_sbr_ports_req_o     (cut_out_sbr_ports_req),
+                    .xbar_cut_sbr_ports_rsp_i     (cut_in_sbr_ports_rsp), 
+                    .cut_mst_sbr_ports_rsp_o      (sbr_ports_rsp_o),
+                    .xbar_cut_mgr_ports_req_i     (cut_in_mgr_ports_req), 
+                    .cut_slv_mgr_ports_req_o      (mgr_ports_req_o),
+                    .slv_cut_mgr_ports_rsp_i      (mgr_ports_rsp_i), 
+                    .cut_xbar_mgr_ports_rsp_o     (cut_out_mgr_ports_rsp),
+                    .addr_map_i                   (addr_map_i),
+                    .addr_map_o                   (cut_out_addr_map),
+                    .en_default_idx_i             (en_default_idx_i),
+                    .en_default_idx_o             (cut_out_en_default_idx),
+                    .default_idx_i                (default_idx_i),
+                    .default_idx_o                (cut_out_default_idx)
+                   );
+  end
 
 
   logic [NumSbrPorts-1:0][cf_math_pkg::idx_width(NumMgrPorts)-1:0] sbr_port_select;
@@ -168,7 +228,7 @@ module obi_xbar #(
       .NumMgrPorts ( NumMgrPorts        ),
       .NumMaxTrans ( NumMaxTrans        )
     ) i_demux (
-      .clk_i,
+      .clk_i ( xbar_clk ),
       .rst_ni,
       .sbr_port_select_i ( sbr_port_select[i]            ),
       .sbr_port_req_i    ( cut_out_sbr_ports_req[i]      ),
@@ -202,7 +262,7 @@ module obi_xbar #(
           .NumMaxTrans ( NumMaxTrans        ),
           .RspData     ( 32'hBADCAB1E       )
         ) i_err_sbr (
-          .clk_i,
+          .clk_i ( xbar_clk ),
           .rst_ni,
           .testmode_i,
           .obi_req_i (sbr_reqs[i][j]),
@@ -226,7 +286,7 @@ module obi_xbar #(
       .NumMaxTrans        ( NumMaxTrans        ),
       .UseIdForRouting    ( UseIdForRouting    )
     ) i_mux (
-      .clk_i,
+      .clk_i ( xbar_clk ),
       .rst_ni,
       .testmode_i,
       .sbr_ports_req_i ( mgr_reqs[i]                ),

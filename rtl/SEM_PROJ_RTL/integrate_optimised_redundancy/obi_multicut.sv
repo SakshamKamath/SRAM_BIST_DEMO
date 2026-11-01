@@ -42,11 +42,15 @@ module obi_multicut #(
 ) (
     input  logic clk_i,
     input  logic rst_ni,
+    // System clock of the subordinates (clk_i is TCK during isolation)
+    input  logic sys_clk_i,
     // input  logic testmode_i,
 
     // JTAG Interface 
     input  logic tdi_i,
     input  logic isol_en_i,
+    // Sub-access mode: subordinate-side cuts may issue one real transaction per step
+    input  logic sub_access_i,
     input  logic capture_dr_i,
     input  logic shift_dr_i,
     input  logic update_dr_i,
@@ -130,10 +134,16 @@ for (genvar i = 0; i < NumSbrPorts; i++) begin : gen_sbr_cuts
       .obi_rsp_t         ( sbr_port_obi_rsp_t ),
       .xcnct_isol_t      ( xcnct_isol_misc_t  ),
       .BypassReq         ( BypassReqSbr[i]    ),
-      .BypassRsp         ( BypassRspSbr[i]    )
+      .BypassRsp         ( BypassRspSbr[i]    ),
+      // Faces a manager: req into the crossbar from scan, gnt/rvalid to the manager held 0
+      .IsolDriveReq      ( 1'b1               ),
+      .IsolDriveGnt      ( 1'b0               ),
+      .IsolDriveRvalid   ( 1'b0               ),
+      .IsolSubAccess     ( 1'b0               )
     ) i_sbr_obi_cut      ( 
       .clk_i,
       .rst_ni,
+      .sys_clk_i,
 
       .sbr_port_req_i ( mst_cut_sbr_ports_req_i[i]  ),
       .sbr_port_rsp_o ( cut_mst_sbr_ports_rsp_o[i]  ),
@@ -143,6 +153,7 @@ for (genvar i = 0; i < NumSbrPorts; i++) begin : gen_sbr_cuts
 
       // JTAG Control
       .isol_en_i,
+      .sub_access_i ( isol_en_i && sub_access_i ),
       .capture_dr_i,
       .shift_dr_i,
       .update_dr_i,
@@ -165,10 +176,16 @@ for (genvar j = 0; j < NumMgrPorts; j++) begin : gen_mgr_cuts
       .obi_rsp_t         ( mgr_port_obi_rsp_t ),
       .xcnct_isol_t      ( xcnct_isol_misc_t  ),
       .BypassReq         ( BypassReqMgr[j]    ),
-      .BypassRsp         ( BypassRspMgr[j]    )
+      .BypassRsp         ( BypassRspMgr[j]    ),
+      // Faces a subordinate: grants the crossbar during a step, rvalid from scan, req to the subordinate held 0
+      .IsolDriveReq      ( 1'b0               ),
+      .IsolDriveGnt      ( 1'b1               ),
+      .IsolDriveRvalid   ( 1'b1               ),
+      .IsolSubAccess     ( 1'b1               )
     ) i_mgr_obi_cut (
       .clk_i,
       .rst_ni,
+      .sys_clk_i,
 
       .sbr_port_req_i ( xbar_cut_mgr_ports_req_i[j] ),
       .sbr_port_rsp_o ( cut_xbar_mgr_ports_rsp_o[j] ),
@@ -178,6 +195,7 @@ for (genvar j = 0; j < NumMgrPorts; j++) begin : gen_mgr_cuts
 
       // JTAG Control
       .isol_en_i,
+      .sub_access_i ( isol_en_i && sub_access_i ),
       .capture_dr_i,
       .shift_dr_i,
       .update_dr_i,

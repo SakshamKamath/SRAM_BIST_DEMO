@@ -1,0 +1,112 @@
+// Copyright 2023 ETH Zurich and University of Bologna.
+// Solderpad Hardware License, Version 0.51, see LICENSE for details.
+// SPDX-License-Identifier: SHL-0.51
+
+// Michael Rogenmoser <michaero@iis.ee.ethz.ch>
+
+// Isolation-only version of obi_cut_mod (no sub-access mode): JTAG transfers stay inside the
+// isolated crossbar and never reach a subordinate.
+module obi_cut_mod_isol #(
+    /// The OBI configuration.
+  parameter obi_pkg::obi_cfg_t ObiCfg       = obi_pkg::ObiDefaultConfig,
+  /// The obi A channel struct.
+  parameter type               obi_a_chan_t = logic,
+  /// The obi R channel struct.
+  parameter type               obi_r_chan_t = logic,
+  /// The request struct.
+  parameter type               obi_req_t    = logic,
+  /// The response struct.
+  parameter type               obi_rsp_t    = logic,
+  /// Isolation Bus type struct
+  parameter type               xcnct_isol_t = logic,
+  /// Bypass enable, can be individually overridden!
+  parameter bit                Bypass       = 1'b0,
+  /// Bypass enable for Request side.
+  parameter bit                BypassReq    = Bypass,
+  /// Bypass enable for Response side.
+  parameter bit                BypassRsp    = Bypass,
+  /// In isolation, drive req (A valid_o) from the scan cell for one step
+  parameter bit                IsolDriveReq    = 1'b0,
+  /// In isolation, grant (A ready_o = 1) during every step
+  parameter bit                IsolDriveGnt    = 1'b0,
+  /// In isolation, drive rvalid (R valid_o) from the scan cell for one step
+  parameter bit                IsolDriveRvalid = 1'b0
+) (
+  input  logic     clk_i,
+  input  logic     rst_ni,
+
+  input  obi_req_t sbr_port_req_i,
+  output obi_rsp_t sbr_port_rsp_o,
+
+  output obi_req_t mgr_port_req_o,
+  input  obi_rsp_t mgr_port_rsp_i,
+
+  //JTAG Interface
+  input  logic tdi_i,
+  output logic tdo_o,
+
+  // -- Tap Signals --
+  input  logic isol_en_i,
+  input  logic capture_dr_i,
+  input  logic shift_dr_i,
+  input  logic update_dr_i
+
+);
+
+  logic spreg_daisy_chain;
+
+  spill_register_mod_isol #(
+    .T              ( obi_a_chan_t ),
+    .Bypass         ( BypassReq    ),
+    .IsolDriveValid ( IsolDriveReq ),
+    .IsolDriveReady ( IsolDriveGnt )
+  ) i_reg_a (
+    .clk_i,
+    .rst_ni,
+    .valid_i    ( sbr_port_req_i.req          ),
+    .ready_o    ( sbr_port_rsp_o.gnt          ),
+    .data_i     ( sbr_port_req_i.a            ),
+    .valid_o    ( mgr_port_req_o.req          ),
+    .ready_i    ( mgr_port_rsp_i.gnt          ),
+    .data_o     ( mgr_port_req_o.a            ),
+    .isol_en_i,
+    .capture_dr_i,
+    .shift_dr_i,
+    .update_dr_i,
+    .tdi_i,
+    .tdo_o(spreg_daisy_chain)
+  );
+
+  logic ready_o;
+  logic ready_i;
+
+  if (ObiCfg.UseRReady) begin : gen_use_rready
+    assign mgr_port_req_o.rready = ready_o;
+    assign ready_i = sbr_port_req_i.rready;
+  end else begin : gen_no_use_rready
+    assign ready_i = 1'b1;
+  end
+
+  spill_register_mod_isol #(
+    .T              ( obi_r_chan_t    ),
+    .Bypass         ( BypassRsp       ),
+    .IsolDriveValid ( IsolDriveRvalid ),
+    .IsolDriveReady ( 1'b0            )
+  ) i_req_r (
+    .clk_i,
+    .rst_ni,
+    .valid_i    ( mgr_port_rsp_i.rvalid       ),
+    .ready_o    ( ready_o                     ),
+    .data_i     ( mgr_port_rsp_i.r            ),
+    .valid_o    ( sbr_port_rsp_o.rvalid       ),
+    .ready_i    ( ready_i                     ),
+    .data_o     ( sbr_port_rsp_o.r            ),
+    .isol_en_i,
+    .capture_dr_i,
+    .shift_dr_i,
+    .update_dr_i,
+    .tdi_i(spreg_daisy_chain),
+    .tdo_o
+  );
+
+endmodule

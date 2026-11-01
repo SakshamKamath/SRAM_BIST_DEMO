@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1230" viewBox="0 0 1600 1230">
+<defs><marker id="a" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="4" markerHeight="4" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#000"/></marker></defs>
+<rect width="1600" height="1230" fill="#fff"/>
+<rect x="30" y="30" width="1540" height="1100" rx="0" fill="#f7f7f7" stroke="#333" stroke-width="3"/>
+<rect x="30" y="30" width="72" height="72" rx="0" fill="#d0d0d0" stroke="#555" stroke-width="1.5"/>
+<rect x="1498" y="30" width="72" height="72" rx="0" fill="#d0d0d0" stroke="#555" stroke-width="1.5"/>
+<rect x="30" y="1058" width="72" height="72" rx="0" fill="#d0d0d0" stroke="#555" stroke-width="1.5"/>
+<rect x="1498" y="1058" width="72" height="72" rx="0" fill="#d0d0d0" stroke="#555" stroke-width="1.5"/>
+<rect x="118.0" y="33" width="102.66666666666667" height="66" rx="0" fill="#8c8c8c" stroke="#555" stroke-width="1.5"/>
+<rect x="232.66666666666669" y="33" width="102.66666666666667" height="66" rx="0" fill="#8c8c8c" stroke="#555" stroke-width="1.5"/>
+<rect x="347.33333333333337" y="33" width="102.66666666666667" height="66" rx="0" fill="#c8e6c9" stroke="#555" stroke-width="1.5"/>
+<rect x="462.0" y="33" width="102.66666666666667" height="66" rx="0" fill="#c8e6c9" stroke="#555" stroke-width="1.5"/>
+<rect x="576.6666666666667" y="33" width="102.66666666666667" height="66" rx="0" fill="#c8e6c9" stroke="#555" stroke-width="1.5"/>
+<rect x="691.3333333333334" y="33" width="102.66666666666667" height="66" rx="0" fill="#c8e6c9" stroke="#555" stroke-width="1.5"/>
+<rect x="806.0" y="33" width="102.66666666666667" height="66" rx="0" fill="#ffcdd2" stroke="#555" stroke-width="1.5"/>
+<rect x="920.6666666666667" y="33" width="102.66666666666667" height="66" rx="0" fill="#c8e6c9" stroke="#555" stroke-width="1.5"/>
+<rect x="1035.3333333333335" y="33" width="102.66666666666667" height="66" rx="0" fill="#c8e6c9" stroke="#555" stroke-width="1.5"/>
+<rect x="1150.0" y="33" width="102.66666666666667" height="66" rx="0" fill="#c8e6c9" stroke="#555" stroke-width="1.5"/>
+<rect x="1264.6666666666667" y="33" width="102.66666666666667" height="66" rx="0" fill="#8c8c8c" stroke="#555" stroke-width="1.5"/>
+<rect x="1379.3333333333335" y="33" width="102.66666666666667" height="66" rx="0" fill="#8c8c8c" stroke="#555" stroke-width="1.5"/>
+<rect x="118.0" y="1061" width="102.66666666666667" height="66" rx="0" fill="#8c8c8c" stroke="#555" stroke-width="1.5"/>
+<rect x="232.66666666666669" y="1061" width="102.66666666666667" height="66" rx="0" fill="#8c8c8c" stroke="#555" stroke-width="1.5"/>
+<rect x="347.33333333333337" y="1061" width="102.66666666666667" height="66" rx="0" fill="#fff3b0" stroke="#555" stroke-width="1.5"/>
+<rect x="462.0" y="1061" width="102.66666666666667" height="66" rx="0" fill="#fff3b0" stroke="#555" stroke-width="1.5"/>
+<rect x="576.6666666666667" y="1061" width="102.66666666666667" height="66" rx="0" fill="#fff3b0" stroke="#555" stroke-width="1.5"/>
+<rect x="691.3333333333334" y="1061" width="102.66666666666667" height="66" rx="0" fill="#fff3b0" stroke="#555" stroke-width="1.5"/>
+<rect x="806.0" y="1061" width="102.66666666666667" height="66" rx="0" fill="#fff3b0" stroke="#555" stroke-width="1.5"/>
+<rect x="920.6666666666667" y="1061" width="102.66666666666667" height="66" rx="0" fill="#fff3b0" stroke="#555" stroke-width="1.5"/>
+<rect x="1035.3333333333335" y="1061" width="102.66666666666667" height="66" rx="0" fill="#c8e6c9" stroke="#555" stroke-width="1.5"/>
+<rect x="1150.0" y="1061" width="102.66666666666667" height="66" rx="0" fill="#ffcdd2" stroke="#555" stroke-width="1.5"/>
+<rect x="1264.6666666666667" y="1061" width="102.66666666666667" height="66" rx="0" fill="#8c8c8c" stroke="#555" stroke-width="1.5"/>
+<rect x="1379.3333333333335" y="1061" width="102.66666666666667" height="66" rx="0" fill="#8c8c8c" stroke="#555" stroke-width="1.5"/>
+<rect x="33" y="118.0" width="66" height="73.0909090909091" rx="0" fill="#8c8c8c" stroke="#555" stroke-width="1.5"/>
+<rect x="33" y="203.0909090909091" width="66" height="73.0909090909091" rx="0" fill="#c8e6c9" stroke="#555" stroke-width="1.5"/>
+<rect x="33" y="288.1818181818182" width="66" height="73.0909090909091" rx="0" fill="#ffcdd2" stroke="#555" stroke-width="1.5"/>
+<rect x="33" y="373.27272727272725" width="66" height="73.0909090909091" rx="0" fill="#fff3b0" stroke="#555" stroke-width="1.5"/>
+<rect x="33" y="458.3636363636364" width="66" height="73.0909090909091" rx="0" fill="#fff3b0" stroke="#555" stroke-width="1.5"/>
+<rect x="33" y="543.4545454545455" width="66" height="73.0909090909091" rx="0" fill="#fff3b0" stroke="#555" stroke-width="1.5"/>
+<rect x="33" y="628.5454545454545" width="66" height="73.0909090909091" rx="0" fill="#fff3b0" stroke="#555" stroke-width="1.5"/>
+<rect x="33" y="713.6363636363636" width="66" height="73.0909090909091" rx="0" fill="#fff3b0" stroke="#555" stroke-width="1.5"/>
+<rect x="33" y="798.7272727272727" width="66" height="73.0909090909091" rx="0" fill="#fff3b0" stroke="#555" stroke-width="1.5"/>
+<rect x="33" y="883.8181818181819" width="66" height="73.0909090909091" rx="0" fill="#fff3b0" stroke="#555" stroke-width="1.5"/>
+<rect x="33" y="968.909090909091" width="66" height="73.0909090909091" rx="0" fill="#8c8c8c" stroke="#555" stroke-width="1.5"/>
+<rect x="1501" y="118.0" width="66" height="73.0909090909091" rx="0" fill="#8c8c8c" stroke="#555" stroke-width="1.5"/>
+<rect x="1501" y="203.0909090909091" width="66" height="73.0909090909091" rx="0" fill="#fff3b0" stroke="#555" stroke-width="1.5"/>
+<rect x="1501" y="288.1818181818182" width="66" height="73.0909090909091" rx="0" fill="#fff3b0" stroke="#555" stroke-width="1.5"/>
+<rect x="1501" y="373.27272727272725" width="66" height="73.0909090909091" rx="0" fill="#fff3b0" stroke="#555" stroke-width="1.5"/>
+<rect x="1501" y="458.3636363636364" width="66" height="73.0909090909091" rx="0" fill="#fff3b0" stroke="#555" stroke-width="1.5"/>
+<rect x="1501" y="543.4545454545455" width="66" height="73.0909090909091" rx="0" fill="#fff3b0" stroke="#555" stroke-width="1.5"/>
+<rect x="1501" y="628.5454545454545" width="66" height="73.0909090909091" rx="0" fill="#fff3b0" stroke="#555" stroke-width="1.5"/>
+<rect x="1501" y="713.6363636363636" width="66" height="73.0909090909091" rx="0" fill="#fff3b0" stroke="#555" stroke-width="1.5"/>
+<rect x="1501" y="798.7272727272727" width="66" height="73.0909090909091" rx="0" fill="#fff3b0" stroke="#555" stroke-width="1.5"/>
+<rect x="1501" y="883.8181818181819" width="66" height="73.0909090909091" rx="0" fill="#fff3b0" stroke="#555" stroke-width="1.5"/>
+<rect x="1501" y="968.909090909091" width="66" height="73.0909090909091" rx="0" fill="#8c8c8c" stroke="#555" stroke-width="1.5"/>
+<text x="628.0000000000001" y="124" font-family="DejaVu Sans, Arial, Helvetica, sans-serif" font-size="19" fill="#333" text-anchor="middle" font-weight="bold" dominant-baseline="middle">JTAG</text>
+<text x="1086.6666666666667" y="124" font-family="DejaVu Sans, Arial, Helvetica, sans-serif" font-size="19" fill="#333" text-anchor="middle" font-weight="bold" dominant-baseline="middle">clk · rst · ref_clk</text>
+<text x="685.3333333333334" y="1036" font-family="DejaVu Sans, Arial, Helvetica, sans-serif" font-size="19" fill="#333" text-anchor="middle" font-weight="bold" dominant-baseline="middle">GPIO</text>
+<text x="1144.0" y="1036" font-family="DejaVu Sans, Arial, Helvetica, sans-serif" font-size="19" fill="#333" text-anchor="middle" font-weight="bold" dominant-baseline="middle">test · status</text>
+<text x="124" y="282.1818181818182" font-family="DejaVu Sans, Arial, Helvetica, sans-serif" font-size="19" fill="#333" text-anchor="middle" font-weight="bold" dominant-baseline="middle" transform="rotate(-90 124 282.1818181818182)">UART</text>
+<text x="124" y="665.090909090909" font-family="DejaVu Sans, Arial, Helvetica, sans-serif" font-size="19" fill="#333" text-anchor="middle" font-weight="bold" dominant-baseline="middle" transform="rotate(-90 124 665.090909090909)">GPIO</text>
+<text x="1476" y="580.0" font-family="DejaVu Sans, Arial, Helvetica, sans-serif" font-size="19" fill="#333" text-anchor="middle" font-weight="bold" dominant-baseline="middle" transform="rotate(90 1476 580.0)">GPIO</text>
+<rect x="180" y="190" width="1240" height="820" rx="0" fill="#e6e6e6" stroke="#999" stroke-width="1.5"/>
+<text x="195" y="213" font-family="DejaVu Sans, Arial, Helvetica, sans-serif" font-size="22" fill="#000" text-anchor="start" font-weight="normal" dominant-baseline="middle">croc_soc</text>
+<rect x="200" y="235" width="790" height="755" rx="0" fill="#cdcdcd" stroke="none" stroke-width="0"/>
+<text x="215" y="258" font-family="DejaVu Sans, Arial, Helvetica, sans-serif" font-size="22" fill="#000" text-anchor="start" font-weight="normal" dominant-baseline="middle">croc_domain</text>
+<rect x="1010" y="235" width="390" height="755" rx="0" fill="#cdcdcd" stroke="none" stroke-width="0"/>
+<text x="1025" y="258" font-family="DejaVu Sans, Arial, Helvetica, sans-serif" font-size="22" fill="#000" text-anchor="start" font-weight="normal" dominant-baseline="middle">user_domain</text>
+<rect x="530" y="290" width="200" height="90" rx="0" fill="#93005f" stroke="none" stroke-width="0"/>
+<text x="630" y="335" font-family="DejaVu Sans, Arial, Helvetica, sans-serif" font-size="24" fill="#fff" text-anchor="middle" font-weight="normal" dominant-baseline="middle">JTAG / Debug</text>
+<rect x="240" y="280" width="240" height="110" rx="0" fill="#a8322d" stroke="none" stroke-width="0"/>
+<text x="360" y="320" font-family="DejaVu Sans, Arial, Helvetica, sans-serif" font-size="34" fill="#fff" text-anchor="middle" font-weight="normal" dominant-baseline="middle">CVE2</text>
+<text x="360" y="358" font-family="DejaVu Sans, Arial, Helvetica, sans-serif" font-size="18" fill="#fff" text-anchor="middle" font-weight="normal" dominant-baseline="middle">RISC-V core</text>
+<rect x="240" y="450" width="720" height="64" rx="0" fill="#1a8a3a" stroke="none" stroke-width="0"/>
+<text x="600" y="483" font-family="DejaVu Sans, Arial, Helvetica, sans-serif" font-size="32" fill="#fff" text-anchor="middle" font-weight="normal" dominant-baseline="middle">OBI Crossbar</text>
+<rect x="240" y="590" width="300" height="300" rx="0" fill="#93005f" stroke="none" stroke-width="0"/>
+<text x="390" y="625" font-family="DejaVu Sans, Arial, Helvetica, sans-serif" font-size="26" fill="#fff" text-anchor="middle" font-weight="bold" dominant-baseline="middle">Peripherals</text>
+<text x="390" y="680" font-family="DejaVu Sans, Arial, Helvetica, sans-serif" font-size="19" fill="#fff" text-anchor="middle" font-weight="normal" dominant-baseline="middle">UART · GPIO · Timer</text>
+<text x="390" y="720" font-family="DejaVu Sans, Arial, Helvetica, sans-serif" font-size="19" fill="#fff" text-anchor="middle" font-weight="normal" dominant-baseline="middle">CLINT · Bootrom</text>
+<text x="390" y="760" font-family="DejaVu Sans, Arial, Helvetica, sans-serif" font-size="19" fill="#fff" text-anchor="middle" font-weight="normal" dominant-baseline="middle">SoC Regs</text>
+<text x="390" y="840" font-family="DejaVu Sans, Arial, Helvetica, sans-serif" font-size="16" fill="#f3d0e4" text-anchor="middle" font-weight="normal" dominant-baseline="middle">(MBIST control)</text>
+<rect x="600" y="590" width="360" height="300" rx="0" fill="#5b9bd5" stroke="none" stroke-width="0"/>
+<text x="780" y="615" font-family="DejaVu Sans, Arial, Helvetica, sans-serif" font-size="22" fill="#fff" text-anchor="middle" font-weight="normal" dominant-baseline="middle">SRAM</text>
+<rect x="620" y="640" width="145" height="230" rx="0" fill="#1565b0" stroke="none" stroke-width="0"/>
+<text x="692" y="720" font-family="DejaVu Sans, Arial, Helvetica, sans-serif" font-size="24" fill="#fff" text-anchor="middle" font-weight="normal" dominant-baseline="middle">Bank 0</text>
+<rect x="642" y="805" width="100" height="40" rx="0" fill="#fbe3b8" stroke="#b36b00" stroke-width="2"/>
+<text x="692" y="826" font-family="DejaVu Sans, Arial, Helvetica, sans-serif" font-size="16" fill="#7a4a00" text-anchor="middle" font-weight="bold" dominant-baseline="middle">MBIST</text>
+<rect x="795" y="640" width="145" height="230" rx="0" fill="#1565b0" stroke="none" stroke-width="0"/>
+<text x="867" y="720" font-family="DejaVu Sans, Arial, Helvetica, sans-serif" font-size="24" fill="#fff" text-anchor="middle" font-weight="normal" dominant-baseline="middle">Bank 1</text>
+<rect x="817" y="805" width="100" height="40" rx="0" fill="#fbe3b8" stroke="#b36b00" stroke-width="2"/>
+<text x="867" y="826" font-family="DejaVu Sans, Arial, Helvetica, sans-serif" font-size="16" fill="#7a4a00" text-anchor="middle" font-weight="bold" dominant-baseline="middle">MBIST</text>
+<rect x="1040" y="300" width="330" height="590" rx="0" fill="#eb9a2f" stroke="none" stroke-width="0"/>
+<text x="1205" y="345" font-family="DejaVu Sans, Arial, Helvetica, sans-serif" font-size="26" fill="#000" text-anchor="middle" font-weight="bold" dominant-baseline="middle">VAD Subsystem</text>
+<rect x="1070" y="390" width="270" height="70" rx="0" fill="#fbe3b8" stroke="#b36b00" stroke-width="2"/>
+<text x="1205" y="425" font-family="DejaVu Sans, Arial, Helvetica, sans-serif" font-size="20" fill="#000" text-anchor="middle" font-weight="normal" dominant-baseline="middle">I2S receiver</text>
+<rect x="1070" y="485" width="270" height="70" rx="0" fill="#fbe3b8" stroke="#b36b00" stroke-width="2"/>
+<text x="1205" y="520" font-family="DejaVu Sans, Arial, Helvetica, sans-serif" font-size="20" fill="#000" text-anchor="middle" font-weight="normal" dominant-baseline="middle">Ping-pong buffer</text>
+<rect x="1070" y="580" width="270" height="70" rx="0" fill="#fbe3b8" stroke="#b36b00" stroke-width="2"/>
+<text x="1205" y="615" font-family="DejaVu Sans, Arial, Helvetica, sans-serif" font-size="20" fill="#000" text-anchor="middle" font-weight="normal" dominant-baseline="middle">VAD core</text>
+<rect x="1070" y="680" width="270" height="70" rx="0" fill="#1565b0" stroke="none" stroke-width="0"/>
+<text x="1205" y="703" font-family="DejaVu Sans, Arial, Helvetica, sans-serif" font-size="20" fill="#fff" text-anchor="middle" font-weight="normal" dominant-baseline="middle">2 × SRAM</text>
+<text x="1205" y="730" font-family="DejaVu Sans, Arial, Helvetica, sans-serif" font-size="16" fill="#fff" text-anchor="middle" font-weight="normal" dominant-baseline="middle">+ MBIST</text>
+<rect x="1070" y="775" width="270" height="90" rx="0" fill="#fbe3b8" stroke="#b36b00" stroke-width="2"/>
+<text x="1205" y="805" font-family="DejaVu Sans, Arial, Helvetica, sans-serif" font-size="18" fill="#000" text-anchor="middle" font-weight="normal" dominant-baseline="middle">Debug / observability</text>
+<text x="1205" y="835" font-family="DejaVu Sans, Arial, Helvetica, sans-serif" font-size="18" fill="#000" text-anchor="middle" font-weight="normal" dominant-baseline="middle">registers</text>
+<polyline points="700,102 700,290" fill="none" stroke="#000" stroke-width="4" stroke-linejoin="round" marker-end="url(#a)"/>
+<polyline points="630,380 630,450" fill="none" stroke="#000" stroke-width="5" stroke-linejoin="round" marker-end="url(#a)"/>
+<polyline points="360,390 360,450" fill="none" stroke="#000" stroke-width="5" stroke-linejoin="round" marker-end="url(#a)"/>
+<polyline points="390,514 390,590" fill="none" stroke="#000" stroke-width="5" stroke-linejoin="round" marker-end="url(#a)"/>
+<polyline points="780,514 780,590" fill="none" stroke="#000" stroke-width="5" stroke-linejoin="round" marker-end="url(#a)"/>
+<polyline points="960,482 1040,482" fill="none" stroke="#000" stroke-width="5" stroke-linejoin="round" marker-end="url(#a)"/>
+<rect x="60" y="1162" width="34" height="26" rx="0" fill="#c8e6c9" stroke="#555" stroke-width="1.5"/>
+<text x="106" y="1175" font-family="DejaVu Sans, Arial, Helvetica, sans-serif" font-size="19" fill="#000" text-anchor="start" font-weight="normal" dominant-baseline="middle">input pad</text>
+<rect x="390" y="1162" width="34" height="26" rx="0" fill="#ffcdd2" stroke="#555" stroke-width="1.5"/>
+<text x="436" y="1175" font-family="DejaVu Sans, Arial, Helvetica, sans-serif" font-size="19" fill="#000" text-anchor="start" font-weight="normal" dominant-baseline="middle">output pad</text>
+<rect x="720" y="1162" width="34" height="26" rx="0" fill="#fff3b0" stroke="#555" stroke-width="1.5"/>
+<text x="766" y="1175" font-family="DejaVu Sans, Arial, Helvetica, sans-serif" font-size="19" fill="#000" text-anchor="start" font-weight="normal" dominant-baseline="middle">bidirectional (GPIO) pad</text>
+<rect x="1050" y="1162" width="34" height="26" rx="0" fill="#8c8c8c" stroke="#555" stroke-width="1.5"/>
+<text x="1096" y="1175" font-family="DejaVu Sans, Arial, Helvetica, sans-serif" font-size="19" fill="#000" text-anchor="start" font-weight="normal" dominant-baseline="middle">power pad</text>
+</svg>

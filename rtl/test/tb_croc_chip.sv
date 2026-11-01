@@ -542,14 +542,15 @@ module tb_croc_chip #(
   //  OBI crossbar JTAG isolation test (+obi_jtag_test)
   ////////////////////////////////////////////////////////////////////////////
   // obi_jtag TAP instruction XcnctIsolation (IR 1): the OBI cuts around the main crossbar
-  // run on TCK and form one scan chain, and the crossbar address map comes from a JTAG
-  // register. DR chain (TDI -> TDO) in the obi_jtag TAP:
+  // and the crossbar itself run on TCK, the cuts form one scan chain, and the crossbar
+  // address map comes from a JTAG register. DR chain (TDI -> TDO) in the obi_jtag TAP:
   //   isolation register (addr map, en_default_idx, default_idx) -> TDO stage ->
   //   cuts at managers 0..3 (A, R) -> cuts at subordinates 0..4 (A, R)
-  // A cut cell holds only channel data (no valid): Capture loads the cut input, Update
-  // drives the cut output. With no request anywhere, every subordinate-side arbiter
-  // passes manager 3's A channel, so data injected into manager cut 3 is captured only by
-  // the subordinate cut it decodes to (all others see '0 from the demux).
+  // Each cut register cell is {valid, channel data}, data bit 0 next to TDO; valid is req
+  // (A channel) or rvalid (R channel). Update drives the cells for one TCK cycle (a step):
+  // manager cuts drive req into the crossbar, subordinate cuts grant every request and drive
+  // rvalid into it. Managers never see gnt/rvalid and subordinates never see req. The next
+  // Capture returns the payload and valid every cell input saw during the step.
   // Run with the core asleep in the bootrom (before program load).
 
   localparam int unsigned XbarMgrs  = croc_pkg::NumXbarManagers;        // 4
@@ -559,10 +560,11 @@ module tb_croc_chip #(
   localparam int unsigned MgrR      = $bits(croc_pkg::mgr_obi_r_chan_t);
   localparam int unsigned SubA      = $bits(croc_pkg::sbr_obi_a_chan_t);
   localparam int unsigned SubR      = $bits(croc_pkg::sbr_obi_r_chan_t);
-  localparam int unsigned InjMgr    = XbarMgrs - 1;   // manager whose data reaches subordinates
+  localparam int unsigned CellHs    = 1;              // valid bit per cut register
 
   localparam logic [ObiIrWidth-1:0] ObiBypass = 0;
   localparam logic [ObiIrWidth-1:0] ObiXcnct  = 1;
+  localparam logic [ObiIrWidth-1:0] ObiSubAcc = 2;   // isolation + transactions to subordinates
 
   // Same layout as xcnct_isol_misc_t in obi_jtag_top
   typedef struct packed {
@@ -572,26 +574,66 @@ module tb_croc_chip #(
   } xbar_isol_t;
 
   localparam int unsigned IsolW       = $bits(xbar_isol_t);
-  localparam int unsigned CutsW       = XbarMgrs * (MgrA + MgrR) + XbarSubs * (SubA + SubR);
+  localparam int unsigned MgrCutW     = MgrA + MgrR + 2 * CellHs;
+  localparam int unsigned SubCutW     = SubA + SubR + 2 * CellHs;
+  localparam int unsigned CutsW       = XbarMgrs * MgrCutW + XbarSubs * SubCutW;
   localparam int unsigned ObiAfter    = 1;                       // DMI bypass
   localparam int unsigned ObiBefore   = 2;                       // bndscan bypass + TDO stage
   localparam int unsigned ObiChainLen = ObiBefore + IsolW + 1 + CutsW + ObiAfter;
+  localparam int unsigned ObiIsolPos  = ObiAfter + CutsW + 1;   // bit 0 of the isolation register
 
-  // Stream position (0 = next to TDO) of bit 0 of a cut register
+  typedef logic           obi_vec_t [];
+  typedef logic [127:0]   obi_bits_t;
+
+  // What one cut register cell holds: channel data and its valid bit
+  typedef struct {
+    obi_bits_t data;
+    bit        valid;
+  } obi_cell_t;
+
+  function automatic int unsigned obi_cell_w(input bit sub_side, input bit r_reg);
+    if (!sub_side) return r_reg ? MgrR : MgrA;
+    else           return r_reg ? SubR : SubA;
+  endfunction
+
+  // Stream position (0 = next to TDO) of data bit 0 of a cut register cell
   function automatic int unsigned obi_cut_pos(input bit sub_side, input int unsigned idx,
                                               input bit r_reg);
     int unsigned off, w;
-    if (!sub_side) begin
-      off = idx * (MgrA + MgrR) + (r_reg ? MgrA : 0);
-      w   = r_reg ? MgrR : MgrA;
-    end else begin
-      off = XbarMgrs * (MgrA + MgrR) + idx * (SubA + SubR) + (r_reg ? SubA : 0);
-      w   = r_reg ? SubR : SubA;
-    end
+    w = obi_cell_w(sub_side, r_reg) + CellHs;
+    if (!sub_side) off = idx * MgrCutW + (r_reg ? MgrA + CellHs : 0);
+    else           off = XbarMgrs * MgrCutW + idx * SubCutW + (r_reg ? SubA + CellHs : 0);
     return ObiAfter + CutsW - off - w;
   endfunction
 
-  localparam int unsigned ObiIsolPos = ObiAfter + CutsW + 1;   // bit 0 of the isolation register
+  function automatic obi_vec_t obi_new_vec(input xbar_isol_t isol);
+    obi_vec_t v = new[ObiChainLen];
+    logic [IsolW-1:0] isol_bits = isol;
+    foreach (v[i]) v[i] = 1'b0;
+    for (int b = 0; b < IsolW; b++) v[ObiIsolPos + b] = isol_bits[b];
+    return v;
+  endfunction
+
+  function automatic obi_vec_t obi_put(input obi_vec_t v, input bit sub_side,
+                                       input int unsigned idx, input bit r_reg,
+                                       input obi_cell_t c);
+    int unsigned p = obi_cut_pos(sub_side, idx, r_reg);
+    int unsigned w = obi_cell_w(sub_side, r_reg);
+    for (int b = 0; b < w; b++) v[p + b] = c.data[b];
+    v[p + w] = c.valid;
+    return v;
+  endfunction
+
+  function automatic obi_cell_t obi_get(input obi_vec_t v, input bit sub_side,
+                                        input int unsigned idx, input bit r_reg);
+    obi_cell_t c;
+    int unsigned p = obi_cut_pos(sub_side, idx, r_reg);
+    int unsigned w = obi_cell_w(sub_side, r_reg);
+    c.data = '0;
+    for (int b = 0; b < w; b++) c.data[b] = v[p + b];
+    c.valid = (v[p + w] === 1'b1);
+    return c;
+  endfunction
 
   function automatic xbar_isol_t obi_default_isol();
     xbar_isol_t isol;
@@ -601,61 +643,184 @@ module tb_croc_chip #(
     return isol;
   endfunction
 
-  // Two scans with the same vector: the first updates (isolation map + manager cut A),
-  // the second captures what reached the subordinate cuts. Returns the captured A
-  // channels of all subordinate cuts.
-  task automatic obi_inject(input xbar_isol_t isol, input croc_pkg::mgr_obi_a_chan_t a,
-                            output croc_pkg::sbr_obi_a_chan_t sub_a [XbarSubs]);
-    logic wdata[], rdata[];
-    logic [IsolW-1:0] isol_bits = isol;
-    logic [MgrA-1:0]  a_bits    = a;
-    logic [SubA-1:0]  cap;
-    int unsigned      p;
-    wdata = new[ObiChainLen];
-    foreach (wdata[i]) wdata[i] = 1'b0;
-    for (int b = 0; b < IsolW; b++) wdata[ObiIsolPos + b] = isol_bits[b];
-    p = obi_cut_pos(0, InjMgr, 0);
-    for (int b = 0; b < MgrA; b++) wdata[p + b] = a_bits[b];
-    chain_scan_dr(wdata, rdata);   // update: inject
-    chain_scan_dr(wdata, rdata);   // capture: read back
-    for (int s = 0; s < XbarSubs; s++) begin
-      p = obi_cut_pos(1, s, 0);
-      for (int b = 0; b < SubA; b++) cap[b] = rdata[p + b];
-      sub_a[s] = cap;
-    end
+  // One crossbar step: the first scan updates the cells (the step runs right after
+  // Update-DR), the second scan captures what the cells saw during the step and drives
+  // no handshake, so its own step is idle.
+  task automatic obi_step(input xbar_isol_t isol, input obi_vec_t wdata,
+                          output obi_vec_t rdata);
+    logic w[], r[];
+    w = wdata;
+    chain_scan_dr(w, r);
+    w = obi_new_vec(isol);
+    chain_scan_dr(w, r);
+    rdata = r;
   endtask
 
-  // Inject a write to addr from manager 3 and check that only subordinate exp captures it.
-  task automatic obi_check_route(input string what, input xbar_isol_t isol,
-                                 input logic [31:0] addr, input int unsigned exp);
+  // One full transfer through the isolated crossbar, all from JTAG:
+  //  step 1: manager cut mgr drives req + A, the subordinate cuts grant it.
+  //          Only subordinate exp may see req, with the same payload.
+  //  step 2: the subordinate cut that got the request drives rvalid + R.
+  //          Only manager mgr may see rvalid, with the same rdata and rid = aid. This also
+  //          proves the grant: the crossbar routes a response only for a granted request.
+  // Every transfer completes, so the crossbar has nothing in flight afterwards.
+  task automatic obi_check_transfer(input string what, input xbar_isol_t isol,
+                                    input int unsigned mgr, input logic [31:0] addr,
+                                    input int unsigned exp);
     croc_pkg::mgr_obi_a_chan_t a;
-    croc_pkg::sbr_obi_a_chan_t sub_a [XbarSubs];
-    bit ok = 1;
-    string got = "";
-    a            = '0;
-    a.addr       = addr;
-    a.we         = 1'b1;
-    a.be         = 4'hF;
-    a.wdata      = 32'hC0DE_0000 | addr[15:0];
-    a.aid        = 1'b1;
-    obi_inject(isol, a, sub_a);
-    // A subordinate "received" the request if any request field is non-zero. aid is not
-    // used for this: obi_mux always prepends the selected manager index (3) to it.
+    croc_pkg::sbr_obi_a_chan_t sub_a;
+    croc_pkg::sbr_obi_r_chan_t rsp;
+    croc_pkg::mgr_obi_r_chan_t mgr_r;
+    obi_vec_t   w, r;
+    obi_cell_t  c;
+    bit         ok = 1;
+    int         hit = -1;
+    string      got = "";
+
+    a       = '0;
+    a.addr  = addr;
+    a.we    = 1'b1;
+    a.be    = 4'hF;
+    a.wdata = 32'hC0DE_0000 | addr[15:0];
+    a.aid   = 1'b1;
+
+    // Step 1: request (granted by the subordinate cuts)
+    w = obi_new_vec(isol);
+    w = obi_put(w, 0, mgr, 0, '{data: obi_bits_t'(a), valid: 1'b1});
+    obi_step(isol, w, r);
+
     for (int s = 0; s < XbarSubs; s++) begin
-      bit hit = (sub_a[s].addr !== '0 || sub_a[s].we !== '0 ||
-                 sub_a[s].be   !== '0 || sub_a[s].wdata !== '0);
-      if (hit) got = {got, $sformatf(" %0d", s)};
+      c = obi_get(r, 1, s, 0);
+      if (c.valid) begin
+        got = {got, $sformatf(" %0d", s)};
+        if (hit < 0) hit = s;
+      end
       if (s == exp) begin
-        if (sub_a[s].addr !== a.addr || sub_a[s].we !== a.we || sub_a[s].be !== a.be ||
-            sub_a[s].wdata !== a.wdata || sub_a[s].aid !== {2'(InjMgr), a.aid}) ok = 0;
-      end else if (hit) ok = 0;
+        sub_a = c.data[SubA-1:0];
+        if (!c.valid || sub_a.addr !== a.addr || sub_a.we !== a.we || sub_a.be !== a.be ||
+            sub_a.wdata !== a.wdata || sub_a.aid !== {2'(mgr), a.aid}) ok = 0;
+      end else if (c.valid) ok = 0;
     end
-    bs_check($sformatf("OBI %s: 0x%08h -> subordinate %0d (captured at:%s)",
-                       what, addr, exp, (got == "") ? " none" : got), ok);
+    bs_check($sformatf("OBI %s: M%0d 0x%08h -> S%0d (req seen at:%s)",
+                       what, mgr, addr, exp, (got == "") ? " none" : got), ok);
+    if (!ok) begin
+      for (int s = 0; s < XbarSubs; s++) begin
+        c = obi_get(r, 1, s, 0);
+        sub_a = c.data[SubA-1:0];
+        $display("            S%0d: req=%0b addr=0x%08h we=%0b be=%01h wdata=0x%08h aid=%0d",
+                 s, c.valid, sub_a.addr, sub_a.we, sub_a.be, sub_a.wdata, sub_a.aid);
+      end
+    end
+
+    // Step 2: response from the subordinate that took the request
+    if (hit < 0) begin
+      bs_check($sformatf("OBI %s: response (no request was routed)", what), 0);
+      return;
+    end
+    sub_a     = obi_get(r, 1, hit, 0).data[SubA-1:0];
+    rsp       = '0;
+    rsp.rdata = ~a.wdata;
+    rsp.rid   = sub_a.aid;
+    w = obi_new_vec(isol);
+    w = obi_put(w, 1, hit, 1, '{data: obi_bits_t'(rsp), valid: 1'b1});
+    obi_step(isol, w, r);
+
+    ok  = 1;
+    got = "";
+    for (int m = 0; m < XbarMgrs; m++) begin
+      c = obi_get(r, 0, m, 1);
+      if (c.valid) got = {got, $sformatf(" %0d", m)};
+      if (m == mgr) begin
+        mgr_r = c.data[MgrR-1:0];
+        if (!c.valid || mgr_r.rdata !== rsp.rdata || mgr_r.rid !== a.aid || mgr_r.err !== 1'b0)
+          ok = 0;
+      end else if (c.valid) ok = 0;
+    end
+    bs_check($sformatf("OBI %s: S%0d rvalid -> M%0d (rvalid seen at:%s)",
+                       what, hit, mgr, (got == "") ? " none" : got), ok);
     if (!ok)
+      for (int m = 0; m < XbarMgrs; m++) begin
+        c     = obi_get(r, 0, m, 1);
+        mgr_r = c.data[MgrR-1:0];
+        $display("            M%0d: rvalid=%0b rdata=0x%08h rid=%0d err=%0b",
+                 m, c.valid, mgr_r.rdata, mgr_r.rid, mgr_r.err);
+      end
+  endtask
+
+  // Isolation must not leak: while XcnctIsolation is active, no manager may see gnt or
+  // rvalid and no subordinate may see req, on any crossbar clock edge. In XcnctSubAccess
+  // the subordinates may see req, and every handshake there is counted on the system clock.
+  int unsigned obi_leaks = 0;
+  int unsigned obi_sub_hs = 0;
+  always @(posedge i_croc_chip.i_croc_soc.i_croc.i_main_xbar.clk_i) begin
+    if (i_croc_chip.i_croc_soc.i_croc.i_main_xbar.jtag_sub_access)
       for (int s = 0; s < XbarSubs; s++)
-        $display("            subordinate %0d: addr=0x%08h we=%0b be=%01h wdata=0x%08h aid=%0d",
-                 s, sub_a[s].addr, sub_a[s].we, sub_a[s].be, sub_a[s].wdata, sub_a[s].aid);
+        if (i_croc_chip.i_croc_soc.i_croc.i_main_xbar.mgr_ports_req_o[s].req === 1'b1 &&
+            i_croc_chip.i_croc_soc.i_croc.i_main_xbar.mgr_ports_rsp_i[s].gnt === 1'b1)
+          obi_sub_hs++;
+  end
+  always @(posedge i_croc_chip.i_croc_soc.i_croc.i_main_xbar.xbar_clk) begin
+    if (i_croc_chip.i_croc_soc.i_croc.i_main_xbar.gen_jtag.i_obi_jtag_top.xcnct_isol_en) begin
+      for (int m = 0; m < XbarMgrs; m++)
+        if (i_croc_chip.i_croc_soc.i_croc.i_main_xbar.sbr_ports_rsp_o[m].gnt !== 1'b0 ||
+            i_croc_chip.i_croc_soc.i_croc.i_main_xbar.sbr_ports_rsp_o[m].rvalid !== 1'b0)
+          obi_leaks++;
+      if (!i_croc_chip.i_croc_soc.i_croc.i_main_xbar.jtag_sub_access)
+        for (int s = 0; s < XbarSubs; s++)
+          if (i_croc_chip.i_croc_soc.i_croc.i_main_xbar.mgr_ports_req_o[s].req !== 1'b0)
+            obi_leaks++;
+    end
+  end
+
+  // XcnctSubAccess: the cut in front of subordinate sub issues one real transaction (A cell,
+  // valid = 1) on its system clock; after a pause the next scan captures the reply in its R cell.
+  task automatic obi_sub_access(input xbar_isol_t isol, input int unsigned sub,
+                                input croc_pkg::sbr_obi_a_chan_t a,
+                                output bit got, output croc_pkg::sbr_obi_r_chan_t rsp);
+    obi_vec_t  w, r;
+    obi_cell_t c;
+    w = obi_new_vec(isol);
+    w = obi_put(w, 1, sub, 0, '{data: obi_bits_t'(a), valid: 1'b1});
+    chain_scan_dr(w, r);                                   // Update: the step fires it
+    repeat (20) i_vip.jtag_dbg.jtag.write_tms(0);          // Run-Test/Idle while it runs
+    w = obi_new_vec(isol);
+    chain_scan_dr(w, r);                                   // Capture: the stored reply
+    c   = obi_get(r, 1, sub, 1);
+    got = c.valid;
+    rsp = c.data[SubR-1:0];
+  endtask
+
+  task automatic obi_sub_test();
+    xbar_isol_t isol = obi_default_isol();
+    croc_pkg::sbr_obi_a_chan_t a;
+    croc_pkg::sbr_obi_r_chan_t rsp;
+    bit got;
+    logic [31:0] addr = SramBaseAddr + 32'h40;
+    logic [31:0] pat  = 32'h5AB1_C0DE;
+    int unsigned hs0  = obi_sub_hs;
+
+    chain_set_ir(BsBypass, ObiSubAcc);
+    $display("@%t | [OBI-JTAG] XcnctSubAccess: transactions to the real subordinates", $time);
+
+    // Write to SRAM bank 0
+    a = '0; a.addr = addr; a.we = 1'b1; a.be = 4'hF; a.wdata = pat; a.aid = 3'b101;
+    obi_sub_access(isol, croc_pkg::XbarBank0, a, got, rsp);
+    bs_check($sformatf("OBI sub-access: write 0x%08h to SRAM bank 0 (rvalid=%0b err=%0b rid=%0d)",
+                       pat, got, rsp.err, rsp.rid), got && rsp.err === 1'b0 && rsp.rid === a.aid);
+
+    // Read it back
+    a.we = 1'b0; a.wdata = '0; a.aid = 3'b010;
+    obi_sub_access(isol, croc_pkg::XbarBank0, a, got, rsp);
+    bs_check($sformatf("OBI sub-access: read back from SRAM bank 0 = 0x%08h", rsp.rdata),
+             got && rsp.err === 1'b0 && rsp.rdata === pat && rsp.rid === a.aid);
+
+    // The error subordinate answers with err
+    a.addr = 32'h9000_0000; a.aid = 3'b001;
+    obi_sub_access(isol, croc_pkg::XbarError, a, got, rsp);
+    bs_check($sformatf("OBI sub-access: error subordinate answers err=%0b", rsp.err),
+             got && rsp.err === 1'b1);
+
+    bs_check($sformatf("OBI sub-access: each transaction reached its subordinate exactly once (%0d of 3)",
+                       obi_sub_hs - hs0), obi_sub_hs - hs0 == 3);
   endtask
 
   task automatic obi_test();
@@ -668,33 +833,39 @@ module tb_croc_chip #(
              $time, IsolW + 1 + CutsW, IsolW, CutsW);
     chain_set_ir(BsBypass, ObiXcnct);
 
-    // Scan-chain length and integrity: the pattern comes out after the whole chain
+    // Scan-chain length and integrity: the pattern comes out after the whole chain.
+    // All handshake bits shifted in are 0, so the step after this scan is idle.
     wdata = new[32 + ObiChainLen];
     foreach (wdata[i]) wdata[i] = (i < 32) ? pat[i] : 1'b0;
     chain_scan_dr(wdata, rdata);
     for (int i = 0; i < 32; i++) if (rdata[i + ObiChainLen] !== pat[i]) ok = 0;
     bs_check($sformatf("OBI scan chain: %0d bits from TDI to TDO", ObiChainLen), ok);
 
-    // Routing with the normal address map
+    // Routing with the normal address map, from every manager
     isol = obi_default_isol();
-    obi_check_route("periph",            isol, 32'h0300_0000, croc_pkg::XbarPeriph);
-    obi_check_route("user",              isol, 32'h2000_0000, croc_pkg::XbarUser);
-    obi_check_route("SRAM bank 0",       isol, 32'h1000_0010, croc_pkg::XbarBank0);
-    obi_check_route("SRAM bank 1",       isol, 32'h1000_0828, croc_pkg::XbarBank0 + 1);
-    obi_check_route("unmapped->default", isol, 32'h9000_0000, croc_pkg::XbarError);
+    obi_check_transfer("periph",            isol, 0, 32'h0300_0000, croc_pkg::XbarPeriph);
+    obi_check_transfer("user",              isol, 1, 32'h2000_0000, croc_pkg::XbarUser);
+    obi_check_transfer("SRAM bank 0",       isol, 2, 32'h1000_0010, croc_pkg::XbarBank0);
+    obi_check_transfer("SRAM bank 1",       isol, 3, 32'h1000_0828, croc_pkg::XbarBank0 + 1);
+    obi_check_transfer("unmapped->default", isol, 1, 32'h9000_0000, croc_pkg::XbarError);
 
     // Address map from JTAG: swap the two SRAM banks
     foreach (isol.addrmap[r]) begin
       if (isol.addrmap[r].idx == croc_pkg::XbarBank0)          isol.addrmap[r].idx = croc_pkg::XbarBank0 + 1;
       else if (isol.addrmap[r].idx == croc_pkg::XbarBank0 + 1) isol.addrmap[r].idx = croc_pkg::XbarBank0;
     end
-    obi_check_route("JTAG map, banks swapped", isol, 32'h1000_0828, croc_pkg::XbarBank0);
-    obi_check_route("JTAG map, banks swapped", isol, 32'h1000_0010, croc_pkg::XbarBank0 + 1);
+    obi_check_transfer("JTAG map, banks swapped", isol, 2, 32'h1000_0828, croc_pkg::XbarBank0);
+    obi_check_transfer("JTAG map, banks swapped", isol, 0, 32'h1000_0010, croc_pkg::XbarBank0 + 1);
 
-    // Default index from JTAG: unmapped addresses of manager 3 go to periph
+    // Default index from JTAG: unmapped addresses of manager 2 go to periph
     isol = obi_default_isol();
-    isol.default_idx[InjMgr] = croc_pkg::XbarPeriph;
-    obi_check_route("JTAG default_idx=periph", isol, 32'h9000_0000, croc_pkg::XbarPeriph);
+    isol.default_idx[2] = croc_pkg::XbarPeriph;
+    obi_check_transfer("JTAG default_idx=periph", isol, 2, 32'h9000_0000, croc_pkg::XbarPeriph);
+
+    bs_check($sformatf("OBI isolation: no gnt/rvalid to managers, no req to subordinates (%0d leaks)",
+                       obi_leaks), obi_leaks == 0);
+
+    if (i_croc_chip.i_croc_soc.i_croc.i_main_xbar.JtagSubAccess) obi_sub_test();
 
     // Leave isolation: crossbar back on the system clock and the hard-wired map
     chain_set_ir(BsBypass, ObiBypass);
@@ -714,7 +885,15 @@ module tb_croc_chip #(
 
     i_vip.jtag_init();
     if (bscan_test)    bs_part_a();
-    if (obi_jtag_test) obi_test();
+    if (obi_jtag_test) begin
+      obi_test();
+      // The sub-access write went to the real memory: read it over the normal debug path
+      if (i_croc_chip.i_croc_soc.i_croc.i_main_xbar.JtagSubAccess) begin
+        i_vip.jtag_read_reg32(SramBaseAddr + 32'h40, tb_data);
+        bs_check($sformatf("OBI sub-access: write is in the real SRAM, read over debug = 0x%08h", tb_data),
+                 tb_data === 32'h5AB1_C0DE);
+      end
+    end
 
     // The bus must still work after isolation: this write is read back over the crossbar
 

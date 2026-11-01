@@ -2,7 +2,8 @@
 
 // Checks the SRAM debug CSRs of vad_csr_wrapper: CPU write/read of both frame
 // banks, auto-increment, read forwarding, audio drop in debug mode, running the
-// VAD core on a CPU-written frame (KICK) and the sticky speech flag.
+// VAD core on a CPU-written frame (KICK), the sticky speech flag and the
+// interrupt, including raising it from software (IRQ_TRIG) and reading it back.
 module tb_vad_sram_dbg;
   import croc_pkg::*;
   import user_pkg::*;
@@ -31,6 +32,8 @@ module tb_vad_sram_dbg;
   localparam logic [31:0] CMD_READ      = 32'h2;
   localparam logic [31:0] CMD_KICK      = 32'h4;
   localparam logic [31:0] CMD_EVAL      = 32'h8;
+  localparam logic [31:0] CMD_IRQ_TRIG  = 32'h10;
+  localparam int          STATUS_IRQ    = 13;
 
   logic clk = 1'b0;
   logic rst_n;
@@ -279,6 +282,8 @@ module tb_vad_sram_dbg;
     write32(SRAM_CTRL, CTRL_DBG_EN | CTRL_BANK1 | CTRL_IRQ_EN);
     repeat (50) @(posedge clk);
     if (vad_irq !== 1'b1) $fatal(1, "interrupt not held high by the sticky flag");
+    read_status(status);
+    if (status[STATUS_IRQ] !== 1'b1) $fatal(1, "SRAM_STATUS.IRQ does not show the raised interrupt");
     write32(SRAM_STATUS, 32'h0);
     read_status(status);
     if (status[0] !== 1'b1 || vad_irq !== 1'b1) $fatal(1, "sticky flag cleared by writing 0");
@@ -287,6 +292,48 @@ module tb_vad_sram_dbg;
     if (status[0] !== 1'b0) $fatal(1, "sticky flag not cleared by W1C");
     if (vad_irq !== 1'b0) $fatal(1, "interrupt not released after W1C");
     write32(SRAM_CTRL, CTRL_DBG_EN | CTRL_BANK1);
+
+    // IRQ_TRIG: software raises the interrupt without audio, also outside debug mode
+    begin : irq_trigger_checks
+      write32(SRAM_CTRL, 32'h0);
+      events_before = event_count;
+      write32(SRAM_CMD, CMD_IRQ_TRIG);
+      read_status(status);
+      if (status[0] !== 1'b1 || status[STATUS_IRQ] !== 1'b0 || vad_irq !== 1'b0)
+        $fatal(1, "IRQ_TRIG with IRQ_EN clear: status 0x%08x irq %b, expected flag only", status, vad_irq);
+      if (event_count != events_before) $fatal(1, "IRQ_TRIG pulsed the wake-up output");
+
+      // Enabling raises the interrupt for the pending flag, masking hides it but keeps the flag
+      write32(SRAM_CTRL, CTRL_IRQ_EN);
+      read_status(status);
+      if (status[STATUS_IRQ] !== 1'b1 || vad_irq !== 1'b1)
+        $fatal(1, "IRQ_EN on a pending flag: status 0x%08x irq %b", status, vad_irq);
+      write32(SRAM_CTRL, 32'h0);
+      read_status(status);
+      if (status[0] !== 1'b1 || status[STATUS_IRQ] !== 1'b0 || vad_irq !== 1'b0)
+        $fatal(1, "IRQ_EN cleared: status 0x%08x irq %b", status, vad_irq);
+
+      // Clear, then trigger while enabled: the line rises right after the write
+      write32(SRAM_CTRL, CTRL_IRQ_EN);
+      write32(SRAM_STATUS, 32'h1);
+      read_status(status);
+      if (status[0] !== 1'b0 || status[STATUS_IRQ] !== 1'b0 || vad_irq !== 1'b0)
+        $fatal(1, "W1C before IRQ_TRIG: status 0x%08x irq %b", status, vad_irq);
+      write32(SRAM_CMD, CMD_IRQ_TRIG);
+      if (vad_irq !== 1'b1) $fatal(1, "interrupt not raised in the cycle after IRQ_TRIG");
+      read_status(status);
+      if (status[0] !== 1'b1 || status[STATUS_IRQ] !== 1'b1)
+        $fatal(1, "IRQ_TRIG with IRQ_EN set: status 0x%08x", status);
+
+      // Handler acknowledge: W1C drops the line and both status bits
+      write32(SRAM_STATUS, 32'h1);
+      if (vad_irq !== 1'b0) $fatal(1, "interrupt not released after W1C of a triggered flag");
+      read_status(status);
+      if (status[0] !== 1'b0 || status[STATUS_IRQ] !== 1'b0)
+        $fatal(1, "W1C after IRQ_TRIG: status 0x%08x", status);
+      write32(SRAM_CTRL, CTRL_DBG_EN | CTRL_BANK1);
+      checks += 8;
+    end
 
     // Same frame, energy threshold equal to the energy: no detection
     write32(ENERGY_THRESH, FRAME_SIZE);

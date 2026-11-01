@@ -17,7 +17,12 @@
 /// between the input and output. This spill register can be flushed.
 module spill_register_flushable_mod #(
   parameter type T           = logic,
-  parameter bit  Bypass      = 1'b0   // make this spill register transparent
+  parameter bit  Bypass      = 1'b0,  // make this spill register transparent
+  // In isolation: drive valid_o from the scan cell's valid bit for one step cycle.
+  // Leave 0 for outputs that face a functional manager or subordinate.
+  parameter bit  IsolDriveValid = 1'b0,
+  // In isolation: assert ready_o for the step cycle (accept whatever is offered).
+  parameter bit  IsolDriveReady = 1'b0
 ) (
   input  logic clk_i   ,
   input  logic rst_ni  ,
@@ -35,6 +40,10 @@ module spill_register_flushable_mod #(
   input  logic capture_dr_i,
   input  logic shift_dr_i,
   input  logic update_dr_i,
+  // Capture the live input at Capture-DR even after a step (for slow, sticky inputs)
+  input  logic isol_cap_live_i,
+  // Pulses in the step cycle when the cell's valid bit is set (before IsolDrive* gating)
+  output logic isol_step_valid_o,
 
   // -- JTAG Signals --
   input  logic tdi_i,
@@ -43,7 +52,12 @@ module spill_register_flushable_mod #(
 );
 
 // -- JTAG Repurpose Info
-// Use register a as a shadow register to update into after shifting in register b complete
+// Scan cell (TDI -> TDO): valid_q, a_data_q[W-1:0] (bit 0 next to TDO).
+// Update: b_data_q <- a_data_q, valid_upd_q <- valid_q, and starts one step cycle (step_q).
+// Step:   valid_o = valid_upd_q (if IsolDriveValid), ready_o = 1 (if IsolDriveReady) for
+//         exactly one clock, and the cell samples data_i and valid_i of that cycle.
+// Capture: loads data_i / valid_i, unless a step was sampled since the last Update
+//          (isol_cap_live_i: always load at Capture-DR, never at the step).
 
 
   if (Bypass) begin : gen_bypass
@@ -53,6 +67,7 @@ module spill_register_flushable_mod #(
 
     // -- JTAG addition
     assign tdo_o   = tdi_i;
+    assign isol_step_valid_o = 1'b0;
 
   end else begin : gen_spill_reg
     // The A register.
@@ -63,6 +78,34 @@ module spill_register_flushable_mod #(
     //For JTAG Addition
     T a_data_d;
     localparam int unsigned TDataBits = $bits(T);
+
+    // Valid bit of the scan cell: req (A channel) or rvalid (R channel) with the payload
+    logic valid_q, valid_d;
+    logic valid_upd_q;
+    logic step_q, stepped_q;
+
+    always_ff @(posedge clk_i or negedge rst_ni) begin : ps_isol_hs
+      if (!rst_ni) begin
+        valid_q     <= 1'b0;
+        valid_upd_q <= 1'b0;
+        step_q      <= 1'b0;
+        stepped_q   <= 1'b0;
+      end else if (!isol_en_i) begin
+        valid_q     <= 1'b0;
+        valid_upd_q <= 1'b0;
+        step_q      <= 1'b0;
+        stepped_q   <= 1'b0;
+      end else begin
+        valid_q <= valid_d;
+        step_q  <= update_dr_i;  // Update-DR lasts one TCK cycle: one step per Update
+        if (update_dr_i) begin
+          valid_upd_q <= valid_q;
+          stepped_q <= 1'b0;
+        end else if (step_q) begin
+          stepped_q <= 1'b1;
+        end
+      end
+    end
 
 
     always_ff @(posedge clk_i or negedge rst_ni) begin : ps_a_data
@@ -75,11 +118,18 @@ module spill_register_flushable_mod #(
     // -- JTAG addition
     always_comb begin
       a_data_d = a_data_q;
+      valid_d  = valid_q;
 
       if (isol_en_i && shift_dr_i) begin // JTAG Shift
-        a_data_d = T'({tdi_i, a_data_q[TDataBits-1:1]});
+        valid_d  = tdi_i;
+        a_data_d = T'({valid_q, a_data_q[TDataBits-1:1]});
       end
-      else if (isol_en_i && capture_dr_i) begin // JTAG Capture
+      else if (isol_en_i && capture_dr_i && (!stepped_q || isol_cap_live_i)) begin // JTAG Capture
+        valid_d  = valid_i;
+        a_data_d = data_i;
+      end
+      else if (isol_en_i && step_q && !isol_cap_live_i) begin // JTAG Step: sample the handshake cycle
+        valid_d  = valid_i;
         a_data_d = data_i;
       end
       else if (a_fill) begin // Functional Mode
@@ -89,6 +139,8 @@ module spill_register_flushable_mod #(
 
     always_ff @(posedge clk_i or negedge rst_ni) begin : ps_a_full
       if (!rst_ni)
+        a_full_q <= 0;
+      else if (isol_en_i) // the cell holds scan data, not a pending transfer
         a_full_q <= 0;
       else if (a_fill || a_drain)
         a_full_q <= a_fill;
@@ -130,6 +182,8 @@ module spill_register_flushable_mod #(
     always_ff @(posedge clk_i or negedge rst_ni) begin : ps_b_full
       if (!rst_ni)
         b_full_q <= 0;
+      else if (isol_en_i)
+        b_full_q <= 0;
       else if (b_fill || b_drain)
         b_full_q <= b_fill;
     end
@@ -150,17 +204,20 @@ module spill_register_flushable_mod #(
     // We can accept input as long as register B is not full.
     // Note: flush_i and valid_i must not be high at the same time,
     // otherwise an invalid handshake may occur
-    // Upstream Ready tied to 0 when JTAG opn going on
-    assign ready_o = isol_en_i ? 1'b0: !a_full_q || !b_full_q;
+    // In isolation ready_o / valid_o only pulse for the step cycle, and only if enabled
+    assign ready_o = isol_en_i ? (IsolDriveReady && step_q)
+                               : (!a_full_q || !b_full_q);
 
     // The unit provides output as long as one of the registers is filled.
-    assign valid_o = a_full_q | b_full_q;
+    assign valid_o = isol_en_i ? (IsolDriveValid && step_q && valid_upd_q)
+                               : (a_full_q | b_full_q);
 
     // We empty the spill register before the slice register.
     assign data_o = isol_en_i ? b_data_q: (b_full_q ? b_data_q : a_data_q);
 
     // -- JTAG addition
     assign tdo_o   = isol_en_i ? a_data_q[0] : tdi_i;
+    assign isol_step_valid_o = isol_en_i && step_q && valid_upd_q;
 
     `ifndef COMMON_CELLS_ASSERTS_OFF
     `ASSERT(flush_valid, flush_i |-> ~valid_i, clk_i, !rst_ni,

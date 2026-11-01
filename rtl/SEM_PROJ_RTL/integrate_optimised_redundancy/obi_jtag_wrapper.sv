@@ -51,12 +51,15 @@ module obi_jtag_wrapper #(
     output logic                 tdo_en_o,
 
     output logic                 xcnct_isol_en_o,
+    // XcnctSubAccess: isolation, and subordinate-side cuts may issue real transactions
+    output logic                 xcnct_sub_access_o,
     output xcnct_isol_misc_t     xcnct_isol_o
 );
 
 typedef enum logic [IrWidth-1:0] {
     Instr_Bypass,
-    Instr_XcnctIsolation
+    Instr_XcnctIsolation,
+    Instr_XcnctSubAccess
 } ir_type_t;
 
 logic [IrWidth-1:0] ir_shift_reg_q, ir_shift_reg_d;
@@ -114,6 +117,7 @@ always_comb begin : dr_select
     unique case (ir_latched_q)
         Instr_Bypass            : bypass_select        = 1'b1;
         Instr_XcnctIsolation    : xcnct_isol_select    = 1'b1;
+        Instr_XcnctSubAccess    : xcnct_isol_select    = 1'b1;
         default                 : bypass_select        = 1'b1; 
     endcase
 
@@ -210,6 +214,8 @@ always_comb begin
 
             Instr_XcnctIsolation:      tdo_d = xcnct_isol_q[0];
 
+            Instr_XcnctSubAccess:      tdo_d = xcnct_isol_q[0];
+
             default:                   tdo_d = bypass_reg_q;
         endcase
     end
@@ -225,6 +231,7 @@ end
 assign tdo_o = tdo_q;
 assign tdo_en_o = tdo_en_q;
 assign xcnct_isol_en_o = xcnct_isol_select;
+assign xcnct_sub_access_o = (ir_latched_q == Instr_XcnctSubAccess);
 assign xcnct_isol_o    = xcnct_isol_q;   // isolation address map / default index to the multicut
 
 endmodule
